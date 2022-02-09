@@ -1,0 +1,1 @@
+{"version":1,"defects":{"DatabaseTest::testConnection":3,"DatabaseTest::testgetConnectionSingleton":4},"times":{"DatabaseTest::testConnection":0.01,"DatabaseTest::testgetConnectionSingleton":0}}
