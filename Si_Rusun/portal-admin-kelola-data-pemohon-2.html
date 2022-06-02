@@ -16,17 +16,18 @@
 <body>
 
     <header class="header">
-        <a href="#" class="logo">SI<span>Rusun</span></a>
+        <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
             <a href="portal-admin-pelayanan.html">Pelayanan</a>
             <a href="portal-admin-rusunku.html">Rusunku</a>
             <a href="portal-admin-pemberitauan.html">Pemberitahuan</a>
             <a href="portal-admin-keluhan.html">Keluhan</a>
             <a href="portal-login.html"> Logout</a>
+        </nav>
 
-            <div class="icons">
-                <div id="menu-btn" class="fas fa-bars"></div>
-            </div>
+        <div class="icons">
+            <div id="portal-btn" class="fas fa-bars"></div>
+        </div>
     </header>
 
     <section class="form-input">
@@ -38,60 +39,42 @@
             <div class="list">
                 <form action="/">
                     <div class="item">
-                        <p>Nama Pemohon (Kepala Keluarga)</p>
+                        <p>Metode Pengumpulan Berkas</p>
                         <div class="item">
-                            <input type="text" name="name" />
+                            <select>
+                                <option value="">Select</option>
+                                <option value="1">Online</option>
+                                <option value="2">Offline</option>
+                            </select>
                         </div>
                     </div>
                     <div class="item">
-                        <p>Nomor Telepon</p>
+                        <p>KTP Pemohon</p>
                         <input type="tel" name="name" />
                     </div>
                     <div class="item">
-                        <p>Nomor Induk Kependudukan Pemohon</p>
+                        <p>KTP Pasangan</p>
                         <input type="text" name="name" />
                     </div>
                     <div class="item">
-                        <p>Nomor Kartu Keluarga</p>
+                        <p>Kartu Keluarga</p>
                         <input type="text" name="name" />
                     </div>
                     <div class="item">
-                        <p>Pekerjaan</p>
+                        <p>Surat Keterangan Memiliki Pekerjaan Tetap</p>
                         <input type="text" name="name" />
-                    </div>
-                    <div class="item">
-                        <p>Kisaran Gaji Perbulan</p>
-                        <select required>
-                            <option value="">Select</option>
-                            <option value="1">Rp 0 - Rp 1.999.999,</option>
-                            <option value="2">Rp 2.000.000, - Rp 3.999.999,</option>
-                            <option value="3">Rp 4.000.000, - Rp 6.000.000,</option>
-                        </select>
                     </div>
                     <div class="item">
                         <p>Jumlah Penghuni</p>
                         <input type="number" name="name" />
                     </div>
                     <div class="item">
-                        <p>Nama Pasangan</p>
+                        <p>Struk/Rincian Gaji</p>
                         <input type="text" name="name" />
                     </div>
                     <div class="item">
-                        <p>Pekerjaan Pasangan</p>
+                        <p>Surat Nikahi</p>
                         <input type="text" name="name" />
-                    </div>
-                    <div class="item">
-                        <p>Kisaran Gaji Pasangan Perbulan</p>
-                        <select required>
-                            <option value="">Select</option>
-                            <option value="1">Rp 0 - Rp 1.999.999,</option>
-                            <option value="2">Rp 2.000.000, - Rp 3.999.999,</option>
-                            <option value="3">Rp 4.000.000, - Rp 6.000.000,</option>
-                        </select>
-                    </div>
-                    <div class="item">
-                        <p>Kode Rusun</p>
-                        <input type="number" name="name" />
                     </div>
 
                 </form>
@@ -101,12 +84,14 @@
         <div class="nav-rule">
             <p></p>
             <div>
-                <a href="portal-admin-pelayanan.html" class="btn-rule">Selesai</a>
+                <a href="portal-admin-kelola-data-pemohon-2.html" class="btn-rule">lanjut</a>
                 <a href="portal-admin-pelayanan.html" class="btn-rule">Batal</a>
             </div>
         </div>
 
     </section>
+
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
