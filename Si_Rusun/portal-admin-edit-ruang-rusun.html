@@ -36,14 +36,14 @@
 
         <div class="rule">
             <div class="list">
-                <form action="/">
+                <form action="/" id="edit-ruang">
                     <div class="item">
                         <p>Nomor Rusun</p>
-                        <input type="tel" name="name" />
+                        <input type="text" name="name" required />
                     </div>
                     <div class="item">
                         <p>Lantai</p>
-                        <select>
+                        <select required>
                             <option value="">Select</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -53,11 +53,11 @@
                     </div>
                     <div class="item">
                         <p>Harga Sewa</p>
-                        <input type="text" name="name" />
+                        <input type="text" name="name" required />
                     </div>
                     <div class="item">
                         <p>Keterangan</p>
-                        <select>
+                        <select required>
                             <option value="">Select</option>
                             <option value="1">Kosong</option>
                             <option value="2">Rusak</option>
@@ -71,8 +71,8 @@
         <div class="nav-rule">
             <div></div>
             <div>
-                <a href="" class="btn-rule">Simpan</a>
-                <a href="portal-rusunku.html" class="btn-rule">Batal</a>
+                <a href="#"><button class="btn-rule" type="submit" form="edit-ruang">Simpan</button></a>
+                <a href="portal-rusunku.html" class="btn-rule">Kembali</a>
             </div>
         </div>
     </section>

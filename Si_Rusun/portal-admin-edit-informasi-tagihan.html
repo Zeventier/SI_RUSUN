@@ -36,40 +36,40 @@
 
         <div class="rule">
             <div class="list">
-                <form action="/">
+                <form action="/" id="edit-informasi">
                     <div class="item">
                         <p>Username</p>
                         <div class="item">
-                            <input type="text" name="name" />
+                            <input type="text" name="name" required />
                         </div>
                     </div>
                     <div class="item">
                         <p>Tanggal Akhir Pembayaran</p>
-                        <input type="tel" name="name" />
+                        <input type="date" name="name" required />
                     </div>
                     <div class="item">
                         <div class="double-item">
                             <div class="rows">
                                 <p>Debit Air</p>
-                                <input type="text" name="name" />
+                                <input type="text" name="name" required />
                             </div>
                             <div class="rows">
                                 <p>Biaya Air/bulan</p>
-                                <input type="text" name="name" />
+                                <input type="text" name="name" required />
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <p>Biaya Sewa Rusun/bulan</p>
-                        <input type="text" name="name" />
+                        <input type="text" name="name" required />
                     </div>
                     <div class="item">
                         <p>Total Tagihan</p>
-                        <input type="text" name="name" />
+                        <input type="text" name="name" required />
                     </div>
                     <div class="item">
                         <p>Keterangan</p>
-                        <select>
+                        <select required>
                             <option value="">Select</option>
                             <option value="1">Lunas</option>
                             <option value="2">Belum Lunas</option>
@@ -82,7 +82,7 @@
         <div class="nav-rule">
             <div></div>
             <div>
-                <a href="" class="btn-rule">Simpan</a>
+                <a href="#"><button class="btn-rule" type="submit" form="edit-informasi">Simpan</button></a>
                 <a href="portal-admin-tagihan-penghuni.html" class="btn-rule">Batal</a>
             </div>
         </div>

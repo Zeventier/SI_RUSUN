@@ -481,6 +481,27 @@ a {
   flex-wrap: wrap;
 }
 
+.form-input .single {
+  display: inline;
+}
+
+.form-input .single input {
+  width: 88%;
+
+}
+
+.form-input .single .btn-rule {
+  padding: 1rem 3rem;
+  background: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+
 .form-input .single-item {
   display: inline;
   flex-wrap: wrap;

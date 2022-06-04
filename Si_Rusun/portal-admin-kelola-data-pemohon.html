@@ -36,7 +36,7 @@
 
         <div class="rule">
             <div class="list">
-                <form action="/">
+                <form action="/" id="kelola-pemohon">
                     <div class="item">
                         <p>Nama Pemohon (Kepala Keluarga)</p>
                         <div class="item">
@@ -90,8 +90,13 @@
                         </select>
                     </div>
                     <div class="item">
-                        <p>Kode Rusun</p>
-                        <input type="number" name="name" />
+                        <p>Pilih Ruangan</p>
+                        <select required>
+                            <option value="">Select</option>
+                            <option value="1"> 1A</option>
+                            <option value="2"> 2A</option>
+                            <option value="3">3A</option>
+                        </select>
                     </div>
 
                 </form>
@@ -101,7 +106,8 @@
         <div class="nav-rule">
             <p></p>
             <div>
-                <a href="portal-admin-pelayanan.html" class="btn-rule">Selesai</a>
+                <a href="portal-admin-kelola-data-pemohon-2.html"><button class="btn-rule" type="submit"
+                        form="kelola-pemohon">Lanjut</button></a>
                 <a href="portal-admin-pelayanan.html" class="btn-rule">Batal</a>
             </div>
         </div>

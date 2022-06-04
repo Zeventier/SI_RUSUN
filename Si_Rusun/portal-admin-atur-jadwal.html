@@ -36,16 +36,16 @@
 
         <div class="rule">
             <div class="list">
-                <form action="/">
+                <form action="/" id="atur-jadwal">
                     <div class="single-item">
                         <p>Tanggal Wawancara</p>
-                        <input type="date" name="name" />
-                        <input type="time" name="name" />
+                        <input type="date" name="name" required />
+                        <input type="time" name="name" required />
                     </div>
                     <div class="single-item">
                         <p>Waktu Pengumuman</p>
-                        <input type="date" name="name" />
-                        <input type="time" name="name" />
+                        <input type="date" name="name" required />
+                        <input type="time" name="name" required />
                     </div>
                 </form>
             </div>
@@ -53,7 +53,7 @@
         <div class="nav-rule">
             <div></div>
             <div>
-                <a href="" class="btn-rule">Atur Jadwal</a>
+                <a href="#"><button class="btn-rule" type="submit" form="atur-jadwal">Atur Jadwal</button></a>
                 <a href="portal-admin-pelayanan.html" class="btn-rule">Batal</a>
             </div>
         </div>
