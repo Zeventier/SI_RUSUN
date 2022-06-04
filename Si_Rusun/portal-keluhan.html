@@ -39,15 +39,18 @@
                 <form action="/">
                     <div class="item">
                         <p>Keluhan</p>
-                        <div class="item">
-                            <textarea rows="5" name="comment" form="usrform">Masukan Keluhan Anda Disini ....</textarea>
+                        <div class="item" id="keluhan">
+                            <form action="">
+                                <textarea rows="5" name="comment"
+                                    form="usrform">Masukan Keluhan Anda Disini....</textarea>
+                            </form>
                         </div>
                     </div>
 
                     <div class="nav-rule">
                         <div></div>
                         <div>
-                            <a href="#" class="btn-rule">Ajukan</a>
+                            <a href="#"><button class="btn-rule" type="submit" form="keluhan">Simpan</button></a>
                             <a href="portal-rusun.html" class="btn-rule">Batal</a>
                         </div>
                     </div>
@@ -57,9 +60,9 @@
                             <form action="/">
                                 <div class="item">
                                     <p>Keluhan</p>
-                                    <textarea rows="5" name="comment" form="usrform"></textarea>
+                                    <textarea rows="5" name="comment" form="usrform" readonly></textarea>
                                     <p>Tanggapan</p>
-                                    <textarea rows="5" name="comment" form="usrform"></textarea>
+                                    <textarea rows="5" name="comment" form="usrform" readonly></textarea>
                                 </div>
                             </form>
                         </div>

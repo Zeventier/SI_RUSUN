@@ -36,24 +36,23 @@
 
         <div class="rule">
             <div class="list">
-                <form action="/">
+                <form action="/" id="pengajuan-1">
                     <div class="item">
                         <p>Nama Pemohon (Kepala Keluarga)</p>
-                        <div class="item">
-                            <input type="text" id="nama_pemohon" name="" required />
-                        </div>
+                        <input type="text" id="nama_pemohon" name="" required />
                     </div>
                     <div class="item">
                         <p>Nomor Telepon</p>
-                        <input type="tel" name="name" required />
+                        <input type="tel" minlength="10" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="name"
+                            required />
                     </div>
                     <div class="item">
                         <p>Nomor Induk Kependudukan</p>
-                        <input type="text" name="name" required />
+                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="name" required />
                     </div>
                     <div class="item">
                         <p>Nomor Kartu Keluarga</p>
-                        <input type="text" name="name" required />
+                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="name" required />
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
@@ -70,7 +69,7 @@
                     </div>
                     <div class="item">
                         <p>Jumlah Penghuni</p>
-                        <input type="number" minlength="1" maxlength="4" name="name" required />
+                        <input type="number" min="1" max="4" name="name" required />
                     </div>
                 </form>
             </div>
@@ -79,7 +78,8 @@
         <div class="nav-rule">
             <p class="num-rule">Tahap <span>2</span> dari 4</p>
             <div>
-                <a href="huni-rusun-3.html" class="btn-rule">Lanjut</a>
+                <a href="huni-rusun-3.html"><button class="btn-rule" type="submit"
+                        form="pengajuan-1">Lanjut</button></a>
                 <a href="huni-rusun-1.html" class="btn-rule">Kembali</a>
             </div>
     </section>

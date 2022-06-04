@@ -35,9 +35,10 @@
         </div>
         <div class="form-input">
             <form action="" class="login-form">
-                <input type="email" placeholder="Nama Pemohon" class="box">
-                <input type="password" placeholder="NIK Pemohon" class="box">
-                <a href="pengumuman2.html" class="btn"> Periksa</a>
+                <input type="text" placeholder="Nama Pemohon" class="box" required>
+                <input type="password" pattern="[0-9]+" minlength="16" maxlength="16" placeholder="NIK Pemohon"
+                    class="box" required>
+                <a href="pengumuman2.html"><button class="btn">Periksa</button></a>
             </form>
         </div>
     </section>

@@ -34,16 +34,16 @@
         </div>
         <div class="rule">
             <div class="list">
-                <form action="/">
+                <form action="/" id="pengajuan-2">
                     <div class="item">
                         <p>Nama Pasangan</p>
                         <div class="item">
-                            <input type="text" name="name" />
+                            <input type="text" name="name" required />
                         </div>
                     </div>
                     <div class="item">
                         <p>Pekerjaan Pasangan</p>
-                        <input type="text" name="name" />
+                        <input type="text" name="name" required />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Pasangan Perbulan</p>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="item">
                         <p>Pilih Ruangan</p>
-                        <select>
+                        <select required>
                             <option value="">Select</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -71,7 +71,8 @@
         <div class="nav-rule">
             <p class="num-rule">Tahap <span>3</span> dari 4</p>
             <div>
-                <a href="huni-rusun-3-on.html" class="btn-rule">Lanjut</a>
+                <a href="huni-rusun-3-on.html"><button class="btn-rule" type="submit"
+                        form="pengajuan-2">Lanjut</button></a>
                 <a href="huni-rusun-2.html" class="btn-rule">Kembali</a>
             </div>
     </section>
