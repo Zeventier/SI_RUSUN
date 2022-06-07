@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header id="not-print" class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
             <a href="portal-rusun.html">Beranda</a>
@@ -33,20 +33,33 @@
         <div>
             <h1 class="heading"> Informasi Tagihan Bulanan</h1>
         </div>
-
-        <div class="rule">
+        <div id="print" class="rule">
             <div class="list">
                 <form action="/">
                     <div class="item">
+                        <p>Bulan</p>
+                        <select required>
+                            <option value="">Select</option>
+                            <option value="1">Januari</option>
+                            <option value="2">Februari</option>
+                            <option value="3">Maret</option>
+                        </select>
+                    </div>
+                    <div class="item">
                         <p>Username</p>
                         <div class="item">
-                            <input type="text" name="name" readonly />
+                            <input type="text" name="name" />
                         </div>
+                    </div>
+                    <div class="item">
+                        <p>Keterangan</p>
+                        <input type="text" name="name" readonly />
                     </div>
                     <div class="item">
                         <p>Tanggal Akhir Pembayaran</p>
                         <input type="text" name="name" readonly />
                     </div>
+
                     <div class="item">
                         <div class="double-item">
                             <div class="rows">
@@ -73,12 +86,14 @@
 
         <div class="nav-rule">
             <div>
-                <button onclick="window.print('rule')" class=" btn-rule">Cetak</button>
-                <a href="portal-rusunku.html" class="btn-rule">Kembali</a>
+                <button id="not-print" onclick=window.print() class=" btn-rule">Cetak</button>
+                <a id="not-print" href="portal-rusunku.html" class="btn-rule">Kembali</a>
             </div>
         </div>
     </section>
+
     <script src="js/script.js"></script>
+    <script src="js/print-tagihan.js"></script>
 </body>
 
 </html>

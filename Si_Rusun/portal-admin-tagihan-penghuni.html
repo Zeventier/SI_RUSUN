@@ -15,7 +15,7 @@
 
 <body>
 
-    <header class="header">
+    <header id="not-print" class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
             <a href="portal-admin-pelayanan.html">Pelayanan</a>
@@ -37,7 +37,7 @@
         <div class="nav-rule">
             <div class="form-input">
                 <div class="list">
-                    <form action="/">
+                    <form class="of" action="/">
                         <div class="single-item">
                             <p>Pilih Waktu</p>
                             <input type="date" name="name" />
@@ -46,7 +46,7 @@
                     </form>
                 </div>
             </div>
-            <div>
+            <div id="not-print">
                 <a href="#" class="btn-rule">Pilih</a>
                 <button onclick="window.print('rule')" class=" btn-rule">Cetak</button>
             </div>
@@ -61,7 +61,7 @@
                     <th>Sewa Rusun</th>
                     <th>Total</th>
                     <th>Keterangan</th>
-                    <th>Aksi</th>
+                    <th id="not-print">Aksi</th>
                 </tr>
                 <tr>
                     <td></td>
@@ -71,7 +71,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="table-btn">
+                    <td id="not-print" class="table-btn">
                         <div class="btn-center">
                             <a href="portal-admin-edit-informasi-tagihan.html" class="btn-table">Edits</a>
                             <a href="" class="btn-table">Tandai Lunas</a>
@@ -83,8 +83,8 @@
         <div class="space nav-rule">
             <div></div>
             <div>
-                <a href="portal-admin-kelola-air.html" class="btn-rule">Ubah Harga Air</a>
-                <a href="portal-admin-rusunku.html" class="btn-rule">Kembali</a>
+                <a id="not-print" href="portal-admin-kelola-air.html" class="btn-rule">Ubah Harga Air</a>
+                <a id="not-print" href="portal-admin-rusunku.html" class="btn-rule">Kembali</a>
             </div>
         </div>
 

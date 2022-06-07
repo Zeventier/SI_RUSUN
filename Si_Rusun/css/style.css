@@ -10,6 +10,11 @@
   --border: .1rem solid rgba(0, 0, 0, .3);
 }
 
+@page {
+  size: auto;
+  margin: 0;
+}
+
 * {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -426,6 +431,12 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 1.5rem;
 }
 
+.form-input .of {
+  width: 100%;
+  padding-left: 0;
+  border-radius: 6px;
+}
+
 .form-input form {
   width: 100%;
   padding: 20px;
@@ -505,7 +516,6 @@ a {
 .form-input .single-item {
   display: inline;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .form-input .single-item input {
@@ -935,4 +945,19 @@ a {
 
 .footer .credit span {
   color: var(--red);
+}
+
+@media print {
+
+  .heading h1 {
+    margin-bottom: 0;
+  }
+
+  #print {
+    display: block;
+  }
+
+  #not-print {
+    display: none;
+  }
 }

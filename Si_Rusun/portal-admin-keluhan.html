@@ -15,7 +15,7 @@
 
 <body>
 
-    <header class="header">
+    <header id="not-print" class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
             <a href="portal-admin-pelayanan.html">Pelayanan</a>
@@ -37,7 +37,7 @@
         <div class="nav-rule">
             <div class="form-input">
                 <div class="list">
-                    <form action="/">
+                    <form class="of" action="/">
                         <div class="single-item">
                             <p>Pilih Waktu</p>
                             <input type="date" name="name" />
@@ -46,9 +46,9 @@
                     </form>
                 </div>
             </div>
-            <div>
+            <div id="not-print">
                 <a href="#" class="btn-rule">Pilih</a>
-                <button onclick="window.print('rule')" class=" btn-rule">Cetak</button>
+                <button onclick="window.print()" class=" btn-rule">Cetak</button>
             </div>
         </div>
         <div class="table">
@@ -59,7 +59,7 @@
                     <th>Username</th>
                     <th>Keluhan</th>
                     <th>Tanggapan</th>
-                    <th>Aksi</th>
+                    <th id="not-print">Aksi</th>
                 </tr>
                 <tr>
                     <td></td>
@@ -67,7 +67,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="table-btn">
+                    <td id="not-print" class="table-btn">
                         <div class="btn-center">
                             <a href="portal-admin-tanggapan-keluhan.html" class="btn-table">Tanggapi</a>
                         </div>
