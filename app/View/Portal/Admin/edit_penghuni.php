@@ -20,30 +20,26 @@
 
         <div class="rule">
             <div class="list">
-                <form action="/" id="edit-penghuni">
+                <form method="post" action="/" id="edit-penghuni">
                     <div class="item">
                         <p>Nama Pemohon (Kepala Keluarga)</p>
-                        <input type="text" id="nama_pemohon" name="" required />
-                    </div>
-                    <div class="item">
-                        <p>Nomor Telepon</p>
-                        <input type="tel" minlength="10" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="name" required />
+                        <input type="text" name="nama_wakil" required />
                     </div>
                     <div class="item">
                         <p>Nomor Induk Kependudukan Pemohon</p>
-                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="name" required />
+                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="nik_wakil" required />
                     </div>
                     <div class="item">
                         <p>Nomor Kartu Keluarga</p>
-                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="name" required />
+                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="no_kk" required />
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
-                        <input type="text" name="name" required />
+                        <input type="text" name="kerja_wakil" required />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Perbulan</p>
-                        <select required>
+                        <select name="gaji_wakil" required>
                             <option value="">Select</option>
                             <option value="1">Rp 0 - Rp 1.999.999,</option>
                             <option value="2">Rp 2.000.000, - Rp 3.999.999,</option>

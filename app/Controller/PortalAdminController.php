@@ -467,7 +467,7 @@ class PortalAdminController
             $dataRuangan = $this->rusunService->showRuangan($kode_ruangan);
         }
 
-        View::render('Portal/Admin/form-ruangan', [
+        View::render('Portal/Admin/form_ruangan', [
             'title' => 'Portal Rusun Admin',
             'data' => $dataRuangan
         ]);
@@ -488,7 +488,7 @@ class PortalAdminController
 
                 View::redirect('/portal/admin/ruangan');
             } catch (ValidationException $exception) {
-                View::render('Portal/Admin/form-ruangan', [
+                View::render('Portal/Admin/form_ruangan', [
                     "title" => "Portal Rusun Admin",
                     'error' => $exception->getMessage()
                 ]);
