@@ -1,11 +1,11 @@
  <header class="header">
      <a href="#" class="logo">SI<span>Rusun</span></a>
      <nav class="navbar-portal">
-         <a href="portal-rusun.html">Beranda</a>
-         <a href="portal-rusunku.html">Rusunku</a>
-         <a href="portal-pemberitahuan.html">Pemberitahuan</a>
-         <a href="portal-keluhan.html">Keluhan</a>
-         <a href="portal-login.html"> Logout</a>
+         <a href="/portal/admin">Pelayanan</a>
+         <a href="/portal/admin/home">Rusunku</a>
+         <a href="/portal/admin/pemberitahuan">Pemberitahuan</a>
+         <a href="/portal/admin/keluhan?date=<?php echo date('Y-m') ?>">Keluhan</a>
+         <a href="/portal/admin/logout"> Logout</a>
      </nav>
 
      <div class="icons">

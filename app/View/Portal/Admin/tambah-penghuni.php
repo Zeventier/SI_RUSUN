@@ -1,11 +1,11 @@
     <header class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
-            <a href="portal-admin-pelayanan.html">Pelayanan</a>
-            <a href="portal-admin-rusunku.html">Rusunku</a>
-            <a href="portal-admin-pemberitauan.html">Pemberitahuan</a>
-            <a href="portal-admin-keluhan.html">Keluhan</a>
-            <a href="portal-login.html"> Logout</a>
+            <a href="/portal/admin">Pelayanan</a>
+            <a href="/portal/admin/home">Rusunku</a>
+            <a href="/portal/admin/pemberitahuan">Pemberitahuan</a>
+            <a href="/portal/admin/keluhan?date=<?php echo date('Y-m') ?>">Keluhan</a>
+            <a href="/portal/admin/logout"> Logout</a>
         </nav>
 
         <div class="icons">
@@ -27,8 +27,7 @@
                     </div>
                     <div class="item">
                         <p>Nomor Telepon</p>
-                        <input type="tel" minlength="10" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="name"
-                            required />
+                        <input type="tel" minlength="10" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="name" required />
                     </div>
                     <div class="item">
                         <p>Nomor Induk Kependudukan Pemohon</p>

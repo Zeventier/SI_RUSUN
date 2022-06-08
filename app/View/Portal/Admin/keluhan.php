@@ -1,11 +1,11 @@
     <header id="not-print" class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
-            <a href="portal-admin-pelayanan.html">Pelayanan</a>
-            <a href="portal-admin-rusunku.html">Rusunku</a>
-            <a href="portal-admin-pemberitauan.html">Pemberitahuan</a>
-            <a href="portal-admin-keluhan.html">Keluhan</a>
-            <a href="portal-login.html"> Logout</a>
+            <a href="/portal/admin">Pelayanan</a>
+            <a href="/portal/admin/home">Rusunku</a>
+            <a href="/portal/admin/pemberitahuan">Pemberitahuan</a>
+            <a href="/portal/admin/keluhan?date=<?php echo date('Y-m') ?>">Keluhan</a>
+            <a href="/portal/admin/logout"> Logout</a>
         </nav>
 
         <div class="icons">
@@ -78,4 +78,4 @@
 
     </section>
 
-    <script src="js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
