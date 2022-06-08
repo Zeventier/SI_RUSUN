@@ -18,7 +18,7 @@
 
          <div class="swiper-wrapper">
 
-            <section class="swiper-slide slide" style="background: url(assets/swiper-img.jpg) no-repeat;">
+            <section class="swiper-slide slide" style="background: url(/assets/img/swiper-img.jpg) no-repeat;">
                <div class="content">
                   <h3>Selamat Datang </h3>
                   <h4>Di Rusunawa <span>Teluk Kelayan</span> </h4>

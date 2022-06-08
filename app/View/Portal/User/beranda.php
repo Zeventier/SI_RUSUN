@@ -1,60 +1,184 @@
-<header>
-    <nav class="navbar navbar-light navbar-expand-md" style="background: var(--blue);">
-        <div class="container-fluid"><a class="navbar-brand" href="portal-user-beranda.html" style="color: var(--light);font-style: normal;font-weight: bold;">PORTAL RUSUN</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="/portal/user/beranda" style="color: var(--white);font-weight: bold;">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="portal-user-rusunku.html" style="color: var(--white);">Rusunku</a></li>
-                    <li class="nav-item"><a class="nav-link" href="portal-user-pemberitahuan.html" style="color: var(--white);">Pemberitahuan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="portal-user-keluhan.html" style="color: var(--white);">Keluhan</a></li>
-                </ul>
-            </div>
+    <header class="header">
+        <a href="#" class="logo">Portal<span>Rusun</span></a>
+        <nav class="navbar-portal">
+            <a href="portal-rusun.html">Beranda</a>
+            <a href="portal-rusunku.html">Rusunku</a>
+            <a href="portal-pemberitahuan.html">Pemberitahuan</a>
+            <a href="portal-keluhan.html">Keluhan</a>
+            <a href="portal-login.html"> Logout</a>
+        </nav>
+
+        <div class="icons">
+            <div id="portal-btn" class="fas fa-bars"></div>
         </div>
-    </nav>
-</header>
-<main>
-    <section class="highlight-clean">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">Selamat Datang</h2>
-                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
-            </div>
-        </div>
-    </section>
-    <section class="projects-clean">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">Panduan</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
-                    <div class="text">
-                        <p>Sed lobortis mi. Suspendisse vel placerat ligula. <span style="text-decoration: underline;">Vivamus</span> ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac lacus. <strong>Ut vehicula rhoncus</strong> elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit <em>pulvinar dict</em> vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                        <p>Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                        <figure class="figure d-block"></figure>
-                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+    </header>
+
+    <section class="home" id="home">
+        <div class="swiper home-slider">
+
+            <div class="swiper-wrapper">
+
+                <section class="swiper-slide slide" style="background: url(images/swiper-img.jpg) no-repeat;">
+                    <div class="content">
+                        <h3>Selamat Datang </h3>
+                        <h4>Di Portal Rusunawa <span>Teluk Kelayan</span> </h4>
                     </div>
-                </div>
+                </section>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="guide">
+
+        <h1 class="heading"> Panduan Portal Rusun</h1>
+        <div class="rule">
+            <h3><span>Informasi Tagihan Bulanan</span></h3>
+            <p>Fitur ini memungkinkan penghuni rusun untuk mencetak tagihan bulanan. Adapun langkah-langkah yang harus
+                dilakukan untuk ini adalah sebagai berikut: </p>
+            <div class="bullet">
+                <p><span>1. </span> Halaman Rusunku dengan mengklik <b>"Rusunku"</b> pada navigation bar.</p>
+                <p><span>2. </span> Opsi <b>"Mulai"</b> pada menu Tagihan.</p>
+                <p><span>3. </span> Tombol <b>"Cetak"</b>.</p>
+            </div>
+        </div>
+        <div class="rule">
+            <h3><span>Mengajukan Keluhan</span></h3>
+            <p>Fitur ini memungkinkan penghuni rusun untuk mengajukan keluhan terkait ruang rusun yang ditempati,
+                tagihan, dan lainnya. Untuk dapat mengajukan keluhan, maka penghuni rusun harus mengikuti tahapan
+                berikut: </p>
+            <div class="bullet">
+                <p><span>1. </span> Buka halaman Keluhan dengan mengklik <b>"Keluhan"</b> pada navigation bar.</p>
+                <p><span>2. </span> Isi keluhan pada formulir yang tampil di halaman Keluhan.</p>
+                <p><span>3. </span> Tekan tombol <b>"Selesai"</b>.</p>
+                <p><span>4. </span> Keluhan pun berhasil dikirimkan ke admin dan tanggapan dari admin dapat dilihat di
+                    halaman ini.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="guide">
+        <h1 class="heading"> Persyaratan Penghunian Rusun</h1>
+        <div class="rule">
+            <h3>Berdasarkan PERDA <span>Nomor 2 Tahun 2009 Pasal 21</span>:</h3>
+            <div class="list">
+                <p>Setiap penghuni Rusun Wajib:</p>
+                <p><span>1. </span>
+                    Menambah atau mengurangi bangunan yang telah
+                    ada tanpa ijin tertulis dari UPTD dan Pemerintah Kota;
+                </p>
+
+                <p><span>2. </span>
+                    Mengalihkan dan menyewakan kembali sebagian
+                    atau seluruh Unit Hunian tersebut pada pihak lain;
+                </p>
+
+                <p><span>3. </span>
+                    Menggunakan ruang dalam Rumah Susun yang
+                    disewanya untuk kepentingan usaha ataupun kepentingan lainnya yang mengganggu ketenangan penyewa
+                    lainnya;
+                </p>
+
+                <p><span>4. </span>
+                    Menyewa lebih dari satu Unit Hunian;
+                </p>
+
+                <p><span>5. </span>
+                    Merusak Benda Bersama dan Barang Bersama;
+                </p>
+
+                <p><span>6. </span>
+                    Mencemari lingkungan dengan membuang sampah, limbah atau membuat kebisingan;
+                </p>
+                <p><span>7. </span>
+                    Menambah instalasi air dan listrik tanpa ijin tertulis UPTD dan Pemerintah Kota;
+                </p>
+                <p><span>8. </span>
+                    Memasang alat komunikasi dan antena radio/televisi diluar yang disediakan UPTD;
+                </p>
+                <p><span>9. </span>
+                    Merombak bangunan dan komponennya tanpa ijin tertulis UPTD;
+                </p>
+                <p><span>10. </span>
+                    Memelihara binatang yang mengganggu keindahan, kebersihan, kesehatan dan kenyamanan tinggal di
+                    Rumah Susun;
+                </p>
+                <p><span>11. </span>
+                    Menanam tanaman terlarang yang membahayakan orang lain;
+                </p>
+
+                <p><span>12. </span>
+                    Melakukan perbuatan yang dapat mengganggu keamanan, ketertiban, dan kesusilaan (berjudi,
+                    minum-minuman keras, narkoba, berbuat maksiat yang melanggar larangan agama dan kesusilaan
+                </p>
+                <p><span>13. </span>
+                    Memanfaatkan halaman luar ruangan hunian/selasar Rumah Susun untuk keperluan pribadi (mencuci,
+                    menjemur, gudang barang dan lain-lain) yang dapat
+                    mengganggu ketertiban, keindahan dan kenyamanan;
+                </p>
+                <p><span>14. </span>
+                    Memanfaatkan halaman rumah susun sebagai
+                    tempat usaha, tempat penitipan mobil, gerobak,
+                    sepeda motor dan lain-lain tanpa izin tertulis UPTD;
+                </p>
+                <p><span>15. </span>
+                    Memasak dengan menggunakan kayu bakar.
+                </p>
+            </div>
+    </section>
+
+    <section class="guide">
+        <h1 class="heading">Tata Tertib Hunian Rusun</h1>
+        <div class="rule">
+            <h3>Berdasarkan PERDA <span>Nomor 2 Tahun 2009 Pasal 9 </span>: </h3>
+            <div class="list">
+                <p>Setiap penghuni Rusun Wajib:</p>
+                <p><span>1. </span>
+                    Menjaga keamanan, ketertiban, kenyamanan dan kebersihan dalam unit hunian, dan lingkungan Rumah
+                    Susun
+                </p>
+
+                <p><span>2. </span>
+                    Mematuhi tata tertib dan peraturan yang sudah ditetapkan
+                </p>
+
+                <p><span>3. </span>
+                    Membayar uang sewa sesuai dengan ketentuan
+                </p>
+
+                <p><span>4. </span>
+                    Membayar uang jaminan sesuai dengan ketentuan
+                </p>
+
+                <p><span>5. </span>
+                    Memelihara Rumah Susun yang disewa dengan sebaik-baiknya sesuai ketentuan
+                </p>
+
+                <p><span>6. </span>
+                    Membayar biaya penggunaan listrik
+                </p>
+                <p><span>7. </span>
+                    Membayar biaya pengelolaan sampah
+                </p>
+                <p><span>8. </span>
+                    Membayar biaya penggunaan air bersih
+                </p>
+                <p><span>9. </span>
+                    Membayar iuran bersama demi kepentingan bersama yang besarnya ditentukan dalam musyawarah bersama
+                    penghuni
+                </p>
+                <p><span>10. </span>
+                    Menyerahkan kembali Unit Hunian Rumah Susun apabila Perjanjian Sewa-menyewa telah berakhir masa
+                    sewanya, dengan tanpa syarat apapun
+                </p>
             </div>
         </div>
     </section>
-    <section class="highlight-clean">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">Persyaratan dan Tata Tertib Penghuni Rusun</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
-                    <div class="text">
-                        <p>Sed lobortis mi. Suspendisse vel placerat ligula. <span style="text-decoration: underline;">Vivamus</span> ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac lacus. <strong>Ut vehicula rhoncus</strong> elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit <em>pulvinar dict</em> vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                        <p>Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                        <figure class="figure d-block"></figure>
-                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    <section class="footer">
+        <div class="credit"> @Sistem Informasi Rusunawa <span>Teluk Kelayan</span></div>
     </section>
-</main>
+
+    <script src="js/script.js"></script>
