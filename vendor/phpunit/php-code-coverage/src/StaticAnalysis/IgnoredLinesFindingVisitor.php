@@ -18,10 +18,6 @@ use PhpParser\Node\Stmt\ClassMethod;
 use PhpParser\Node\Stmt\Function_;
 use PhpParser\Node\Stmt\Interface_;
 use PhpParser\Node\Stmt\Trait_;
-<<<<<<< HEAD
-=======
-use PhpParser\NodeTraverser;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 use PhpParser\NodeVisitorAbstract;
 
 /**
@@ -50,30 +46,18 @@ final class IgnoredLinesFindingVisitor extends NodeVisitorAbstract
         $this->ignoreDeprecated              = $ignoreDeprecated;
     }
 
-<<<<<<< HEAD
     public function enterNode(Node $node): void
-=======
-    public function enterNode(Node $node): ?int
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     {
         if (!$node instanceof Class_ &&
             !$node instanceof Trait_ &&
             !$node instanceof Interface_ &&
             !$node instanceof ClassMethod &&
             !$node instanceof Function_) {
-<<<<<<< HEAD
             return;
         }
 
         if ($node instanceof Class_ && $node->isAnonymous()) {
             return;
-=======
-            return null;
-        }
-
-        if ($node instanceof Class_ && $node->isAnonymous()) {
-            return null;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         }
 
         // Workaround for https://bugs.xdebug.org/view.php?id=1798
@@ -84,29 +68,17 @@ final class IgnoredLinesFindingVisitor extends NodeVisitorAbstract
         }
 
         if (!$this->useAnnotationsForIgnoringCode) {
-<<<<<<< HEAD
             return;
         }
 
         if ($node instanceof Interface_) {
             return;
-=======
-            return null;
-        }
-
-        if ($node instanceof Interface_) {
-            return null;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         }
 
         $docComment = $node->getDocComment();
 
         if ($docComment === null) {
-<<<<<<< HEAD
             return;
-=======
-            return null;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         }
 
         if (strpos($docComment->getText(), '@codeCoverageIgnore') !== false) {
@@ -122,15 +94,6 @@ final class IgnoredLinesFindingVisitor extends NodeVisitorAbstract
                 range($node->getStartLine(), $node->getEndLine())
             );
         }
-<<<<<<< HEAD
-=======
-
-        if ($node instanceof ClassMethod || $node instanceof Function_) {
-            return NodeTraverser::DONT_TRAVERSE_CHILDREN;
-        }
-
-        return null;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     }
 
     /**

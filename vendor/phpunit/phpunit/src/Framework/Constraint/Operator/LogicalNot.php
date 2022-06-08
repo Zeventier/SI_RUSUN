@@ -50,12 +50,7 @@ final class LogicalNot extends UnaryOperator
 
         preg_match('/(\'[\w\W]*\')([\w\W]*)("[\w\W]*")/i', $string, $matches);
 
-<<<<<<< HEAD
         $positives = array_map(static function (string $s) {
-=======
-        $positives = array_map(static function (string $s)
-        {
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
             return '/\\b' . preg_quote($s, '/') . '/';
         }, $positives);
 

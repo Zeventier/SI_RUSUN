@@ -96,14 +96,6 @@ span.success, span.warning, span.danger {
  text-align: center;
 }
 
-<<<<<<< HEAD
-=======
-#classCoverageDistribution, #classComplexity {
- height: 200px;
- width: 475px;
-}
-
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 #toplink {
  position: fixed;
  left: 5px;

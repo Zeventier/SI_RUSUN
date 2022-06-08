@@ -407,19 +407,13 @@ return array(
     'PharIo\\Version\\AbstractVersionConstraint' => $vendorDir . '/phar-io/version/src/constraints/AbstractVersionConstraint.php',
     'PharIo\\Version\\AndVersionConstraintGroup' => $vendorDir . '/phar-io/version/src/constraints/AndVersionConstraintGroup.php',
     'PharIo\\Version\\AnyVersionConstraint' => $vendorDir . '/phar-io/version/src/constraints/AnyVersionConstraint.php',
-<<<<<<< HEAD
     'PharIo\\Version\\BuildMetaData' => $vendorDir . '/phar-io/version/src/BuildMetaData.php',
-=======
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     'PharIo\\Version\\ExactVersionConstraint' => $vendorDir . '/phar-io/version/src/constraints/ExactVersionConstraint.php',
     'PharIo\\Version\\Exception' => $vendorDir . '/phar-io/version/src/exceptions/Exception.php',
     'PharIo\\Version\\GreaterThanOrEqualToVersionConstraint' => $vendorDir . '/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php',
     'PharIo\\Version\\InvalidPreReleaseSuffixException' => $vendorDir . '/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php',
     'PharIo\\Version\\InvalidVersionException' => $vendorDir . '/phar-io/version/src/exceptions/InvalidVersionException.php',
-<<<<<<< HEAD
     'PharIo\\Version\\NoBuildMetaDataException' => $vendorDir . '/phar-io/version/src/exceptions/NoBuildMetaDataException.php',
-=======
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     'PharIo\\Version\\NoPreReleaseSuffixException' => $vendorDir . '/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php',
     'PharIo\\Version\\OrVersionConstraintGroup' => $vendorDir . '/phar-io/version/src/constraints/OrVersionConstraintGroup.php',
     'PharIo\\Version\\PreReleaseSuffix' => $vendorDir . '/phar-io/version/src/PreReleaseSuffix.php',
@@ -439,14 +433,7 @@ return array(
     'SebastianBergmann\\CliParser\\UnknownOptionException' => $vendorDir . '/sebastian/cli-parser/src/exceptions/UnknownOptionException.php',
     'SebastianBergmann\\CodeCoverage\\BranchAndPathCoverageNotSupportedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php',
     'SebastianBergmann\\CodeCoverage\\CodeCoverage' => $vendorDir . '/phpunit/php-code-coverage/src/CodeCoverage.php',
-<<<<<<< HEAD
     'SebastianBergmann\\CodeCoverage\\DeadCodeDetectionNotSupportedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php',
-=======
-    'SebastianBergmann\\CodeCoverage\\CrapIndex' => $vendorDir . '/phpunit/php-code-coverage/src/CrapIndex.php',
-    'SebastianBergmann\\CodeCoverage\\DeadCodeDetectionNotSupportedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php',
-    'SebastianBergmann\\CodeCoverage\\Directory' => $vendorDir . '/phpunit/php-code-coverage/src/Directory.php',
-    'SebastianBergmann\\CodeCoverage\\DirectoryCouldNotBeCreatedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php',
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Driver.php',
     'SebastianBergmann\\CodeCoverage\\Driver\\PathExistsButIsNotDirectoryException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php',
     'SebastianBergmann\\CodeCoverage\\Driver\\PcovDriver' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/PcovDriver.php',
@@ -468,18 +455,11 @@ return array(
     'SebastianBergmann\\CodeCoverage\\NoCodeCoverageDriverWithPathCoverageSupportAvailableException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php',
     'SebastianBergmann\\CodeCoverage\\Node\\AbstractNode' => $vendorDir . '/phpunit/php-code-coverage/src/Node/AbstractNode.php',
     'SebastianBergmann\\CodeCoverage\\Node\\Builder' => $vendorDir . '/phpunit/php-code-coverage/src/Node/Builder.php',
-<<<<<<< HEAD
     'SebastianBergmann\\CodeCoverage\\Node\\CrapIndex' => $vendorDir . '/phpunit/php-code-coverage/src/Node/CrapIndex.php',
-=======
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     'SebastianBergmann\\CodeCoverage\\Node\\Directory' => $vendorDir . '/phpunit/php-code-coverage/src/Node/Directory.php',
     'SebastianBergmann\\CodeCoverage\\Node\\File' => $vendorDir . '/phpunit/php-code-coverage/src/Node/File.php',
     'SebastianBergmann\\CodeCoverage\\Node\\Iterator' => $vendorDir . '/phpunit/php-code-coverage/src/Node/Iterator.php',
     'SebastianBergmann\\CodeCoverage\\ParserException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/ParserException.php',
-<<<<<<< HEAD
-=======
-    'SebastianBergmann\\CodeCoverage\\Percentage' => $vendorDir . '/phpunit/php-code-coverage/src/Percentage.php',
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     'SebastianBergmann\\CodeCoverage\\ProcessedCodeCoverageData' => $vendorDir . '/phpunit/php-code-coverage/src/ProcessedCodeCoverageData.php',
     'SebastianBergmann\\CodeCoverage\\RawCodeCoverageData' => $vendorDir . '/phpunit/php-code-coverage/src/RawCodeCoverageData.php',
     'SebastianBergmann\\CodeCoverage\\ReflectionException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/ReflectionException.php',
@@ -508,7 +488,6 @@ return array(
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Totals' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Totals.php',
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Unit' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Unit.php',
     'SebastianBergmann\\CodeCoverage\\StaticAnalysisCacheNotConfiguredException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php',
-<<<<<<< HEAD
     'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\CacheWarmer' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/CacheWarmer.php',
     'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\CachingFileAnalyser' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/CachingFileAnalyser.php',
     'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\CodeUnitFindingVisitor' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/CodeUnitFindingVisitor.php',
@@ -521,21 +500,6 @@ return array(
     'SebastianBergmann\\CodeCoverage\\Util\\DirectoryCouldNotBeCreatedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php',
     'SebastianBergmann\\CodeCoverage\\Util\\Filesystem' => $vendorDir . '/phpunit/php-code-coverage/src/Util/Filesystem.php',
     'SebastianBergmann\\CodeCoverage\\Util\\Percentage' => $vendorDir . '/phpunit/php-code-coverage/src/Util/Percentage.php',
-=======
-    'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\Cache' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/Cache.php',
-    'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\CacheWarmer' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/CacheWarmer.php',
-    'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\CachingCoveredFileAnalyser' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/CachingCoveredFileAnalyser.php',
-    'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\CachingUncoveredFileAnalyser' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/CachingUncoveredFileAnalyser.php',
-    'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\CodeUnitFindingVisitor' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/CodeUnitFindingVisitor.php',
-    'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\CoveredFileAnalyser' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/CoveredFileAnalyser.php',
-    'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\ExecutableLinesFindingVisitor' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/ExecutableLinesFindingVisitor.php',
-    'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\IgnoredLinesFindingVisitor' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/IgnoredLinesFindingVisitor.php',
-    'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\ParsingCoveredFileAnalyser' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/ParsingCoveredFileAnalyser.php',
-    'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\ParsingUncoveredFileAnalyser' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/ParsingUncoveredFileAnalyser.php',
-    'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\UncoveredFileAnalyser' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/UncoveredFileAnalyser.php',
-    'SebastianBergmann\\CodeCoverage\\TestIdMissingException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php',
-    'SebastianBergmann\\CodeCoverage\\UnintentionallyCoveredCodeException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php',
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     'SebastianBergmann\\CodeCoverage\\Version' => $vendorDir . '/phpunit/php-code-coverage/src/Version.php',
     'SebastianBergmann\\CodeCoverage\\XmlException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/XmlException.php',
     'SebastianBergmann\\CodeUnitReverseLookup\\Wizard' => $vendorDir . '/sebastian/code-unit-reverse-lookup/src/Wizard.php',

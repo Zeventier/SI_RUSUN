@@ -11,10 +11,6 @@ namespace PHPUnit\Util;
 
 use function array_keys;
 use function array_reverse;
-<<<<<<< HEAD
-=======
-use function array_shift;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 use function defined;
 use function get_defined_constants;
 use function get_included_files;
@@ -27,11 +23,6 @@ use function preg_match;
 use function serialize;
 use function sprintf;
 use function strpos;
-<<<<<<< HEAD
-=======
-use function strtr;
-use function substr;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 use function var_export;
 use Closure;
 
@@ -77,16 +68,7 @@ final class GlobalState
         }
 
         // Do not process bootstrap script
-<<<<<<< HEAD
         unset($files[0]);
-=======
-        array_shift($files);
-
-        // If bootstrap script was a Composer bin proxy, skip the second entry as well
-        if (substr(strtr($files[0], '\\', '/'), -24) === '/phpunit/phpunit/phpunit') {
-            array_shift($files);
-        }
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
         foreach (array_reverse($files) as $file) {
             if (!empty($GLOBALS['__PHPUNIT_ISOLATION_EXCLUDE_LIST']) &&

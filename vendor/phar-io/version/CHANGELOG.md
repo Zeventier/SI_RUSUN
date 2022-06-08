@@ -2,7 +2,6 @@
 
 All notable changes to phar-io/version are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-<<<<<<< HEAD
 ## [3.2.1] - 2022-02-21
 
 ### Fixed
@@ -27,11 +26,6 @@ All notable changes to phar-io/version are documented in this file using the [Ke
 ## [3.1.0] - 2021-02-23
 
 ### Changed
-=======
-## [3.1.0] - 2021-02-23
-
->### Changed
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
 - Internal Refactoring
 - More scalar types

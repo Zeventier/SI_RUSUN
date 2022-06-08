@@ -22,11 +22,7 @@ final class Version
     public static function id(): string
     {
         if (self::$version === null) {
-<<<<<<< HEAD
             self::$version = (new VersionId('9.2.15', dirname(__DIR__)))->getVersion();
-=======
-            self::$version = (new VersionId('9.2.10', dirname(__DIR__)))->getVersion();
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         }
 
         return self::$version;

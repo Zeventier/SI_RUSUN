@@ -32,11 +32,6 @@ final class HtmlResultPrinter extends ResultPrinter
                 font-variant-ligatures: common-ligatures;
                 font-kerning: normal;
                 margin-left: 2em;
-<<<<<<< HEAD
-=======
-                background-color: #ffffff;
-                color: #000000;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
             }
 
             body > ul > li {

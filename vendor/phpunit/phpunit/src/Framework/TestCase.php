@@ -515,27 +515,6 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * Performs assertions shared by all tests of a test case.
-     *
-     * This method is called between setUp() and test.
-     */
-    protected function assertPreConditions(): void
-    {
-    }
-
-    /**
-     * Performs assertions shared by all tests of a test case.
-     *
-     * This method is called between test and tearDown().
-     */
-    protected function assertPostConditions(): void
-    {
-    }
-
-    /**
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
      * This method is called after each test.
      */
     protected function tearDown(): void
@@ -1765,12 +1744,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
 
         $mockedMethodsThatDontExist = array_filter(
             $methods,
-<<<<<<< HEAD
             static function (string $method) use ($reflector) {
-=======
-            static function (string $method) use ($reflector)
-            {
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 return !$reflector->hasMethod($method);
             }
         );
@@ -1981,7 +1955,6 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
     }
 
     /**
-<<<<<<< HEAD
      * Performs assertions shared by all tests of a test case.
      *
      * This method is called between setUp() and test.
@@ -2000,8 +1973,6 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
     }
 
     /**
-=======
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
      * This method is called when a test method did not execute successfully.
      *
      * @throws Throwable
