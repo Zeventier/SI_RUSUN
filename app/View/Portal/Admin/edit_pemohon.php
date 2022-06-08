@@ -24,28 +24,28 @@
                     <div class="item">
                         <p>Nama Pemohon (Kepala Keluarga)</p>
                         <div class="item">
-                            <input type="text" name="name" />
+                            <input type="text" name="nama_pemohon" />
                         </div>
                     </div>
                     <div class="item">
                         <p>Nomor Telepon</p>
-                        <input type="tel" name="name" />
+                        <input type="tel" name="no_telpn" />
                     </div>
                     <div class="item">
                         <p>Nomor Induk Kependudukan Pemohon</p>
-                        <input type="text" name="name" />
+                        <input type="text" name="nik_pemohon" />
                     </div>
                     <div class="item">
                         <p>Nomor Kartu Keluarga</p>
-                        <input type="text" name="name" />
+                        <input type="text" name="no_kk" />
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
-                        <input type="text" name="name" />
+                        <input type="text" name="kerja_pemohon" />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Perbulan</p>
-                        <select required>
+                        <select name="gaji_pemohon" required>
                             <option value="">Select</option>
                             <option value="1">Rp 0 - Rp 1.999.999,</option>
                             <option value="2">Rp 2.000.000, - Rp 3.999.999,</option>
@@ -54,19 +54,19 @@
                     </div>
                     <div class="item">
                         <p>Jumlah Penghuni</p>
-                        <input type="number" name="name" />
+                        <input type="number" name="jlh_penghuni" />
                     </div>
                     <div class="item">
                         <p>Nama Pasangan</p>
-                        <input type="text" name="name" />
+                        <input type="text" name="nama_psgn" />
                     </div>
                     <div class="item">
                         <p>Pekerjaan Pasangan</p>
-                        <input type="text" name="name" />
+                        <input type="text" name="kerja_psgn" />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Pasangan Perbulan</p>
-                        <select required>
+                        <select name="gaji_psgn" required>
                             <option value="">Select</option>
                             <option value="1">Rp 0 - Rp 1.999.999,</option>
                             <option value="2">Rp 2.000.000, - Rp 3.999.999,</option>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="item">
                         <p>Pilih Ruangan</p>
-                        <select required>
+                        <select name="ruangan" required>
                             <option value="">Select</option>
                             <option value="1"> 1A</option>
                             <option value="2"> 2A</option>
@@ -96,5 +96,5 @@
         </div>
 
     </section>
-    
+
     <script src="assets/js/script.js"></script>

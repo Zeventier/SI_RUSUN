@@ -23,27 +23,27 @@
                 <form action="/" id="tambah-portal">
                     <div class="item">
                         <p>Nama Pemohon (Kepala Keluarga)</p>
-                        <input type="text" id="nama_pemohon" name="" required />
+                        <input type="text" id="nama_pemohon" name="nama_pemohon" required />
                     </div>
                     <div class="item">
                         <p>Nomor Telepon</p>
-                        <input type="tel" minlength="10" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="name" required />
+                        <input type="tel" minlength="10" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="no_telp" required />
                     </div>
                     <div class="item">
                         <p>Nomor Induk Kependudukan Pemohon</p>
-                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="name" required />
+                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="nik_pemohon" required />
                     </div>
                     <div class="item">
                         <p>Nomor Kartu Keluarga</p>
-                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="name" required />
+                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="no_kk" required />
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
-                        <input type="text" name="name" required />
+                        <input type="text" name="kerja_pemohon" required />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Perbulan</p>
-                        <select required>
+                        <select name="gaji_pemohon" required>
                             <option value="">Select</option>
                             <option value="1">Rp 0 - Rp 1.999.999,</option>
                             <option value="2">Rp 2.000.000, - Rp 3.999.999,</option>
@@ -52,19 +52,19 @@
                     </div>
                     <div class="item">
                         <p>Jumlah Penghuni</p>
-                        <input type="number" min="1" max="4" name="name" required />
+                        <input type="number" min="1" max="4" name="jlh_penghuni" required />
                     </div>
                     <div class="item">
                         <p>Nama Pasangan</p>
-                        <input type="text" name="name" required />
+                        <input type="text" name="nama_psgn" required />
                     </div>
                     <div class="item">
                         <p>Pekerjaan Pasangan</p>
-                        <input type="text" name="name" required />
+                        <input type="text" name="kerja_psgn" required />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Pasangan Perbulan</p>
-                        <select required>
+                        <select name="gaji_psgn" required>
                             <option value="">Select</option>
                             <option value="1">Rp 0 - Rp 1.999.999,</option>
                             <option value="2">Rp 2.000.000, - Rp 3.999.999,</option>
@@ -73,23 +73,19 @@
                     </div>
                     <div class="item">
                         <p>Kode Rusun</p>
-                        <input type="text" name="name" required />
-                    </div>
-                    <div class="item">
-                        <p>Harga Sewa Rusun</p>
-                        <input type="text" name="name" required />
+                        <input type="text" name="ruangan" required />
                     </div>
                     <div class="item">
                         <p>Tanggal Mulai Menghuni</p>
-                        <input type="text" name="name" required />
+                        <input type="text" name="tgl_huni" required />
                     </div>
                     <div class="item">
                         <p>Username</p>
-                        <input type="text" name="name" required />
+                        <input type="text" name="username" required />
                     </div>
                     <div class="item">
                         <p>Password</p>
-                        <input type="text" name="name" required />
+                        <input type="text" name="password" required />
                     </div>
                 </form>
             </div>
