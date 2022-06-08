@@ -21,7 +21,6 @@ final class InvalidArgumentException extends Exception
 {
     public static function create(int $argument, string $type): self
     {
-<<<<<<< HEAD
         $stack = debug_backtrace();
 
         return new self(
@@ -30,20 +29,6 @@ final class InvalidArgumentException extends Exception
                 $argument,
                 $stack[1]['class'],
                 $stack[1]['function'],
-=======
-        $stack    = debug_backtrace();
-        $function = $stack[1]['function'];
-
-        if (isset($stack[1]['class'])) {
-            $function = sprintf('%s::%s', $stack[1]['class'], $stack[1]['function']);
-        }
-
-        return new self(
-            sprintf(
-                'Argument #%d of %s() must be %s %s',
-                $argument,
-                $function,
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 in_array(lcfirst($type)[0], ['a', 'e', 'i', 'o', 'u'], true) ? 'an' : 'a',
                 $type
             )

@@ -28,12 +28,7 @@ final class XdebugFilterScriptGenerator
     public function generate(FilterConfiguration $filter): string
     {
         $files = array_map(
-<<<<<<< HEAD
             static function ($item) {
-=======
-            static function ($item)
-            {
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 return sprintf(
                     "        '%s'",
                     $item

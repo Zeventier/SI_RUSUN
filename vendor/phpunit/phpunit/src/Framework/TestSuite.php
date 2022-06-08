@@ -10,10 +10,7 @@
 namespace PHPUnit\Framework;
 
 use const PHP_EOL;
-<<<<<<< HEAD
 use function array_diff;
-=======
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 use function array_keys;
 use function array_map;
 use function array_merge;
@@ -131,15 +128,9 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
     private $iteratorFilter;
 
     /**
-<<<<<<< HEAD
      * @var string[]
      */
     private $declaredClasses;
-=======
-     * @var int
-     */
-    private $declaredClassesPointer;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
     /**
      * @psalm-var array<int,string>
@@ -176,11 +167,7 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
             );
         }
 
-<<<<<<< HEAD
         $this->declaredClasses = get_declared_classes();
-=======
-        $this->declaredClassesPointer = count(get_declared_classes());
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
         if (!$theClass instanceof ReflectionClass) {
             if (class_exists($theClass, true)) {
@@ -403,11 +390,7 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
         if (is_file($filename) && substr($filename, -5) === '.phpt') {
             $this->addTest(new PhptTestCase($filename));
 
-<<<<<<< HEAD
             $this->declaredClasses = get_declared_classes();
-=======
-            $this->declaredClassesPointer = count(get_declared_classes());
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
             return;
         }
@@ -417,11 +400,7 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
         // The given file may contain further stub classes in addition to the
         // test class itself. Figure out the actual test class.
         $filename   = FileLoader::checkAndLoad($filename);
-<<<<<<< HEAD
         $newClasses = array_diff(get_declared_classes(), $this->declaredClasses);
-=======
-        $newClasses = array_slice(get_declared_classes(), $this->declaredClassesPointer);
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
         // The diff is empty in case a parent class (with test methods) is added
         // AFTER a child class that inherited from it. To account for that case,
@@ -431,13 +410,8 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
             // On the assumption that test classes are defined first in files,
             // process discovered classes in approximate LIFO order, so as to
             // avoid unnecessary reflection.
-<<<<<<< HEAD
             $this->foundClasses    = array_merge($newClasses, $this->foundClasses);
             $this->declaredClasses = get_declared_classes();
-=======
-            $this->foundClasses           = array_merge($newClasses, $this->foundClasses);
-            $this->declaredClassesPointer = count(get_declared_classes());
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         }
 
         // The test class's name must match the filename, either in full, or as
@@ -589,12 +563,7 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
     public function getGroups(): array
     {
         return array_map(
-<<<<<<< HEAD
             static function ($key): string {
-=======
-            static function ($key): string
-            {
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 return (string) $key;
             },
             array_keys($this->groups)

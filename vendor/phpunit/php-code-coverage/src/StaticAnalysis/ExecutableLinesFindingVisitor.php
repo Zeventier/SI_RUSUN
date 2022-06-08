@@ -9,7 +9,6 @@
  */
 namespace SebastianBergmann\CodeCoverage\StaticAnalysis;
 
-<<<<<<< HEAD
 use PhpParser\Node;
 use PhpParser\Node\Expr\Array_;
 use PhpParser\Node\Expr\ArrayDimFetch;
@@ -32,14 +31,6 @@ use PhpParser\Node\Stmt\Case_;
 use PhpParser\Node\Stmt\Catch_;
 use PhpParser\Node\Stmt\Class_;
 use PhpParser\Node\Stmt\ClassMethod;
-=======
-use function array_unique;
-use function sort;
-use PhpParser\Node;
-use PhpParser\Node\Stmt\Break_;
-use PhpParser\Node\Stmt\Case_;
-use PhpParser\Node\Stmt\Catch_;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 use PhpParser\Node\Stmt\Continue_;
 use PhpParser\Node\Stmt\Do_;
 use PhpParser\Node\Stmt\Echo_;
@@ -51,10 +42,7 @@ use PhpParser\Node\Stmt\For_;
 use PhpParser\Node\Stmt\Foreach_;
 use PhpParser\Node\Stmt\Goto_;
 use PhpParser\Node\Stmt\If_;
-<<<<<<< HEAD
 use PhpParser\Node\Stmt\Property;
-=======
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 use PhpParser\Node\Stmt\Return_;
 use PhpParser\Node\Stmt\Switch_;
 use PhpParser\Node\Stmt\Throw_;
@@ -69,7 +57,6 @@ use PhpParser\NodeVisitorAbstract;
 final class ExecutableLinesFindingVisitor extends NodeVisitorAbstract
 {
     /**
-<<<<<<< HEAD
      * @psalm-var array<int, int>
      */
     private $executableLines = [];
@@ -88,19 +75,10 @@ final class ExecutableLinesFindingVisitor extends NodeVisitorAbstract
     {
         $this->savePropertyLines($node);
 
-=======
-     * @psalm-var list<int>
-     */
-    private $executableLines = [];
-
-    public function enterNode(Node $node): void
-    {
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         if (!$this->isExecutable($node)) {
             return;
         }
 
-<<<<<<< HEAD
         foreach ($this->getLines($node) as $line) {
             if (isset($this->propertyLines[$line])) {
                 return;
@@ -251,26 +229,10 @@ final class ExecutableLinesFindingVisitor extends NodeVisitorAbstract
         }
 
         return [$node->getStartLine()];
-=======
-        $this->executableLines[] = $node->getStartLine();
-    }
-
-    /**
-     * @psalm-return list<int>
-     */
-    public function executableLines(): array
-    {
-        $executableLines = array_unique($this->executableLines);
-
-        sort($executableLines);
-
-        return $executableLines;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     }
 
     private function isExecutable(Node $node): bool
     {
-<<<<<<< HEAD
         return $node instanceof Assign ||
                $node instanceof ArrayDimFetch ||
                $node instanceof Array_ ||
@@ -282,17 +244,11 @@ final class ExecutableLinesFindingVisitor extends NodeVisitorAbstract
                $node instanceof Catch_ ||
                $node instanceof ClassMethod ||
                $node instanceof Closure ||
-=======
-        return $node instanceof Break_ ||
-               $node instanceof Case_ ||
-               $node instanceof Catch_ ||
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                $node instanceof Continue_ ||
                $node instanceof Do_ ||
                $node instanceof Echo_ ||
                $node instanceof ElseIf_ ||
                $node instanceof Else_ ||
-<<<<<<< HEAD
                $node instanceof Encapsed ||
                $node instanceof Expression ||
                $node instanceof Finally_ ||
@@ -309,16 +265,6 @@ final class ExecutableLinesFindingVisitor extends NodeVisitorAbstract
                $node instanceof StaticPropertyFetch ||
                $node instanceof Switch_ ||
                $node instanceof Ternary ||
-=======
-               $node instanceof Expression ||
-               $node instanceof Finally_ ||
-               $node instanceof Foreach_ ||
-               $node instanceof For_ ||
-               $node instanceof Goto_ ||
-               $node instanceof If_ ||
-               $node instanceof Return_ ||
-               $node instanceof Switch_ ||
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                $node instanceof Throw_ ||
                $node instanceof TryCatch ||
                $node instanceof Unset_ ||

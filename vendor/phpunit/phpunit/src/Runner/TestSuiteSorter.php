@@ -237,12 +237,7 @@ final class TestSuiteSorter
             /**
              * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
              */
-<<<<<<< HEAD
             function ($left, $right) {
-=======
-            function ($left, $right)
-            {
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 return $this->cmpDefectPriorityAndTime($left, $right);
             }
         );
@@ -257,12 +252,7 @@ final class TestSuiteSorter
             /**
              * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
              */
-<<<<<<< HEAD
             function ($left, $right) {
-=======
-            function ($left, $right)
-            {
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 return $this->cmpDuration($left, $right);
             }
         );
@@ -277,12 +267,7 @@ final class TestSuiteSorter
             /**
              * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
              */
-<<<<<<< HEAD
             function ($left, $right) {
-=======
-            function ($left, $right)
-            {
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 return $this->cmpSize($left, $right);
             }
         );

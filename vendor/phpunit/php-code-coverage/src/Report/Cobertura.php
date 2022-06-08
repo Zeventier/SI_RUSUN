@@ -16,15 +16,9 @@ use function range;
 use function time;
 use DOMImplementation;
 use SebastianBergmann\CodeCoverage\CodeCoverage;
-<<<<<<< HEAD
 use SebastianBergmann\CodeCoverage\Driver\WriteOperationFailedException;
 use SebastianBergmann\CodeCoverage\Node\File;
 use SebastianBergmann\CodeCoverage\Util\Filesystem;
-=======
-use SebastianBergmann\CodeCoverage\Directory;
-use SebastianBergmann\CodeCoverage\Driver\WriteOperationFailedException;
-use SebastianBergmann\CodeCoverage\Node\File;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
 final class Cobertura
 {
@@ -298,11 +292,7 @@ final class Cobertura
         $buffer = $document->saveXML();
 
         if ($target !== null) {
-<<<<<<< HEAD
             Filesystem::createDirectory(dirname($target));
-=======
-            Directory::create(dirname($target));
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
             if (@file_put_contents($target, $buffer) === false) {
                 throw new WriteOperationFailedException($target);

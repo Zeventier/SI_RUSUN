@@ -19,15 +19,9 @@ use function range;
 use function time;
 use DOMDocument;
 use SebastianBergmann\CodeCoverage\CodeCoverage;
-<<<<<<< HEAD
 use SebastianBergmann\CodeCoverage\Driver\WriteOperationFailedException;
 use SebastianBergmann\CodeCoverage\Node\File;
 use SebastianBergmann\CodeCoverage\Util\Filesystem;
-=======
-use SebastianBergmann\CodeCoverage\Directory;
-use SebastianBergmann\CodeCoverage\Driver\WriteOperationFailedException;
-use SebastianBergmann\CodeCoverage\Node\File;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
 final class Clover
 {
@@ -200,13 +194,8 @@ final class Clover
             $linesOfCode = $item->linesOfCode();
 
             $xmlMetrics = $xmlDocument->createElement('metrics');
-<<<<<<< HEAD
             $xmlMetrics->setAttribute('loc', (string) $linesOfCode['linesOfCode']);
             $xmlMetrics->setAttribute('ncloc', (string) $linesOfCode['nonCommentLinesOfCode']);
-=======
-            $xmlMetrics->setAttribute('loc', (string) $linesOfCode->linesOfCode());
-            $xmlMetrics->setAttribute('ncloc', (string) $linesOfCode->nonCommentLinesOfCode());
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
             $xmlMetrics->setAttribute('classes', (string) $item->numberOfClassesAndTraits());
             $xmlMetrics->setAttribute('methods', (string) $item->numberOfMethods());
             $xmlMetrics->setAttribute('coveredmethods', (string) $item->numberOfTestedMethods());
@@ -238,13 +227,8 @@ final class Clover
 
         $xmlMetrics = $xmlDocument->createElement('metrics');
         $xmlMetrics->setAttribute('files', (string) count($report));
-<<<<<<< HEAD
         $xmlMetrics->setAttribute('loc', (string) $linesOfCode['linesOfCode']);
         $xmlMetrics->setAttribute('ncloc', (string) $linesOfCode['nonCommentLinesOfCode']);
-=======
-        $xmlMetrics->setAttribute('loc', (string) $linesOfCode->linesOfCode());
-        $xmlMetrics->setAttribute('ncloc', (string) $linesOfCode->nonCommentLinesOfCode());
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         $xmlMetrics->setAttribute('classes', (string) $report->numberOfClassesAndTraits());
         $xmlMetrics->setAttribute('methods', (string) $report->numberOfMethods());
         $xmlMetrics->setAttribute('coveredmethods', (string) $report->numberOfTestedMethods());
@@ -259,11 +243,7 @@ final class Clover
         $buffer = $xmlDocument->saveXML();
 
         if ($target !== null) {
-<<<<<<< HEAD
             Filesystem::createDirectory(dirname($target));
-=======
-            Directory::create(dirname($target));
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
             if (@file_put_contents($target, $buffer) === false) {
                 throw new WriteOperationFailedException($target);

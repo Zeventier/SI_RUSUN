@@ -28,19 +28,12 @@ use function substr;
 use DateTimeImmutable;
 use DOMDocument;
 use SebastianBergmann\CodeCoverage\CodeCoverage;
-<<<<<<< HEAD
-=======
-use SebastianBergmann\CodeCoverage\Directory as DirectoryUtil;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 use SebastianBergmann\CodeCoverage\Driver\PathExistsButIsNotDirectoryException;
 use SebastianBergmann\CodeCoverage\Driver\WriteOperationFailedException;
 use SebastianBergmann\CodeCoverage\Node\AbstractNode;
 use SebastianBergmann\CodeCoverage\Node\Directory as DirectoryNode;
 use SebastianBergmann\CodeCoverage\Node\File as FileNode;
-<<<<<<< HEAD
 use SebastianBergmann\CodeCoverage\Util\Filesystem as DirectoryUtil;
-=======
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 use SebastianBergmann\CodeCoverage\Version;
 use SebastianBergmann\CodeCoverage\XmlException;
 use SebastianBergmann\Environment\Runtime;
@@ -116,11 +109,7 @@ final class Facade
             }
         }
 
-<<<<<<< HEAD
         DirectoryUtil::createDirectory($directory);
-=======
-        DirectoryUtil::create($directory);
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     }
 
     /**
@@ -251,15 +240,9 @@ final class Facade
         $loc = $node->linesOfCode();
 
         $totals->setNumLines(
-<<<<<<< HEAD
             $loc['linesOfCode'],
             $loc['commentLinesOfCode'],
             $loc['nonCommentLinesOfCode'],
-=======
-            $loc->linesOfCode(),
-            $loc->commentLinesOfCode(),
-            $loc->nonCommentLinesOfCode(),
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
             $node->numberOfExecutableLines(),
             $node->numberOfExecutedLines()
         );

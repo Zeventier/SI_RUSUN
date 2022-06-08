@@ -24,7 +24,6 @@ use Composer\Semver\VersionParser;
  */
 class InstalledVersions
 {
-<<<<<<< HEAD
     /**
      * @var mixed[]|null
      * @psalm-var array{root: array{name: string, version: string, reference: string, pretty_version: string, aliases: string[], dev: bool, install_path: string, type: string}, versions: array<string, array{dev_requirement: bool, pretty_version?: string, version?: string, aliases?: string[], reference?: string, replaced?: string[], provided?: string[], install_path?: string, type?: string}>}|array{}|null
@@ -40,10 +39,6 @@ class InstalledVersions
      * @var array[]
      * @psalm-var array<string, array{root: array{name: string, version: string, reference: string, pretty_version: string, aliases: string[], dev: bool, install_path: string, type: string}, versions: array<string, array{dev_requirement: bool, pretty_version?: string, version?: string, aliases?: string[], reference?: string, replaced?: string[], provided?: string[], install_path?: string, type?: string}>}>
      */
-=======
-    private static $installed;
-    private static $canGetVendors;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     private static $installedByVendor = array();
 
     /**

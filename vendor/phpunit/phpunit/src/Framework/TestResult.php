@@ -14,13 +14,6 @@ use function count;
 use function function_exists;
 use function get_class;
 use function sprintf;
-<<<<<<< HEAD
-=======
-use function xdebug_get_monitored_functions;
-use function xdebug_is_debugger_active;
-use function xdebug_start_function_monitor;
-use function xdebug_stop_function_monitor;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 use AssertionError;
 use Countable;
 use Error;
@@ -116,11 +109,7 @@ final class TestResult implements Countable
     /**
      * @var bool
      */
-<<<<<<< HEAD
     private $convertDeprecationsToExceptions = true;
-=======
-    private $convertDeprecationsToExceptions = false;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
     /**
      * @var bool
@@ -463,11 +452,7 @@ final class TestResult implements Countable
 
             $this->passed[$key] = [
                 'result' => $test->getResult(),
-<<<<<<< HEAD
                 'size'   => \PHPUnit\Util\Test::getSize(
-=======
-                'size'   => TestUtil::getSize(
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                     $class,
                     $test->getName(false)
                 ),
@@ -651,21 +636,12 @@ final class TestResult implements Countable
     {
         Assert::resetCount();
 
-<<<<<<< HEAD
-=======
-        $size = TestUtil::UNKNOWN;
-
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         if ($test instanceof TestCase) {
             $test->setRegisterMockObjectsFromTestArgumentsRecursively(
                 $this->registerMockObjectsFromTestArgumentsRecursively
             );
 
             $isAnyCoverageRequired = TestUtil::requiresCodeCoverageDataCollection($test);
-<<<<<<< HEAD
-=======
-            $size                  = $test->getSize();
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         }
 
         $error      = false;
@@ -700,11 +676,7 @@ final class TestResult implements Countable
         $monitorFunctions = $this->beStrictAboutResourceUsageDuringSmallTests &&
                             !$test instanceof ErrorTestCase &&
                             !$test instanceof WarningTestCase &&
-<<<<<<< HEAD
                             $test->getSize() === \PHPUnit\Util\Test::SMALL &&
-=======
-                            $size === TestUtil::SMALL &&
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                             function_exists('xdebug_start_function_monitor');
 
         if ($monitorFunctions) {
@@ -720,49 +692,29 @@ final class TestResult implements Countable
 
             if (!$test instanceof ErrorTestCase &&
                 !$test instanceof WarningTestCase &&
-<<<<<<< HEAD
                 $this->enforceTimeLimit &&
                 ($this->defaultTimeLimit || $test->getSize() != \PHPUnit\Util\Test::UNKNOWN) &&
                 $invoker->canInvokeWithTimeout()) {
                 switch ($test->getSize()) {
                     case \PHPUnit\Util\Test::SMALL:
-=======
-                $this->shouldTimeLimitBeEnforced($size) &&
-                $invoker->canInvokeWithTimeout()) {
-                switch ($size) {
-                    case TestUtil::SMALL:
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                         $_timeout = $this->timeoutForSmallTests;
 
                         break;
 
-<<<<<<< HEAD
                     case \PHPUnit\Util\Test::MEDIUM:
-=======
-                    case TestUtil::MEDIUM:
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                         $_timeout = $this->timeoutForMediumTests;
 
                         break;
 
-<<<<<<< HEAD
                     case \PHPUnit\Util\Test::LARGE:
-=======
-                    case TestUtil::LARGE:
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                         $_timeout = $this->timeoutForLargeTests;
 
                         break;
 
-<<<<<<< HEAD
                     case \PHPUnit\Util\Test::UNKNOWN:
                         $_timeout = $this->defaultTimeLimit;
 
                         break;
-=======
-                    default:
-                        $_timeout = $this->defaultTimeLimit;
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 }
 
                 $invoker->invoke([$test, 'runBare'], [], $_timeout);
@@ -799,13 +751,8 @@ final class TestResult implements Countable
                 sprintf(
                     '%s in %s:%s',
                     $e->getMessage(),
-<<<<<<< HEAD
                     $frame['file'],
                     $frame['line']
-=======
-                    $frame['file'] ?? $e->getFile(),
-                    $frame['line'] ?? $e->getLine()
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 )
             );
         } catch (Warning $e) {
@@ -882,20 +829,12 @@ final class TestResult implements Countable
 
             if ($append && $test instanceof TestCase) {
                 try {
-<<<<<<< HEAD
                     $linesToBeCovered = \PHPUnit\Util\Test::getLinesToBeCovered(
-=======
-                    $linesToBeCovered = TestUtil::getLinesToBeCovered(
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                         get_class($test),
                         $test->getName(false)
                     );
 
-<<<<<<< HEAD
                     $linesToBeUsed = \PHPUnit\Util\Test::getLinesToBeUsed(
-=======
-                    $linesToBeUsed = TestUtil::getLinesToBeUsed(
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                         get_class($test),
                         $test->getName(false)
                     );
@@ -1347,32 +1286,4 @@ final class TestResult implements Countable
     {
         $this->warnings[] = new TestFailure($test, $t);
     }
-<<<<<<< HEAD
-=======
-
-    private function shouldTimeLimitBeEnforced(int $size): bool
-    {
-        if (!$this->enforceTimeLimit) {
-            return false;
-        }
-
-        if (!(($this->defaultTimeLimit || $size !== TestUtil::UNKNOWN))) {
-            return false;
-        }
-
-        if (!extension_loaded('pcntl')) {
-            return false;
-        }
-
-        if (!class_exists(Invoker::class)) {
-            return false;
-        }
-
-        if (extension_loaded('xdebug') && xdebug_is_debugger_active()) {
-            return false;
-        }
-
-        return true;
-    }
->>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 }
