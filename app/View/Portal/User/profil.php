@@ -1,11 +1,11 @@
     <header class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
-            <a href="portal-rusun.html">Beranda</a>
-            <a href="portal-rusunku.html">Rusunku</a>
-            <a href="portal-pemberitahuan.html">Pemberitahuan</a>
-            <a href="portal-keluhan.html">Keluhan</a>
-            <a href="portal-login.html"> Logout</a>
+            <a href="/portal/user/beranda">Beranda</a>
+            <a href="/portal/user/rusunku">Rusunku</a>
+            <a href="/portal/user/pemberitahuan">Pemberitahuan</a>
+            <a href="/portal/user/keluhan">Keluhan</a>
+            <a href="/portal/user/logout"> Logout</a>
         </nav>
 
         <div class="icons">
@@ -27,8 +27,7 @@
                     </div>
                     <div class="item">
                         <p>Nomor Telepon</p>
-                        <input type="tel" minlength="10" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="name"
-                            required />
+                        <input type="tel" minlength="10" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="name" required />
                     </div>
                     <div class="item">
                         <p>Nomor Induk Kependudukan Pemohon</p>
@@ -99,11 +98,10 @@
         <div class="nav-rule">
             <p></p>
             <div>
-                <a href="portal-profile-rusunku.html"><button class="btn-rule" type="submit"
-                        form="profile-rusunku">Simpan</button></a>
+                <a href="portal-profile-rusunku.html"><button class="btn-rule" type="submit" form="profile-rusunku">Simpan</button></a>
                 <a href="#" class="btn-rule">Batal</a>
             </div>
         </div>
     </section>
 
-    <script src="js/script.js"></script>
+    <script src="/assets/js/script.js"></script>

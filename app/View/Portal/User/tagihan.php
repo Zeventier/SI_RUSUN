@@ -1,11 +1,11 @@
     <header id="not-print" class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
-            <a href="portal-rusun.html">Beranda</a>
-            <a href="portal-rusunku.html">Rusunku</a>
-            <a href="portal-pemberitahuan.html">Pemberitahuan</a>
-            <a href="portal-keluhan.html">Keluhan</a>
-            <a href="portal-login.html"> Logout</a>
+            <a href="/portal/user/beranda">Beranda</a>
+            <a href="/portal/user/rusunku">Rusunku</a>
+            <a href="/portal/user/pemberitahuan">Pemberitahuan</a>
+            <a href="/portal/user/keluhan">Keluhan</a>
+            <a href="/portal/user/logout"> Logout</a>
         </nav>
 
         <div class="icons">
@@ -71,9 +71,9 @@
         <div class="nav-rule">
             <div>
                 <button id="not-print" onclick=window.print() class=" btn-rule">Cetak</button>
-                <a id="not-print" href="portal-rusunku.html" class="btn-rule">Kembali</a>
+                <button id="not-print" href="portal-rusunku.html" class="btn-rule">Kembali</button>
             </div>
         </div>
     </section>
 
-    <script src="js/script.js"></script>
+    <script src="/assets/js/script.js"></script>

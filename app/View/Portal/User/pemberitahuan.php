@@ -1,11 +1,11 @@
     <header class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
-            <a href="portal-rusun.html">Beranda</a>
-            <a href="portal-rusunku.html">Rusunku</a>
-            <a href="portal-pemberitahuan.html">Pemberitahuan</a>
-            <a href="portal-keluhan.html">Keluhan</a>
-            <a href="portal-login.html"> Logout</a>
+            <a href="/portal/user/beranda">Beranda</a>
+            <a href="/portal/user/rusunku">Rusunku</a>
+            <a href="/portal/user/pemberitahuan">Pemberitahuan</a>
+            <a href="/portal/user/keluhan">Keluhan</a>
+            <a href="/portal/user/logout"> Logout</a>
         </nav>
 
         <div class="icons">
@@ -66,5 +66,5 @@
         </div>
     </section>
 
-    <script src="js/script.js"></script>
-    <script src="js/notification.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/notification.js"></script>

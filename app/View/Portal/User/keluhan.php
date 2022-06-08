@@ -1,11 +1,11 @@
     <header class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
-            <a href="portal-rusun.html">Beranda</a>
-            <a href="portal-rusunku.html">Rusunku</a>
-            <a href="portal-pemberitahuan.html">Pemberitahuan</a>
-            <a href="portal-keluhan.html">Keluhan</a>
-            <a href="portal-login.html"> Logout</a>
+            <a href="/portal/user/beranda">Beranda</a>
+            <a href="/portal/user/rusunku">Rusunku</a>
+            <a href="/portal/user/pemberitahuan">Pemberitahuan</a>
+            <a href="/portal/user/keluhan">Keluhan</a>
+            <a href="/portal/user/logout"> Logout</a>
         </nav>
 
         <div class="icons">
@@ -24,8 +24,7 @@
                         <p>Keluhan</p>
                         <div class="item" id="keluhan">
                             <form action="">
-                                <textarea rows="5" name="comment"
-                                    form="usrform">Masukan Keluhan Anda Disini....</textarea>
+                                <textarea rows="5" name="comment" form="usrform">Masukan Keluhan Anda Disini....</textarea>
                             </form>
                         </div>
                     </div>
@@ -33,8 +32,8 @@
                     <div class="nav-rule">
                         <div></div>
                         <div>
-                            <a href="#"><button class="btn-rule" type="submit" form="keluhan">Simpan</button></a>
-                            <a href="portal-rusun.html" class="btn-rule">Batal</a>
+                            <button class="btn-rule" type="submit" form="keluhan">Simpan</button>
+                            <button href="portal-rusun.html" class="btn-rule">Batal</button>
                         </div>
                     </div>
 
@@ -54,5 +53,5 @@
             </div>
         </div>
     </section>
-    
-    <script src="js/script.js"></script>
+
+    <script src="/assets/js/script.js"></script>
