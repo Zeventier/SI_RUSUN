@@ -4,10 +4,8 @@ namespace Project\Controller;
 
 use Project\App\View;
 use Project\Domain\Sewa;
-use Project\Domain\User;
 use Project\Domain\Keluhan;
 use Project\Config\Database;
-use Project\Domain\Penghuni;
 use Project\Service\SewaService;
 use Project\Service\UserService;
 use Project\Service\KeluhanService;
@@ -23,7 +21,6 @@ use Project\Repository\PenghuniRepository;
 class PortalUserController 
 {
     private SessionService $sessionService;
-    private UserService $userService;
     private SewaService $sewaService;
     private PenghuniService $penghuniService;
     private KeluhanService $keluhanService;
@@ -125,5 +122,11 @@ class PortalUserController
                 'title' => 'Portal Rusun User',
             ]);
         }
+    }
+
+    public function logout()
+    {
+        $this->sessionService->destroy();
+        View::redirect("/");
     }
 }
