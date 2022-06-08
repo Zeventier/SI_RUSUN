@@ -5,7 +5,7 @@
             <a href="portal-admin-rusunku.html">Rusunku</a>
             <a href="portal-admin-pemberitauan.html">Pemberitahuan</a>
             <a href="portal-admin-keluhan.html">Keluhan</a>
-            <a href="portal-login.html"> Logout</a>
+            <a href="/portal/admin/logout"> Logout</a>
         </nav>
 
         <div class="icons">
