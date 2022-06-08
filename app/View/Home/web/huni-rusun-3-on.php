@@ -18,7 +18,6 @@
             <h1 class="heading"> Formulir Pengajuan Menghuni Rusun</h1>
         </div>
 
-
         <div class="rule">
             <div class="list">
                 <span>*Bagi pemohon yang ingin mengumpulkan berkas secara offline, maka tidak perlu mengisi formulir
