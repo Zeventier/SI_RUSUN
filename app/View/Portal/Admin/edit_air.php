@@ -19,23 +19,23 @@
 
         <div class="rule">
             <div class="list">
-                <form action="/">
+                <form method="post" action="/portal/admin/edit_air?id_air=<?php echo $_GET["id_air"]; ?>">
                     <div>
                         <p>Harga Awal Air/㎥</p>
-                        <input type="number" name="name" readonly />
+                        <input type="number" name="harga_awal" value="<?php echo $model['data']->harga_akhir; ?>" readonly />
                     </div>
                     <div>
                         <p>Harga Baru Air/㎥</p>
-                        <input type="number" name="name" required />
+                        <input type="number" name="harga_akhir" required />
+                    </div>
+                    <div class="nav-rule">
+                        <div></div>
+                        <div>
+                            <button class="btn-rule" type="submit">Ubah</button>
+                            <a href="/portal/admin/tagihan_penghuni?date=<?php echo date('Y-m') ?>" class="btn-rule">Batal</a>
+                        </div>
                     </div>
                 </form>
-            </div>
-        </div>
-        <div class="nav-rule">
-            <div></div>
-            <div>
-                <a href=""><button class="btn-rule" type="submit">Ubah</button></a>
-                <a href="portal-admin-tagihan-penghuni.html" class="btn-rule">Batal</a>
             </div>
         </div>
     </section>
