@@ -275,8 +275,8 @@ class PortalAdminController
 
     public function keluhan()
     {
-        $year = $_POST['year'];
-        $month = $_POST['month'];
+        $year = date('Y', strtotime($_GET['date']));
+        $month = date('m', strtotime($_GET['date']));
 
         $daftarKeluhan = $this->keluhanService->showDaftarKeluhanMY($year, $month);
 
@@ -369,8 +369,8 @@ class PortalAdminController
 
     public function tagihanPenghuni()
     {
-        $year = $_POST['year'];
-        $month = $_POST['month'];
+        $year = date('Y', strtotime($_GET['date']));
+        $month = date('m', strtotime($_GET['date']));
 
         $daftarTagihan = $this->sewaService->showDaftarTagihanMY($year, $month);
         $air = $this->airService->getHargaAir();
@@ -460,8 +460,12 @@ class PortalAdminController
 
     public function formRuangan()
     {
-        $kode_ruangan = $_GET['kode_ruangan'];
-        $dataRuangan = $this->rusunService->showRuangan($kode_ruangan);
+        $dataRuangan = new Rusun();
+    
+        if(isset($_GET['kode_ruangan'])) {
+            $kode_ruangan = $_GET['kode_ruangan'];
+            $dataRuangan = $this->rusunService->showRuangan($kode_ruangan);
+        }
 
         View::render('Portal/Admin/form-ruangan', [
             'title' => 'Portal Rusun Admin',
@@ -471,8 +475,6 @@ class PortalAdminController
 
     public function postFormRuangan()
     {
-        $kode_ruangan = $_GET['kode_ruangan'];
-
         $ruangan = new Rusun();
         $ruangan->no_ruang = $_POST['no_ruangan'];
         $ruangan->lantai = $_POST['lantai'];
@@ -480,6 +482,8 @@ class PortalAdminController
 
         if(isset($_GET['kode_ruangan'])) {
             try {
+                $kode_ruangan = $_GET['kode_ruangan'];
+
                 $this->rusunService->editRuangan($kode_ruangan, $ruangan);
 
                 View::redirect('/portal/admin/ruangan');

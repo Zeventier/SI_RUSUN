@@ -52,11 +52,6 @@ class HomeController
         ]);
     }
 
-    public function postPengumuman()
-    {
-
-    }
-
     public function huniRusun()
     {
         View::render('Home/huni_rusun', [

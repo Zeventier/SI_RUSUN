@@ -1,11 +1,11 @@
     <header class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar">
-            <a href="index.html">Beranda</a>
-            <a href="huni-rusun-1.html">Huni Rusun</a>
-            <a href="pengumuman.html">Pengumuman</a>
-            <a href="portal-login.html">Portal Rusun</a>
-            <a href="tentang-kami.html">Tentang Rusun</a>
+            <a href="/">Beranda</a>
+            <a href="/huni_rusun">Huni Rusun</a>
+            <a href="/pengumuman">Pengumuman</a>
+            <a href="/portal">Portal Rusun</a>
+            <a href="/about">Tentang Rusun</a>
         </nav>
 
         <div class="icons">
@@ -15,10 +15,10 @@
 
     <section class="login">
         <div class="form-input">
-            <form action="" class="login-form">
+            <form method="post" action="/portal" class="login-form">
                 <h3>LogIn Portal Rusun</h3>
-                <input type="text" placeholder="Username" class="box" required>
-                <input type="password" placeholder="Password" class="box" required>
+                <input type="text" name="username" value="<?php echo $_POST['username'] ?? ""; ?>" placeholder="Username" class="box" required>
+                <input type="password" name="password" placeholder="Password" class="box" required>
                 <a href="portal-rusun.html"><button type="submit" class="btn">login</button></a>
                 <div class="flex">
                     <a href="#" id="modal-btn">Lupa Password?</a>
@@ -42,13 +42,13 @@
         var modal = document.getElementById("modal-box");
         var btn = document.getElementById("modal-btn");
         var span = document.getElementsByClassName("close")[0];
-        btn.onclick = function () {
+        btn.onclick = function() {
             modal.style.display = "block";
         }
-        span.onclick = function () {
+        span.onclick = function() {
             modal.style.display = "none";
         }
-        window.onclick = function (event) {
+        window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }

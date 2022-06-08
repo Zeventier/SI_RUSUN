@@ -23,11 +23,11 @@
             <div class="box-container">
                 <div class="container box">
                     <div class="image">
-                        <img class="big" src="images/kelola-ruangan.png" alt="">
+                        <img class="big" src="/assets/img/kelola-ruangan.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Kelola Ruang Rusun</h3>
-                        <a href="portal-admin-daftar-ruang-rusun.html" class="btn">mulai
+                        <a href="/portal/admin/ruangan" class="btn">mulai
                         </a>
                     </div>
 
@@ -35,21 +35,21 @@
 
                 <div class="container box">
                     <div class="image">
-                        <img class="big" src="images/kelola-tagihan.png" alt="">
+                        <img class="big" src="/assets/img/kelola-tagihan.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Kelola Tagihan</h3>
-                        <a href="portal-admin-tagihan-penghuni.html" class="btn">mulai</a>
+                        <a href="/portal/admin/tagihan_penghuni?date=<?php echo date('Y-m') ?>" class="btn">mulai</a>
                     </div>
                 </div>
 
                 <div class="container box">
                     <div class="image">
-                        <img class="big" src="images/kelola-penghuni.png" alt="">
+                        <img class="big" src="/assets/img/kelola-penghuni.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Kelola Penghuni Rusun</h3>
-                        <a href="portal-admin-kelola-penghuni-rusun.html" class="btn">mulai</a>
+                        <a href="/portal/admin/penghuni" class="btn">mulai</a>
                     </div>
                 </div>
             </div>
