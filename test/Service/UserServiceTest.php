@@ -26,7 +26,7 @@ class UserServiceTest extends TestCase
     }
 
     public function testRegisterSuccess()
-    {
+    {   
         $request = new UserRegisterRequest();
         $request->username = "irvan";
         $request->password = "rahasia";

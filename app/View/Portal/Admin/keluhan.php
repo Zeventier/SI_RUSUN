@@ -17,23 +17,23 @@
         <div>
             <h1 class="heading">Daftar Keluhan</h1>
         </div>
-        <div class="nav-rule">
-            <div class="form-input">
-                <div class="list">
-                    <form class="of" action="/">
+        <form method="get" class="of" action="/portal/admin/keluhan">
+            <div class="nav-rule">
+                <div class="form-input">
+                    <div class="list">
+
                         <div class="single-item">
                             <p>Pilih Waktu</p>
-                            <input type="date" name="name" />
-                            <input type="year" name="name" />
+                            <input type="month" name="date" />
                         </div>
-                    </form>
+                    </div>
+                </div>
+                <div id="not-print">
+                    <button type="submit" class="btn-rule">Pilih</button>
+                    <button onclick="window.print()" class=" btn-rule">Cetak</button>
                 </div>
             </div>
-            <div id="not-print">
-                <a href="#" class="btn-rule">Pilih</a>
-                <button onclick="window.print()" class=" btn-rule">Cetak</button>
-            </div>
-        </div>
+        </form>
         <div class="table">
             <table>
                 <tr>
@@ -44,18 +44,35 @@
                     <th>Tanggapan</th>
                     <th id="not-print">Aksi</th>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td id="not-print" class="table-btn">
-                        <div class="btn-center">
-                            <a href="portal-admin-tanggapan-keluhan.html" class="btn-table">Tanggapi</a>
-                        </div>
-                    </td>
-                </tr>
+
+                <?php if (isset($model['data'])) {
+                    foreach ($model['data'] as $value) {
+                ?>
+
+                        <tr>
+                            <td><?php echo $value['waktu'] ?></td>
+                            <td><?php echo $value['kode_rusun'] ?></td>
+                            <td><?php echo $value['username'] ?></td>
+                            <td><?php echo $value['keluhan'] ?></td>
+                            <td><?php echo $value['tanggapan'] ?></td>
+                            <td id="not-print" class="table-btn">
+                                <div class="btn-center">
+                                    <a href="/portal/admin/tanggapan?id_keluhan=<?php echo $value['id_keluhan'] ?>" class="btn-table">Tanggapi</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                } else {
+                    ?>
+                    <tr>
+                        <td colspan="6">
+                            <center>No data</center>
+                        </td>
+                    </tr>
+                <?php
+                }
+                ?>
             </table>
         </div>
 

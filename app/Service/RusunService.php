@@ -19,7 +19,7 @@ class RusunService {
         try {
             Database::beginTransaction();
 
-            $ruangan = $this->ruanganRepository->readAll();
+            $ruangan = $this->rusunRepository->readAll();
 
             Database::commitTransaction();
 

@@ -28,24 +28,40 @@
                     <th>Aksi</th>
 
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="table-btn fit">
-                        <div class="btn-center">
-                            <a href="portal-admin-edit-ruang-rusun.html" class="btn-table">Edit</a>
-                            <a href="#" class="btn-table">Hapus</a>
-                        </div>
-                    </td>
-                </tr>
+
+                <?php if (isset($model['data'])) {
+                    foreach ($model['data'] as $value) {
+                ?>
+                        <tr>
+                            <td><?php echo $value['kode_rusun'] ?></td>
+                            <td><?php echo $value['no_ruang'] ?></td>
+                            <td><?php echo $value['lantai'] ?></td>
+                            <td><?php echo $value['keterangan'] ?></td>
+                            <td class="table-btn fit">
+                                <div class="btn-center">
+                                    <a href="/portal/admin/form_ruangan?kode_ruangan=<?php echo $value['kode_rusun'] ?>" class="btn-table">Edit</a>
+                                    <a href="/portal/admin/ruangan/delete?kode_ruangan=<?php echo $value['kode_rusun'] ?>" class="btn-table">Hapus</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                } else {
+                    ?>
+                    <tr>
+                        <td colspan="5">
+                            <center>No data</center>
+                        </td>
+                    </tr>
+                <?php
+                }
+                ?>
             </table>
             <div class="nav-rule">
                 <div></div>
                 <div>
-                    <a href="#" class="btn-rule">Tambah</a>
-                    <a href="portal-admin-rusunku.html" class="btn-rule">Kembali</a>
+                    <a href="/portal/admin/form_ruangan" class="btn-rule">Tambah</a>
+                    <a href="/portal/admin/home" class="btn-rule">Kembali</a>
                 </div>
             </div>
         </div>

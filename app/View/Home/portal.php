@@ -15,10 +15,10 @@
 
     <section class="login">
         <div class="form-input">
-            <form action="" class="login-form">
+            <form method="post" action="/portal" class="login-form">
                 <h3>LogIn Portal Rusun</h3>
-                <input type="text" placeholder="Username" class="box" required>
-                <input type="password" placeholder="Password" class="box" required>
+                <input type="text" name="username" value="<?php echo $_POST['username'] ?? ""; ?>" placeholder="Username" class="box" required>
+                <input type="password" name="password" placeholder="Password" class="box" required>
                 <a href="portal-rusun.html"><button type="submit" class="btn">login</button></a>
                 <div class="flex">
                     <a href="#" id="modal-btn">Lupa Password?</a>
