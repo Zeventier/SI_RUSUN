@@ -67,5 +67,5 @@
 
     </section>
 
-    <script src="js/script.js"></script>
-    <script src="js/notification.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/notification.js"></script>
