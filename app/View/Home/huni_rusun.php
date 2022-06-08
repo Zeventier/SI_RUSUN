@@ -77,27 +77,27 @@
                     <div class="list">
                         <div class="item">
                             <p>Nama Pemohon (Kepala Keluarga)</p>
-                            <input type="text" pattern="^[a-zA-Z@ ]+$" autocapitalize="words" id="nama_pemohon" name="" required />
+                            <input type="text" pattern="^[a-zA-Z@ ]+$" autocapitalize="words" id="nama_pemohon" name="nama_pemohon" value="<?php echo $_POST['nama_pemohon'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Nomor Telepon</p>
-                            <input type="tel" minlength="10" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="name" required />
+                            <input type="tel" minlength="10" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="no_telp" value="<?php echo $_POST['no_telp'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Nomor Induk Kependudukan</p>
-                            <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="name" required />
+                            <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="nik_pemohon" value="<?php echo $_POST['nik_pemohon'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Nomor Kartu Keluarga</p>
-                            <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="name" required />
+                            <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="no_kk" value="<?php echo $_POST['no_kk'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Pekerjaan</p>
-                            <input type="text" name="name" required />
+                            <input type="text" name="kerja_pemohon" value="<?php echo $_POST['kerja_pemohon'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Kisaran Gaji Perbulan</p>
-                            <select required>
+                            <select name="gaji_pemohon" required>
                                 <option value="">Select</option>
                                 <option value="1">Rp 0 - Rp 1.999.999,</option>
                                 <option value="2">Rp 2.000.000, - Rp 3.999.999,</option>
@@ -106,7 +106,7 @@
                         </div>
                         <div class="item">
                             <p>Jumlah Penghuni</p>
-                            <input type="number" min="1" max="4" name="name" required />
+                            <input type="number" min="1" max="4" name="jlh_penghuni" value="<?php echo $_POST['jlh_penghuni'] ?? "" ?>" required />
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                 <div class="nav-rule">
                     <p class="num-rule">Tahap <span>2</span> dari 4</p>
                     <div>
-                        <button class="btn-rule" id="nextBtn" onclick="nextPrev(1)" type="submit">Lanjut</button>
+                        <button class="btn-rule" id="nextBtn" onclick="nextPrev(1)">Lanjut</button>
                         <button class="btn-rule" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
                     </div>
                 </div>
@@ -129,16 +129,16 @@
                         <div class="item">
                             <p>Nama Pasangan</p>
                             <div class="item">
-                                <input type="text" name="name" required />
+                                <input type="text" name="nama_psgn" value="<?php echo $_POST['nama_psgn'] ?? "" ?>" required />
                             </div>
                         </div>
                         <div class="item">
                             <p>Pekerjaan Pasangan</p>
-                            <input type="text" name="name" required />
+                            <input type="text" name="kerja_psgn" value="<?php echo $_POST['kerja_psgn'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Kisaran Gaji Pasangan Perbulan</p>
-                            <select required>
+                            <select name="gaji_psgn" required>
                                 <option value="">Select</option>
                                 <option value="1">Rp 0 - Rp 1.999.999,</option>
                                 <option value="2">Rp 2.000.000, - Rp 3.999.999,</option>
@@ -147,7 +147,7 @@
                         </div>
                         <div class="item">
                             <p>Pilih Ruangan</p>
-                            <select required>
+                            <select name="ruangan" required>
                                 <option value="">Select</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -161,7 +161,7 @@
                 <div class="nav-rule">
                     <p class="num-rule">Tahap <span>3</span> dari 4</p>
                     <div>
-                        <button class="btn-rule" type="submit" id="nextBtn" onclick="nextPrev(1)">Lanjut</button>
+                        <button class="btn-rule" id="nextBtn" onclick="nextPrev(1)">Lanjut</button>
                         <button class="btn-rule" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
                     </div>
                 </div>
@@ -180,28 +180,28 @@
                         <div class="item">
                             <p>KTP Pemohon</p>
                             <div class="item">
-                                <input type="file" accept="image/*,.pdf" name="name" required />
+                                <input type="file" accept="image/*,.pdf" name="ktp_pmhn"/>
                             </div>
                         </div>
                         <div class="item">
                             <p>KTP Pasangan</p>
-                            <input type="file" accept="image/*,.pdf" name="name" required />
+                            <input type="file" accept="image/*,.pdf" name="ktp_psgn" />
                         </div>
                         <div class="item">
                             <p>Kartu Keluarga</p>
-                            <input type="file" accept="image/*,.pdf" name="name" required />
+                            <input type="file" accept="image/*,.pdf" name="kartu_kk" />
                         </div>
                         <div class="item">
                             <p>Surat Keterangan Memiliki Pekerjaan Tetap</p>
-                            <input type="file" accept="image/*,.pdf" name="name" required />
+                            <input type="file" accept="image/*,.pdf" name="srt_kerja"/>
                         </div>
                         <div class="item">
                             <p>Struk/Rincian Gaji</p>
-                            <input type="file" accept="image/*,.pdf" name="name" required />
+                            <input type="file" accept="image/*,.pdf" name="struk_gaji" />
                         </div>
                         <div class="item">
                             <p>Surat Nikah</p>
-                            <input type="file" accept="image/*,.pdf" name="name" required />
+                            <input type="file" accept="image/*,.pdf" name="srt_nikah" />
                         </div>
                     </div>
                 </div>
@@ -209,7 +209,7 @@
                 <div class="nav-rule">
                     <p class="num-rule">Tahap <span>3</span> dari 4</p>
                     <div>
-                        <button class="btn-rule" type="submit" id="nextBtn" onclick="nextPrev(1)">Lanjut</button>
+                        <button class="btn-rule" id="nextBtn" onclick="nextPrev(1)">Lanjut</button>
                         <button class="btn-rule" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
                     </div>
                 </div>
