@@ -140,11 +140,14 @@ class DeepCopy
             return $var;
         }
 
+<<<<<<< HEAD
         // Enum
         if (PHP_VERSION_ID >= 80100 && enum_exists(get_class($var))) {
             return $var;
         }
 
+=======
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         // Object
         return $this->copyObject($var);
     }

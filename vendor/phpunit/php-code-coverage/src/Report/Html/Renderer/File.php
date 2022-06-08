@@ -96,7 +96,11 @@ use function token_get_all;
 use function trim;
 use PHPUnit\Runner\BaseTestRunner;
 use SebastianBergmann\CodeCoverage\Node\File as FileNode;
+<<<<<<< HEAD
 use SebastianBergmann\CodeCoverage\Util\Percentage;
+=======
+use SebastianBergmann\CodeCoverage\Percentage;
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 use SebastianBergmann\Template\Template;
 
 /**

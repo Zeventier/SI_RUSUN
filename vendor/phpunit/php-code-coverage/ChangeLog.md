@@ -2,6 +2,7 @@
 
 All notable changes are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+<<<<<<< HEAD
 ## [9.2.15] - 2022-03-07
 
 ### Fixed
@@ -51,6 +52,8 @@ All notable changes are documented in this file using the [Keep a CHANGELOG](htt
 
 * [#889](https://github.com/sebastianbergmann/php-code-coverage/issues/889): Code Coverage depends on autoload order
 
+=======
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 ## [9.2.10] - 2021-12-05
 
 ### Fixed
@@ -137,7 +140,11 @@ All notable changes are documented in this file using the [Keep a CHANGELOG](htt
 
 ### Fixed
 
+<<<<<<< HEAD
 * [#810](https://github.com/sebastianbergmann/php-code-coverage/issues/810): `SebastianBergmann\CodeCoverage\Driver\Driver::forLineCoverage()` and `SebastianBergmann\CodeCoverage\Driver\Driver::forLineAndPathCoverage()` are marked as internal
+=======
+* [#810](https://github.com/sebastianbergmann/php-code-coverage/issues/810): `SebastianBergmann\CodeCoverage\Driver\Driver::forLineCoverage()` and `SebastianBergmann\CodeCoverage\Driver\Driver::forLineAndPathCoverage()` are marked as internal 
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
 ### Removed
 
@@ -335,7 +342,11 @@ All notable changes are documented in this file using the [Keep a CHANGELOG](htt
 
 ### Changed
 
+<<<<<<< HEAD
 * Updated bundled CSS/JavaScript components used for HTML report: Bootstrap 4.3.1, jQuery 3.4.1, and popper.js 1.15.0
+=======
+* Update HTML report Bootstrap 4.3.1, jQuery 3.4.1, and popper.js 1.15.0
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
 ## [7.0.7] - 2019-07-25
 
@@ -371,7 +382,11 @@ All notable changes are documented in this file using the [Keep a CHANGELOG](htt
 
 ### Changed
 
+<<<<<<< HEAD
 * Updated bundled CSS/JavaScript components used for HTML report: Bootstrap 4.3.0
+=======
+* Updated HTML report to Bootstrap 4.3.0
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
 ### Fixed
 
@@ -398,11 +413,14 @@ All notable changes are documented in this file using the [Keep a CHANGELOG](htt
 
 * This component is no longer supported on PHP 7.1
 
+<<<<<<< HEAD
 [9.2.15]: https://github.com/sebastianbergmann/php-code-coverage/compare/9.2.14...9.2.15
 [9.2.14]: https://github.com/sebastianbergmann/php-code-coverage/compare/9.2.13...9.2.14
 [9.2.13]: https://github.com/sebastianbergmann/php-code-coverage/compare/c011a0b6aaa4acd2f39b7f51fb4ad4442b6ec631...9.2.13
 [9.2.12]: https://github.com/sebastianbergmann/php-code-coverage/compare/9.2.11...c011a0b6aaa4acd2f39b7f51fb4ad4442b6ec631
 [9.2.11]: https://github.com/sebastianbergmann/php-code-coverage/compare/9.2.10...9.2.11
+=======
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 [9.2.10]: https://github.com/sebastianbergmann/php-code-coverage/compare/9.2.9...9.2.10
 [9.2.9]: https://github.com/sebastianbergmann/php-code-coverage/compare/9.2.8...9.2.9
 [9.2.8]: https://github.com/sebastianbergmann/php-code-coverage/compare/9.2.7...9.2.8

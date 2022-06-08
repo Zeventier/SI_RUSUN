@@ -20,7 +20,11 @@ final class ClassIsFinalException extends \PHPUnit\Framework\Exception implement
     {
         parent::__construct(
             sprintf(
+<<<<<<< HEAD
                 'Class "%s" is declared "final" and cannot be mocked',
+=======
+                'Class "%s" is declared "final" and cannot be doubled',
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 $className
             )
         );

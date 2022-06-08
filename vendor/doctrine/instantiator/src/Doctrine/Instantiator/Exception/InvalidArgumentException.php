@@ -17,24 +17,38 @@ class InvalidArgumentException extends BaseInvalidArgumentException implements E
     public static function fromNonExistingClass(string $className): self
     {
         if (interface_exists($className)) {
+<<<<<<< HEAD
             return new self(sprintf('The provided type "%s" is an interface, and cannot be instantiated', $className));
         }
 
         if (trait_exists($className)) {
             return new self(sprintf('The provided type "%s" is a trait, and cannot be instantiated', $className));
+=======
+            return new self(sprintf('The provided type "%s" is an interface, and can not be instantiated', $className));
+        }
+
+        if (trait_exists($className)) {
+            return new self(sprintf('The provided type "%s" is a trait, and can not be instantiated', $className));
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         }
 
         return new self(sprintf('The provided class "%s" does not exist', $className));
     }
 
     /**
+<<<<<<< HEAD
      * @phpstan-param ReflectionClass<T> $reflectionClass
      *
      * @template T of object
+=======
+     * @template T of object
+     * @phpstan-param ReflectionClass<T> $reflectionClass
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
      */
     public static function fromAbstractClass(ReflectionClass $reflectionClass): self
     {
         return new self(sprintf(
+<<<<<<< HEAD
             'The provided class "%s" is abstract, and cannot be instantiated',
             $reflectionClass->getName()
         ));
@@ -47,4 +61,10 @@ class InvalidArgumentException extends BaseInvalidArgumentException implements E
             $className
         ));
     }
+=======
+            'The provided class "%s" is abstract, and can not be instantiated',
+            $reflectionClass->getName()
+        ));
+    }
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 }

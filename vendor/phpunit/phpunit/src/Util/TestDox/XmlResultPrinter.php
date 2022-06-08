@@ -161,7 +161,12 @@ final class XmlResultPrinter extends Printer implements TestListener
 
         $groups = array_filter(
             $test->getGroups(),
+<<<<<<< HEAD
             static function ($group) {
+=======
+            static function ($group)
+            {
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 return !($group === 'small' || $group === 'medium' || $group === 'large' || strpos($group, '__phpunit_') === 0);
             }
         );

@@ -377,7 +377,12 @@ class TestDoxPrinter extends DefaultResultPrinter
         return implode(
             PHP_EOL,
             array_map(
+<<<<<<< HEAD
                 static function (string $text) use ($prefix) {
+=======
+                static function (string $text) use ($prefix)
+                {
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                     return '   ' . $prefix . ($text ? ' ' . $text : '');
                 },
                 preg_split('/\r\n|\r|\n/', $message)

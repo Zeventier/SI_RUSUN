@@ -15,10 +15,18 @@ use function array_flip;
 use function array_intersect;
 use function array_intersect_key;
 use function count;
+<<<<<<< HEAD
 use function in_array;
 use function range;
 use SebastianBergmann\CodeCoverage\Driver\Driver;
 use SebastianBergmann\CodeCoverage\StaticAnalysis\FileAnalyser;
+=======
+use function file;
+use function in_array;
+use function range;
+use SebastianBergmann\CodeCoverage\Driver\Driver;
+use SebastianBergmann\CodeCoverage\StaticAnalysis\UncoveredFileAnalyser;
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
 /**
  * @internal This class is not covered by the backward compatibility promise for phpunit/php-code-coverage
@@ -83,11 +91,19 @@ final class RawCodeCoverageData
         return new self($lineCoverage, $functionCoverage);
     }
 
+<<<<<<< HEAD
     public static function fromUncoveredFile(string $filename, FileAnalyser $analyser): self
     {
         $lineCoverage = [];
 
         foreach ($analyser->executableLinesIn($filename) as $line) {
+=======
+    public static function fromUncoveredFile(string $filename, UncoveredFileAnalyser $uncoveredFileAnalyser): self
+    {
+        $lineCoverage = [];
+
+        foreach ($uncoveredFileAnalyser->executableLinesIn($filename) as $line) {
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
             $lineCoverage[$line] = Driver::LINE_NOT_EXECUTED;
         }
 
@@ -125,7 +141,11 @@ final class RawCodeCoverageData
     /**
      * @param int[] $lines
      */
+<<<<<<< HEAD
     public function keepLineCoverageDataOnlyForLines(string $filename, array $lines): void
+=======
+    public function keepCoverageDataOnlyForLines(string $filename, array $lines): void
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     {
         if (!isset($this->lineCoverage[$filename])) {
             return;
@@ -135,6 +155,7 @@ final class RawCodeCoverageData
             $this->lineCoverage[$filename],
             array_flip($lines)
         );
+<<<<<<< HEAD
     }
 
     /**
@@ -154,6 +175,19 @@ final class RawCodeCoverageData
                     foreach ($functionData['paths'] as $pathId => $path) {
                         if (in_array($branchId, $path['path'], true)) {
                             unset($this->functionCoverage[$filename][$functionName]['paths'][$pathId]);
+=======
+
+        if (isset($this->functionCoverage[$filename])) {
+            foreach ($this->functionCoverage[$filename] as $functionName => $functionData) {
+                foreach ($functionData['branches'] as $branchId => $branch) {
+                    if (count(array_diff(range($branch['line_start'], $branch['line_end']), $lines)) > 0) {
+                        unset($this->functionCoverage[$filename][$functionName]['branches'][$branchId]);
+
+                        foreach ($functionData['paths'] as $pathId => $path) {
+                            if (in_array($branchId, $path['path'], true)) {
+                                unset($this->functionCoverage[$filename][$functionName]['paths'][$pathId]);
+                            }
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                         }
                     }
                 }

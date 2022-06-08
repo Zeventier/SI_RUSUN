@@ -23,7 +23,11 @@ final class DuplicateMethodException extends \PHPUnit\Framework\Exception implem
     {
         parent::__construct(
             sprintf(
+<<<<<<< HEAD
                 'Cannot stub or mock using a method list that contains duplicates: "%s" (duplicate: "%s")',
+=======
+                'Cannot double using a method list that contains duplicates: "%s" (duplicate: "%s")',
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 implode(', ', $methods),
                 implode(', ', array_unique(array_diff_assoc($methods, array_unique($methods))))
             )

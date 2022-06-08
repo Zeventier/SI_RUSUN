@@ -26,7 +26,10 @@ use function is_numeric;
 use function is_object;
 use function is_scalar;
 use function is_string;
+<<<<<<< HEAD
 use function mb_strtolower;
+=======
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 use function ord;
 use function preg_quote;
 use function preg_replace;
@@ -109,6 +112,7 @@ final class NamePrettifier
             $fullyQualifiedName = $className;
         }
 
+<<<<<<< HEAD
         $result       = '';
         $wasLowerCase = false;
 
@@ -127,6 +131,9 @@ final class NamePrettifier
                 $wasLowerCase = false;
             }
         }
+=======
+        $result = preg_replace('/(?<=[[:lower:]])(?=[[:upper:]])/u', ' ', $className);
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
         if ($fullyQualifiedName !== $className) {
             return $result . ' (' . $fullyQualifiedName . ')';
@@ -147,7 +154,12 @@ final class NamePrettifier
 
         $annotationWithPlaceholders = false;
 
+<<<<<<< HEAD
         $callback = static function (string $variable): string {
+=======
+        $callback = static function (string $variable): string
+        {
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
             return sprintf('/%s(?=\b)/', preg_quote($variable, '/'));
         };
 
@@ -318,7 +330,12 @@ final class NamePrettifier
         }
 
         if ($this->useColor) {
+<<<<<<< HEAD
             $providedData = array_map(static function ($value) {
+=======
+            $providedData = array_map(static function ($value)
+            {
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                 return Color::colorize('fg-cyan', Color::visualizeWhitespace((string) $value, true));
             }, $providedData);
         }

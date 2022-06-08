@@ -10,7 +10,10 @@ class PreReleaseSuffix {
         'beta'  => 2,
         'rc'    => 3,
         'p'     => 4,
+<<<<<<< HEAD
         'pl'    => 4,
+=======
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         'patch' => 4,
     ];
 
@@ -60,11 +63,23 @@ class PreReleaseSuffix {
     private function mapValueToScore(string $value): int {
         $value = \strtolower($value);
 
+<<<<<<< HEAD
         return self::valueScoreMap[$value];
     }
 
     private function parseValue(string $value): void {
         $regex = '/-?((dev|beta|b|rc|alpha|a|patch|p|pl)\.?(\d*)).*$/i';
+=======
+        if (\array_key_exists($value, self::valueScoreMap)) {
+            return self::valueScoreMap[$value];
+        }
+
+        return 0;
+    }
+
+    private function parseValue(string $value): void {
+        $regex = '/-?((dev|beta|b|rc|alpha|a|patch|p)\.?(\d*)).*$/i';
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
         if (\preg_match($regex, $value, $matches) !== 1) {
             throw new InvalidPreReleaseSuffixException(\sprintf('Invalid label %s', $value));

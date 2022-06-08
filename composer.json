@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "require": {
     "php": ">=8"
   },
@@ -15,4 +16,9 @@
       "Project\\": "test"
     }
   }
+=======
+    "require": {
+        "phpunit/phpunit": "^9"
+    }
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 }

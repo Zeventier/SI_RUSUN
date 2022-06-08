@@ -15,9 +15,14 @@ use function date;
 use function dirname;
 use function substr;
 use SebastianBergmann\CodeCoverage\CodeCoverage;
+<<<<<<< HEAD
 use SebastianBergmann\CodeCoverage\InvalidArgumentException;
 use SebastianBergmann\CodeCoverage\Node\Directory as DirectoryNode;
 use SebastianBergmann\CodeCoverage\Util\Filesystem;
+=======
+use SebastianBergmann\CodeCoverage\Directory as DirectoryUtil;
+use SebastianBergmann\CodeCoverage\Node\Directory as DirectoryNode;
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
 final class Facade
 {
@@ -43,12 +48,15 @@ final class Facade
 
     public function __construct(int $lowUpperBound = 50, int $highLowerBound = 90, string $generator = '')
     {
+<<<<<<< HEAD
         if ($lowUpperBound > $highLowerBound) {
             throw new InvalidArgumentException(
                 '$lowUpperBound must not be larger than $highLowerBound'
             );
         }
 
+=======
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         $this->generator      = $generator;
         $this->highLowerBound = $highLowerBound;
         $this->lowUpperBound  = $lowUpperBound;
@@ -95,14 +103,22 @@ final class Facade
             $id = $node->id();
 
             if ($node instanceof DirectoryNode) {
+<<<<<<< HEAD
                 Filesystem::createDirectory($target . $id);
+=======
+                DirectoryUtil::create($target . $id);
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
                 $directory->render($node, $target . $id . '/index.html');
                 $dashboard->render($node, $target . $id . '/dashboard.html');
             } else {
                 $dir = dirname($target . $id);
 
+<<<<<<< HEAD
                 Filesystem::createDirectory($dir);
+=======
+                DirectoryUtil::create($dir);
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
                 $file->render($node, $target . $id);
             }
@@ -140,7 +156,11 @@ final class Facade
             $directory .= DIRECTORY_SEPARATOR;
         }
 
+<<<<<<< HEAD
         Filesystem::createDirectory($directory);
+=======
+        DirectoryUtil::create($directory);
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
         return $directory;
     }

@@ -25,17 +25,23 @@ class Version {
     /** @var null|PreReleaseSuffix */
     private $preReleaseSuffix;
 
+<<<<<<< HEAD
     /** @var null|BuildMetaData */
     private $buildMetadata;
 
+=======
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     public function __construct(string $versionString) {
         $this->ensureVersionStringIsValid($versionString);
         $this->originalVersionString = $versionString;
     }
 
+<<<<<<< HEAD
     /**
      * @throws NoPreReleaseSuffixException
      */
+=======
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     public function getPreReleaseSuffix(): PreReleaseSuffix {
         if ($this->preReleaseSuffix === null) {
             throw new NoPreReleaseSuffixException('No pre-release suffix set');
@@ -68,6 +74,7 @@ class Version {
     }
 
     public function equals(Version $other): bool {
+<<<<<<< HEAD
         if ($this->getVersionString() !== $other->getVersionString()) {
             return false;
         }
@@ -82,6 +89,9 @@ class Version {
         }
 
         return true;
+=======
+        return $this->getVersionString() === $other->getVersionString();
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     }
 
     public function isGreaterThan(Version $version): bool {
@@ -137,6 +147,7 @@ class Version {
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-assert-if-true BuildMetaData $this->buildMetadata
      * @psalm-assert-if-true BuildMetaData $this->getBuildMetaData()
      */
@@ -156,6 +167,8 @@ class Version {
     }
 
     /**
+=======
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
      * @param string[] $matches
      *
      * @throws InvalidPreReleaseSuffixException
@@ -165,6 +178,7 @@ class Version {
         $this->minor = new VersionNumber((int)$matches['Minor']);
         $this->patch = isset($matches['Patch']) ? new VersionNumber((int)$matches['Patch']) : new VersionNumber(0);
 
+<<<<<<< HEAD
         if (isset($matches['PreReleaseSuffix']) && $matches['PreReleaseSuffix'] !== '') {
             $this->preReleaseSuffix = new PreReleaseSuffix($matches['PreReleaseSuffix']);
         }
@@ -172,6 +186,11 @@ class Version {
         if (isset($matches['BuildMetadata'])) {
             $this->buildMetadata = new BuildMetaData($matches['BuildMetadata']);
         }
+=======
+        if (isset($matches['PreReleaseSuffix'])) {
+            $this->preReleaseSuffix = new PreReleaseSuffix($matches['PreReleaseSuffix']);
+        }
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     }
 
     /**
@@ -181,6 +200,7 @@ class Version {
      */
     private function ensureVersionStringIsValid($version): void {
         $regex = '/^v?
+<<<<<<< HEAD
             (?P<Major>0|[1-9]\d*)
             \\.
             (?P<Minor>0|[1-9]\d*)
@@ -195,6 +215,18 @@ class Version {
                 \\+
                 (?P<BuildMetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-@]+)*)
             )?
+=======
+            (?<Major>(0|(?:[1-9]\d*)))
+            \\.
+            (?<Minor>(0|(?:[1-9]\d*)))
+            (\\.
+                (?<Patch>(0|(?:[1-9]\d*)))
+            )?
+            (?:
+                -
+                (?<PreReleaseSuffix>(?:(dev|beta|b|rc|alpha|a|patch|p)\.?\d*))
+            )?       
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
         $/xi';
 
         if (\preg_match($regex, $version, $matches) !== 1) {

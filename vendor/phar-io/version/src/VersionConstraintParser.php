@@ -14,7 +14,11 @@ class VersionConstraintParser {
      * @throws UnsupportedVersionConstraintException
      */
     public function parse(string $value): VersionConstraint {
+<<<<<<< HEAD
         if (\strpos($value, '|') !== false) {
+=======
+        if (\strpos($value, '||') !== false) {
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
             return $this->handleOrGroup($value);
         }
 
@@ -58,7 +62,11 @@ class VersionConstraintParser {
     private function handleOrGroup(string $value): OrVersionConstraintGroup {
         $constraints = [];
 
+<<<<<<< HEAD
         foreach (\preg_split('{\s*\|\|?\s*}', \trim($value)) as $groupSegment) {
+=======
+        foreach (\explode('||', $value) as $groupSegment) {
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
             $constraints[] = $this->parse(\trim($groupSegment));
         }
 

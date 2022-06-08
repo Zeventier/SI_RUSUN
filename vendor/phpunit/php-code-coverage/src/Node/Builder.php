@@ -22,7 +22,11 @@ use function strpos;
 use function substr;
 use SebastianBergmann\CodeCoverage\CodeCoverage;
 use SebastianBergmann\CodeCoverage\ProcessedCodeCoverageData;
+<<<<<<< HEAD
 use SebastianBergmann\CodeCoverage\StaticAnalysis\FileAnalyser;
+=======
+use SebastianBergmann\CodeCoverage\StaticAnalysis\CoveredFileAnalyser;
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
 
 /**
  * @internal This class is not covered by the backward compatibility promise for phpunit/php-code-coverage
@@ -30,6 +34,7 @@ use SebastianBergmann\CodeCoverage\StaticAnalysis\FileAnalyser;
 final class Builder
 {
     /**
+<<<<<<< HEAD
      * @var FileAnalyser
      */
     private $analyser;
@@ -37,6 +42,15 @@ final class Builder
     public function __construct(FileAnalyser $analyser)
     {
         $this->analyser = $analyser;
+=======
+     * @var CoveredFileAnalyser
+     */
+    private $coveredFileAnalyser;
+
+    public function __construct(CoveredFileAnalyser $coveredFileAnalyser)
+    {
+        $this->coveredFileAnalyser = $coveredFileAnalyser;
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
     }
 
     public function build(CodeCoverage $coverage): Directory
@@ -74,10 +88,17 @@ final class Builder
                             $value['lineCoverage'],
                             $value['functionCoverage'],
                             $tests,
+<<<<<<< HEAD
                             $this->analyser->classesIn($filename),
                             $this->analyser->traitsIn($filename),
                             $this->analyser->functionsIn($filename),
                             $this->analyser->linesOfCodeFor($filename)
+=======
+                            $this->coveredFileAnalyser->classesIn($filename),
+                            $this->coveredFileAnalyser->traitsIn($filename),
+                            $this->coveredFileAnalyser->functionsIn($filename),
+                            $this->coveredFileAnalyser->linesOfCodeFor($filename)
+>>>>>>> 44ccf595db7c3c3c71635086dad7d6c5b6625f30
                         )
                     );
                 }

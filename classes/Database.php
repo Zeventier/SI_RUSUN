@@ -4,7 +4,7 @@ class Database
 {
     public static $pdo;
 
-    public static function connection(string $env = 'test')
+    public static function connection(string $env = 'prod')
     {
         if (!isset(self::$pdo)) {
             require_once __DIR__ . '/../config/config.php';
