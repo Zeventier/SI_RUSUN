@@ -1,12 +1,12 @@
     <header class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
-            <a href="portal-rusun.html">Beranda</a>
-            <a href="portal-rusunku.html">Rusunku</a>
-            <a href="portal-pemberitahuan.html">Pemberitahuan</a>
-            <a href="portal-keluhan.html">Keluhan</a>
-            <a href="portal-login.html"> Logout</a>
-        </nav>
+            <a href="/portal/user/beranda">Beranda</a>
+            <a href="/portal/user/rusunku">Rusunku</a>
+            <a href="/portal/user/pemberitahuan">Pemberitahuan</a>
+            <a href="/portal/user/keluhan">Keluhan</a>
+            <a href="/portal/user/logout"> Logout</a>
+        </nav>>
 
         <div class="icons">
             <div id="portal-btn" class="fas fa-bars"></div>
@@ -18,7 +18,7 @@
 
             <div class="swiper-wrapper">
 
-                <section class="swiper-slide slide" style="background: url(images/swiper-img.jpg) no-repeat;">
+                <section class="swiper-slide slide" style="background: url(/assets/img/swiper-img.jpg) no-repeat;">
                     <div class="content">
                         <h3>Selamat Datang </h3>
                         <h4>Di Portal Rusunawa <span>Teluk Kelayan</span> </h4>
@@ -181,4 +181,4 @@
         <div class="credit"> @Sistem Informasi Rusunawa <span>Teluk Kelayan</span></div>
     </section>
 
-    <script src="js/script.js"></script>
+    <script src="/assets/js/script.js"></script>

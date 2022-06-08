@@ -1,15 +1,16 @@
     <header class="header">
         <a href="#" class="logo">SI<span>Rusun</span></a>
         <nav class="navbar-portal">
-            <a href="portal-admin-pelayanan.html">Pelayanan</a>
-            <a href="portal-admin-rusunku.html">Rusunku</a>
-            <a href="portal-admin-pemberitauan.html">Pemberitahuan</a>
-            <a href="portal-admin-keluhan.html">Keluhan</a>
-            <a href="portal-login.html"> Logout</a>
+            <a href="/portal/admin">Pelayanan</a>
+            <a href="/portal/admin/home">Rusunku</a>
+            <a href="/portal/admin/pemberitahuan">Pemberitahuan</a>
+            <a href="/portal/admin/keluhan?date=<?php echo date('Y-m') ?>">Keluhan</a>
+            <a href="/portal/admin/logout"> Logout</a>
+        </nav>
 
-            <div class="icons">
-                <div id="menu-btn" class="fas fa-bars"></div>
-            </div>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
     </header>
 
     <section class="form-input">
@@ -89,10 +90,11 @@
         <div class="nav-rule">
             <p></p>
             <div>
-                <a href="portal-admin-kelola-data-pemohon-2.html"><button class="btn-rule" type="submit"
-                        form="kelola-pemohon">Lanjut</button></a>
+                <a href="portal-admin-kelola-data-pemohon-2.html"><button class="btn-rule" type="submit" form="kelola-pemohon">Lanjut</button></a>
                 <a href="portal-admin-pelayanan.html" class="btn-rule">Batal</a>
             </div>
         </div>
 
     </section>
+    
+    <script src="assets/js/script.js"></script>

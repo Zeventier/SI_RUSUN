@@ -1,11 +1,11 @@
     <header id="not-print" class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
-            <a href="portal-admin-pelayanan.html">Pelayanan</a>
-            <a href="portal-admin-rusunku.html">Rusunku</a>
-            <a href="portal-admin-pemberitauan.html">Pemberitahuan</a>
-            <a href="portal-admin-keluhan.html">Keluhan</a>
-            <a href="portal-login.html"> Logout</a>
+            <a href="/portal/admin">Pelayanan</a>
+            <a href="/portal/admin/home">Rusunku</a>
+            <a href="/portal/admin/pemberitahuan">Pemberitahuan</a>
+            <a href="/portal/admin/keluhan?date=<?php echo date('Y-m') ?>">Keluhan</a>
+            <a href="/portal/admin/logout"> Logout</a>
         </nav>
 
         <div class="icons">
@@ -20,17 +20,16 @@
         <div class="nav-rule">
             <div class="form-input">
                 <div class="list">
-                    <form class="of" action="/">
+                    <form method="get" class="of" action="/portal/admin/keluhan">
                         <div class="single-item">
                             <p>Pilih Waktu</p>
-                            <input type="date" name="name" />
-                            <input type="year" name="name" />
+                            <input type="month" name="date" />
                         </div>
                     </form>
                 </div>
             </div>
             <div id="not-print">
-                <a href="#" class="btn-rule">Pilih</a>
+                <button type="submit" class="btn-rule">Pilih</button>
                 <button onclick="window.print('rule')" class=" btn-rule">Cetak</button>
             </div>
         </div>
@@ -87,3 +86,5 @@
         </div>
 
     </section>
+
+    <script src="/assets/js/script.js"></script>

@@ -1,13 +1,12 @@
     <header class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
-            <a href="portal-rusun.html">Beranda</a>
-            <a href="portal-rusunku.html">Rusunku</a>
-            <a href="portal-pemberitahuan.html">Pemberitahuan</a>
-            <a href="portal-keluhan.html">Keluhan</a>
-            <a href="portal-login.html"> Logout</a>
+            <a href="/portal/user/beranda">Beranda</a>
+            <a href="/portal/user/rusunku">Rusunku</a>
+            <a href="/portal/user/pemberitahuan">Pemberitahuan</a>
+            <a href="/portal/user/keluhan">Keluhan</a>
+            <a href="/portal/user/logout"> Logout</a>
         </nav>
-
 
         <div class="icons">
             <div id="portal-btn" class="fas fa-bars"></div>
@@ -23,11 +22,11 @@
             <div class="box-container">
                 <div class="container box">
                     <div class="image">
-                        <img class="small" src="images/tagihan.png" alt="">
+                        <img class="small" src="/assets/img/tagihan.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Tagihan</h3>
-                        <a href="portal-info-tagihan.html" class="btn">mulai
+                        <a href="/portal/user/tagihan" class="btn">mulai
                         </a>
                     </div>
 
@@ -35,11 +34,11 @@
 
                 <div class="container box">
                     <div class="image">
-                        <img class="small" src="images/profile.png" alt="">
+                        <img class="small" src="/assets/img/profile.png" alt="">
                     </div>
                     <div class="content">
                         <h3>Profile</h3>
-                        <a href="portal-profile-rusunku.html" class="btn">mulai</a>
+                        <a href="/portal/user/profil" class="btn">mulai</a>
                     </div>
                 </div>
             </div>
@@ -47,4 +46,4 @@
     </section>
     <div class="fill"></div>
 
-    <script src="js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
