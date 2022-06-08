@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Project\\Service\\PemohonServiceTest::testSubmitSuccess":4,"Project\\Service\\UserServiceTest::testRegisterSuccess":4},"times":{"Project\\Service\\UserServiceTest::testRegisterSuccess":0.137,"Project\\Service\\PemohonServiceTest::testSubmitSuccess":0.038}}
