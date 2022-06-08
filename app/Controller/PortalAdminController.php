@@ -439,7 +439,7 @@ class PortalAdminController
         try {
             $this->airService->editHargaAir($air);
 
-            View::redirect('/portal/admin/tagihan_penghuni');
+            View::redirect('/portal/admin/tagihan_penghuni?date=' . date('Y-m'));
         } catch (ValidationException $exception) {
             View::render('Portal/Admin/edit_air', [
                 "title" => "Portal Rusun Admin",

@@ -26,7 +26,7 @@ class AirRepository
 
     public function update(Air $air): Air
     {
-        $statement = $this->connection->prepare("UPDATE air SET harga_awal = ?, harga_akhir = ?) 
+        $statement = $this->connection->prepare("UPDATE air SET harga_awal = ?, harga_akhir = ? 
         WHERE id_air = ?");
         $statement->execute([
             $air->harga_awal, $air->harga_akhir, $air->id_air
