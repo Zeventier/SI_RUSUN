@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
+define('SITE_ROOT', realpath(dirname(__FILE__)));
 
 use Project\App\Router;
 use Project\Config\Database;

@@ -74,8 +74,10 @@ class HomeController
         $request->gaji_psgn = $_POST['gaji_psgn'];
         $request->kode_rusun = $_POST['ruangan'];
 
-        $target_dir = "/assets/file/uploads/";
-        $target_file = $target_dir . $_POST['nik_pemohon'] . basename($_FILES["ktp_pmhn"]["name"]);
+
+        $target_dir = SITE_ROOT . '/assets/file/uploads/';
+
+        $target_file = $target_dir . rand() . $_POST['nik_pemohon'] . rand() . basename($_FILES["ktp_pmhn"]["name"]);
         $tmpFile = $_FILES['ktp_pmhn']['tmp_name'];
 
         $upload = move_uploaded_file($tmpFile, $target_file);
@@ -86,8 +88,7 @@ class HomeController
             $request->ktp_pmhn = null;
         }
 
-        $target_dir = "/assets/file/uploads/";
-        $target_file = $target_dir . $_POST['nik_pemohon'] . basename($_FILES["ktp_psgn"]["name"]);
+        $target_file = $target_dir . rand() . $_POST['nik_pemohon'] . rand() . basename($_FILES["ktp_psgn"]["name"]);
         $tmpFile = $_FILES['ktp_psgn']['tmp_name'];
 
         $upload = move_uploaded_file($tmpFile, $target_file);
@@ -98,8 +99,7 @@ class HomeController
             $request->ktp_psgn = null;
         }
 
-        $target_dir = "/assets/file/uploads/";
-        $target_file = $target_dir . $_POST['nik_pemohon'] . basename($_FILES["kartu_kk"]["name"]);
+        $target_file = $target_dir . rand() . $_POST['nik_pemohon'] . rand() . basename($_FILES["kartu_kk"]["name"]);
         $tmpFile = $_FILES['kartu_kk']['tmp_name'];
 
         $upload = move_uploaded_file($tmpFile, $target_file);
@@ -110,8 +110,7 @@ class HomeController
             $request->kartu_kk = null;
         }
 
-        $target_dir = "/assets/file/uploads/";
-        $target_file = $target_dir . $_POST['nik_pemohon'] . basename($_FILES["srt_kerja"]["name"]);
+        $target_file = $target_dir . rand() . $_POST['nik_pemohon'] . rand() . basename($_FILES["srt_kerja"]["name"]);
         $tmpFile = $_FILES['srt_kerja']['tmp_name'];
 
         $upload = move_uploaded_file($tmpFile, $target_file);
@@ -122,8 +121,7 @@ class HomeController
             $request->srt_kerja = null;
         }
 
-        $target_dir = "/assets/file/uploads/";
-        $target_file = $target_dir . $_POST['nik_pemohon'] . basename($_FILES["struk_gaji"]["name"]);
+        $target_file = $target_dir . rand() . $_POST['nik_pemohon'] . rand() . basename($_FILES["struk_gaji"]["name"]);
         $tmpFile = $_FILES['struk_gaji']['tmp_name'];
 
         $upload = move_uploaded_file($tmpFile, $target_file);
@@ -134,8 +132,7 @@ class HomeController
             $request->struk_gaji = null;
         }
 
-        $target_dir = "/assets/file/uploads/";
-        $target_file = $target_dir . $_POST['nik_pemohon'] . basename($_FILES["srt_nikah"]["name"]);
+        $target_file = $target_dir . rand() . $_POST['nik_pemohon'] . rand() . basename($_FILES["srt_nikah"]["name"]);
         $tmpFile = $_FILES['srt_nikah']['tmp_name'];
 
         $upload = move_uploaded_file($tmpFile, $target_file);
