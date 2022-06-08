@@ -17,22 +17,22 @@
         <div>
             <h1 class="heading">Tagihan Penghuni</h1>
         </div>
-        <div class="nav-rule">
-            <div class="form-input">
-                <div class="list">
-                    <form method="get" class="of" action="/portal/admin/keluhan">
+        <form method="get" class="of" action="/portal/admin/tagihan_penghuni">
+            <div class="nav-rule">
+                <div class="form-input">
+                    <div class="list">
                         <div class="single-item">
                             <p>Pilih Waktu</p>
                             <input type="month" name="date" />
                         </div>
-                    </form>
+                    </div>
+                </div>
+                <div id="not-print">
+                    <button type="submit" class="btn-rule">Pilih</button>
+                    <button onclick="window.print('rule')" class=" btn-rule">Cetak</button>
                 </div>
             </div>
-            <div id="not-print">
-                <button type="submit" class="btn-rule">Pilih</button>
-                <button onclick="window.print('rule')" class=" btn-rule">Cetak</button>
-            </div>
-        </div>
+        </form>
         <div class="table">
             <table>
                 <tr>

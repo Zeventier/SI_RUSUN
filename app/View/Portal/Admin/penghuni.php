@@ -22,26 +22,40 @@
             <table>
                 <tr>
                     <th>No</th>
+                    <th>Username</th>
                     <th>Kode Rusun</th>
-                    <th>Nomor Rusun</th>
-                    <th>Lantai</th>
-                    <th>Keterangan</th>
+                    <th>Kepala Keluarga</th>
                     <th>Aksi</th>
-
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="table-btn fit">
-                        <div class="btn-center">
-                            <a href="portal-admin-edit-penghuni-rusun.html" class="btn-table">Edit</a>
-                            <a href="#" class="btn-table">Hapus</a>
-                        </div>
-                    </td>
-                </tr>
+                <?php if (isset($model['data'])) {
+                    $i = 1;
+                    foreach ($model['data'] as $value) {
+                ?>
+                        <tr>
+                            <td><?php echo $i ?></td>
+                            <td><?php echo $value['username'] ?></td>
+                            <td><?php echo $value['kode_rusun'] ?></td>
+                            <td><?php echo $value['nama_wakil'] ?></td>
+                            <td class="table-btn fit">
+                                <div class="btn-center">
+                                    <a href="portal/admin/edit_penghuni?id_penghuni=<?php echo $value['id_penghuni'] ?>" class="btn-table">Edit</a>
+                                    <a href="portal/admin/penghuni/delete?id_penghuni=<?php echo $value['id_penghuni'] ?>" class="btn-table">Hapus</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php
+                    $i++; 
+                }
+                } else {
+                    ?>
+                    <tr>
+                        <td colspan="5">
+                            <center>No data</center>
+                        </td>
+                    </tr>
+                <?php
+                }
+                ?>
             </table>
         </div>
 
