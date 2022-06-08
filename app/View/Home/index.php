@@ -22,15 +22,15 @@
                <div class="content">
                   <h3>Selamat Datang </h3>
                   <h4>Di Rusunawa <span>Teluk Kelayan</span> </h4>
-                  <a href="tentang-kami.html" class="btn">Tentang Rusun</a>
+                  <a href="/about" class="btn">Tentang Rusun</a>
                </div>
             </section>
 
-            <section class="swiper-slide slide" style="background: url(images/swiper-img.jpg) no-repeat;">
+            <section class="swiper-slide slide" style="background: url(/assets/img/swiper-img.jpg) no-repeat;">
                <div class="content">
                   <h3>Rusunawa <span> Teluk Kelayan </span></h3>
                   <h4>Kota Banjarmasin</h4>
-                  <a href="tentang-kami.html" class="btn">Tentang Rusun</a>
+                  <a href="/about" class="btn">Tentang Rusun</a>
                </div>
             </section>
 
@@ -45,9 +45,9 @@
       <h1 class="heading"> Fasilitas Rusun </h1>
       <div class="box-container">
 
-         <a href="images/fasilitas-1.jpeg" class="box">
+         <a href="/assets/img/fasilitas-1.jpeg" class="box">
             <div class="image">
-               <img src="images//fasilitas-1.jpeg" alt="">
+               <img src="/assets/img/fasilitas-1.jpeg" alt="">
             </div>
             <div class="content">
                <div class="info">
@@ -56,9 +56,9 @@
             </div>
          </a>
 
-         <a href="images/fasilitas-2.jpeg" class="box">
+         <a href="/assets/img/fasilitas-2.jpeg" class="box">
             <div class="image">
-               <img src="images/fasilitas-2.jpeg" alt="">
+               <img src="/assets/img/fasilitas-2.jpeg" alt="">
             </div>
             <div class="content">
                <div class="info">
@@ -68,9 +68,9 @@
          </a>
 
 
-         <a href="images/fasilitas-3.png" class="box">
+         <a href="/assets/img/fasilitas-3.png" class="box">
             <div class="image">
-               <img src="images/fasilitas-3.png" alt="">
+               <img src="/assets/img/fasilitas-3.png" alt="">
             </div>
             <div class="content">
                <div class="info">
@@ -79,9 +79,9 @@
             </div>
          </a>
 
-         <a href="images/fasilitas-4.jpeg" class="box">
+         <a href="/assets/img/fasilitas-4.jpeg" class="box">
             <div class="image">
-               <img src="images/fasilitas-4.jpeg" alt="">
+               <img src="/assets/img/fasilitas-4.jpeg" alt="">
             </div>
             <div class="content">
                <div class="info">
@@ -90,9 +90,9 @@
             </div>
          </a>
 
-         <a href="images/fasilitas-5.png" class="box">
+         <a href="/assets/img/fasilitas-5.png" class="box">
             <div class="image">
-               <img src="images/fasilitas-5.png" alt="">
+               <img src="/assets/img/fasilitas-5.png" alt="">
             </div>
             <div class="content">
                <div class="info">
@@ -101,9 +101,9 @@
             </div>
          </a>
 
-         <a href="images/fasilitas-6.png" class="box">
+         <a href="/assets/img/fasilitas-6.png" class="box">
             <div class="image">
-               <img src="images/fasilitas-6.png" alt="">
+               <img src="/assets/img/fasilitas-6.png" alt="">
             </div>
             <div class="content">
                <div class="info">
@@ -144,8 +144,8 @@
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-   <script src="js/script.js"></script>
-   <script src="js/slider.js"></script>
+   <script src="/assets/js/slider.js"></script>
+   <script src="/assets/js/script.js"></script>
 
    <script>
       lightGallery(document.querySelector('.facility .box-container'));

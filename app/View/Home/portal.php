@@ -1,5 +1,5 @@
     <header class="header">
-        <a href="#" class="logo">Portal<span>Rusun</span></a>
+        <a href="#" class="logo">SI<span>Rusun</span></a>
         <nav class="navbar">
             <a href="/">Beranda</a>
             <a href="/huni_rusun">Huni Rusun</a>
@@ -37,7 +37,6 @@
         </div>
     </section>
 
-    <script src="js/script.js"></script>
     <script>
         var modal = document.getElementById("modal-box");
         var btn = document.getElementById("modal-btn");
@@ -54,3 +53,4 @@
             }
         }
     </script>
+    <script src="/assets/js/script.js"></script>
