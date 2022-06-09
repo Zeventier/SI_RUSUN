@@ -56,9 +56,11 @@
                             <td><?php echo $value['keluhan'] ?></td>
                             <td><?php echo $value['tanggapan'] ?></td>
                             <td id="not-print" class="table-btn">
+                                <?php if ($value['tanggapan'] == null) { ?>
                                 <div class="btn-center">
                                     <a href="/portal/admin/tanggapan?id_keluhan=<?php echo $value['id_keluhan'] ?>" class="btn-table">Tanggapi</a>
                                 </div>
+                                <?php } ?>
                             </td>
                         </tr>
                     <?php

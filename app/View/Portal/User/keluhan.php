@@ -19,36 +19,40 @@
 
         <div class="rule">
             <div class="list">
-                <form action="/">
+                <div class="item">
+                    <p>Keluhan</p>
                     <div class="item">
-                        <p>Keluhan</p>
-                        <div class="item" id="keluhan">
-                            <form action="">
-                                <textarea rows="5" name="comment" form="usrform">Masukan Keluhan Anda Disini....</textarea>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="nav-rule">
-                        <div></div>
-                        <div>
-                            <button class="btn-rule" type="submit" form="keluhan">Simpan</button>
-                            <button href="portal-rusun.html" class="btn-rule">Batal</button>
-                        </div>
-                    </div>
-
-                    <div class="rule">
-                        <div class="list">
-                            <form action="/">
-                                <div class="item">
-                                    <p>Keluhan</p>
-                                    <textarea rows="5" name="comment" form="usrform" readonly></textarea>
-                                    <p>Tanggapan</p>
-                                    <textarea rows="5" name="comment" form="usrform" readonly></textarea>
+                        <form method="post" action="/portal/user/keluhan">
+                            <textarea rows="5" name="keluhan">Masukan Keluhan Anda Disini....</textarea>
+                            <div class="nav-rule">
+                                <div></div>
+                                <div>
+                                    <button class="btn-rule" type="submit">Simpan</button>
                                 </div>
-                            </form>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+                <div class="rule">
+                    <div class="list">
+                        <div class="item">
+                            <?php if (isset($model['data'])) {
+                                foreach ($model['data'] as $value) {
+                            ?>
+                                    <p>Keluhan</p>
+                                    <textarea rows="5" name="keluhan" readonly><?php echo $value['keluhan']; ?></textarea>
+                                    <p>Tanggapan</p>
+                                    <textarea rows="5" name="tanggapan" readonly><?php echo $value['tanggapan']; ?></textarea>
+                            <?php
+                                }
+                            }
+                            ?>
                         </div>
                     </div>
+                </div>
                 </form>
             </div>
         </div>

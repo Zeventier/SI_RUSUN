@@ -32,37 +32,37 @@
                     <div class="item">
                         <p>Username</p>
                         <div class="item">
-                            <input type="text" name="name" />
+                            <input type="text" value="<?php echo $model['data']->username ?? "" ?>" name="username" readonly />
                         </div>
                     </div>
                     <div class="item">
                         <p>Keterangan</p>
-                        <input type="text" name="name" readonly />
+                        <input type="text" value="<?php echo $model['data']->keterangan ?? "" ?>" name="keterangan" readonly />
                     </div>
                     <div class="item">
                         <p>Tanggal Akhir Pembayaran</p>
-                        <input type="text" name="name" readonly />
+                        <input type="text" value="<?php echo $model['data']->deadline ?? "" ?>" name="deadline" readonly />
                     </div>
 
                     <div class="item">
                         <div class="double-item">
                             <div class="rows">
                                 <p>Debit Air</p>
-                                <input type="text" name="name" readonly />
+                                <input type="text" value="<?php echo $model['data']->debit_air ?? "" ?>" name="debit_air" readonly />
                             </div>
                             <div class="rows">
                                 <p>Biaya Air/bulan</p>
-                                <input type="text" name="name" readonly />
+                                <input type="text" value="<?php echo $model['air'][0]['harga_akhir'] ?? "" ?>" name="air" readonly />
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <p>Biaya Sewa Rusun/bulan</p>
-                        <input type="text" name="name" readonly />
+                        <input type="text" value="<?php echo $model['data']->sewa_rusun ?? "" ?>" name="sewa_rusun" readonly />
                     </div>
                     <div class="item">
                         <p>Total Tagihan</p>
-                        <input type="text" name="name" readonly />
+                        <input type="text" value="<?php echo ($model['data']->sewa_rusun + $model['data']->debit_air * $model['air'][0]['harga_akhir']) ?>" name="total" readonly />
                     </div>
                 </form>
             </div>
@@ -71,7 +71,7 @@
         <div class="nav-rule">
             <div>
                 <button id="not-print" onclick=window.print() class=" btn-rule">Cetak</button>
-                <button id="not-print" href="portal-rusunku.html" class="btn-rule">Kembali</button>
+                <a id="not-print" href="/portal/user/rusunku" class="btn-rule">Kembali</a>
             </div>
         </div>
     </section>

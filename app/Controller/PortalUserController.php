@@ -6,11 +6,13 @@ use Project\App\View;
 use Project\Domain\Sewa;
 use Project\Domain\Keluhan;
 use Project\Config\Database;
+use Project\Service\AirService;
 use Project\Service\SewaService;
 use Project\Service\UserService;
 use Project\Service\KeluhanService;
 use Project\Service\SessionService;
 use Project\Service\PenghuniService;
+use Project\Repository\AirRepository;
 use Project\Repository\SewaRepository;
 use Project\Repository\UserRepository;
 use Project\Repository\KeluhanRepository;
@@ -24,6 +26,7 @@ class PortalUserController
     private SewaService $sewaService;
     private PenghuniService $penghuniService;
     private KeluhanService $keluhanService;
+    private airService $airService;
 
     public function __construct()
     {
@@ -42,6 +45,9 @@ class PortalUserController
 
         $keluhanRepository = new KeluhanRepository($connection);
         $this->keluhanService = new KeluhanService($keluhanRepository);
+
+        $airRepository = new AirRepository($connection);
+        $this->airService = new AirService($airRepository);
     }
 
     public function beranda()
@@ -78,10 +84,12 @@ class PortalUserController
 
         $tagihan = new Sewa();
         $tagihan = $this->sewaService->showTagihanUsername($user->username);
+        $air = $this->airService->getHargaAir();
 
         View::render('Portal/User/tagihan', [
             'title' => 'Portal Rusun User',
-            'data' => $tagihan
+            'data' => $tagihan,
+            'air' => $air
         ]);
     }
 
@@ -108,18 +116,19 @@ class PortalUserController
     {
         $user = $this->sessionService->current();
 
-        $keluhan = new Keluhan();
-        $keluhan->keluhan = $_POST['keluhan'];
-        $keluhan->username = $user->username;
-        $keluhan->waktu = date("Y-m-d H:i:s");
+        $request = new Keluhan();
+        $request->keluhan = $_POST['keluhan'];
+        $request->username = $user->username;
+        $request->waktu = date("Y-m-d H:i:s");
 
         try {
-            $this->keluhanService->addKeluhan($keluhan);
+            $this->keluhanService->addKeluhan($request);
 
             View::redirect('/portal/user/keluhan');
         } catch (ValidationException $exception) {
             View::render('Portal/User/keluhan', [
                 'title' => 'Portal Rusun User',
+                'error' => $exception
             ]);
         }
     }

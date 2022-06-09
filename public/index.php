@@ -7,6 +7,7 @@ use Project\App\Router;
 use Project\Config\Database;
 use Project\Controller\HomeController;
 use Project\Middleware\MustLoginMiddleware;
+use Project\Controller\PortalUserController;
 use Project\Controller\PortalAdminController;
 use Project\Middleware\MustNotLoginMiddleware;
 
@@ -70,5 +71,6 @@ Router::add('GET', '/portal/user/tagihan', PortalUserController::class, 'tagihan
 Router::add('GET', '/portal/user/pemberitahuan', PortalUserController::class, 'pemberitahuan', [MustLoginMiddleware::class]);
 Router::add('GET', '/portal/user/keluhan', PortalUserController::class, 'keluhan', [MustLoginMiddleware::class]);
 Router::add('POST', '/portal/user/keluhan', PortalUserController::class, 'postKeluhan', [MustLoginMiddleware::class]);
+Router::add('GET', '/portal/user/logout', PortalUserController::class, 'logout', [MustLoginMiddleware::class]);
 
 Router::run();

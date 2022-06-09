@@ -312,7 +312,7 @@ class PortalAdminController
         try {
             $this->tanggapanService->addTanggapan($tanggapan);
 
-            View::redirect('/portal/admin/keluhan');
+            View::redirect('/portal/admin/keluhan?date='. date('Y-m'));
         } catch (ValidationException $exception) {
             View::render('Portal/Admin/tanggapan', [
                 "title" => "Portal Rusun Admin",
