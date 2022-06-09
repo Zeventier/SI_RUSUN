@@ -15,7 +15,7 @@ class KeluhanRepository
 
     public function save(Keluhan $keluhan): Keluhan
     {
-        $statement = $this->connection->prepare("INSERT INTO keluhan(id_keluha, waktu, keluhan, username) 
+        $statement = $this->connection->prepare("INSERT INTO keluhan(id_keluhan, waktu, keluhan, username) 
         VALUES (?, ?, ?, ?)");
         $statement->execute([
             $keluhan->id_keluhan, $keluhan->waktu, $keluhan->keluhan, $keluhan->username

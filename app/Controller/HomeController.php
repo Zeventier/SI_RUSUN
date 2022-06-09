@@ -174,6 +174,9 @@ class HomeController
             if($response->user->status == 'admin') {
                 View::redirect('/portal/admin/pelayanan');
             }
+            if($response->user->status == 'user') {
+                View::redirect('/portal/user/');
+            }
         } catch (ValidationException $exception) {
             View::render('Home/portal', [
                 "title" => "SI Rusun",

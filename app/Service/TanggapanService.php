@@ -31,7 +31,7 @@ class TanggapanService
 
             $tanggapan->id_tanggapan = $id_tanggapan;
 
-            $this->penghuniRepository->save($tanggapan);
+            $this->tanggapanRepository->save($tanggapan);
 
             Database::commitTransaction();
 

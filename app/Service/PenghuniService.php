@@ -153,7 +153,7 @@ class PenghuniService {
             $user = new User();
 
             $penghuni = $this->penghuniRepository->findByUsername($username);
-            $user = $this->userRepository->findById($penghuni->username);
+            $user = $this->userRepository->findById($username);
 
             $response = new ShowPenghuniResponse();
             $response->penghuni = $penghuni;
