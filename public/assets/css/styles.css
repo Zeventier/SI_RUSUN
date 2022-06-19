@@ -1,0 +1,88 @@
+.tab .rule {
+  padding: 0.2rem;
+  background: var(--light-bg);
+  position: relative;
+  margin-bottom: 3rem;
+  margin-top: 4rem;
+  font-size: 1.4rem;
+  color: var(--light-color);
+  line-height: 2;
+}
+
+.tab .rule::before {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 2rem;
+  height: 2rem;
+  width: 2rem;
+  background: var(--light-bg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.tab .rule span {
+  color: var(--red);
+  font-weight: 900;
+}
+
+.tab .rule .list {
+  margin: 15px 30px;
+  font-size: 1.5rem;
+}
+
+.tab .of {
+  width: 100%;
+  padding-left: 0;
+  border-radius: 6px;
+}
+
+.tab form {
+  width: 100%;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.tab input,
+select {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.tab input {
+  width: calc(100% - 10px);
+  padding: 5px;
+  background: var(--white);
+}
+
+.tab select {
+  width: calc(100% - 10px);
+  padding: 7px 0;
+  background: var(--white);
+}
+
+.tab .item:hover p,
+.tab .item:hover i,
+input:hover::placeholder,
+a {
+  color: #095484;
+}
+
+.tab .item input:hover,
+.tab .item select:hover {
+  border: 1px solid transparent;
+  box-shadow: 0 0 6px 0 #095484;
+  color: #095484;
+}
+
+.tab .item {
+  position: relative;
+  margin: 10px 0;
+}
+
+.tab .item i {
+  right: 2%;
+  top: 30px;
+  z-index: 1;
+}
