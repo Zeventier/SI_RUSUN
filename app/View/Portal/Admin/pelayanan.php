@@ -23,7 +23,6 @@
                 <tr>
                     <th>Nama Pemohon</th>
                     <th>NIK</th>
-                    <th>Status</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
 

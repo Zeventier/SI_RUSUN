@@ -23,7 +23,7 @@
                 <form action="/" id="tambah-portal">
                     <div class="item">
                         <p>Nama Pemohon (Kepala Keluarga)</p>
-                        <input type="text" id="nama_pemohon" name="nama_pemohon" required />
+                        <input type="text" id="nama_pemohon" value="<?php echo $model['data']['pemohon']->nama_pemohon ?>" name="nama_wakil" required />
                     </div>
                     <div class="item">
                         <p>Nomor Telepon</p>
@@ -31,15 +31,15 @@
                     </div>
                     <div class="item">
                         <p>Nomor Induk Kependudukan Pemohon</p>
-                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="nik_pemohon" required />
+                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" value="<?php echo $model['data']['pemohon']->nik_pemohon ?>" name="nik_wakil" required />
                     </div>
                     <div class="item">
                         <p>Nomor Kartu Keluarga</p>
-                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="no_kk" required />
+                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" value="<?php echo $model['data']['pemohon']->nomor_kk ?>" name="no_kk" required />
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
-                        <input type="text" name="kerja_pemohon" required />
+                        <input type="text" value="<?php echo $model['data']['pemohon']->kerja_pemohon ?>" name="kerja_wakil" required />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Perbulan</p>
@@ -52,15 +52,15 @@
                     </div>
                     <div class="item">
                         <p>Jumlah Penghuni</p>
-                        <input type="number" min="1" max="4" name="jlh_penghuni" required />
+                        <input type="number" min="1" max="4" value="<?php echo $model['data']['pemohon']->jlh_penghuni ?>" name="jlh_penghuni" required />
                     </div>
                     <div class="item">
                         <p>Nama Pasangan</p>
-                        <input type="text" name="nama_psgn" required />
+                        <input type="text" value="<?php echo $model['data']['pemohon']->nama_psgn ?>" name="nama_psgn" required />
                     </div>
                     <div class="item">
                         <p>Pekerjaan Pasangan</p>
-                        <input type="text" name="kerja_psgn" required />
+                        <input type="text" value="<?php echo $model['data']['pemohon']->kerja_psgn ?>" name="kerja_psgn" required />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Pasangan Perbulan</p>

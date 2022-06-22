@@ -117,6 +117,17 @@ class PortalAdminController
         ]);
     }
 
+    public function kelolaPemohon()
+    {
+        $id_pengumuman = $_GET['id_pengumuman'];
+        $dataPemohon = $this->pemohonService->showPemohon($id_pengumuman);
+
+        View::render('Portal/Admin/kelola_pemohon', [
+            'title' => 'Portal Rusun Admin',
+            'data' => $dataPemohon
+        ]);
+    }
+
     public function postEditPemohon()
     {
         $id_pengumuman = $_GET['id_pengumuman'];

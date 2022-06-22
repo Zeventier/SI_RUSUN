@@ -6,10 +6,12 @@ use Project\App\View;
 use Project\Config\Database;
 use Project\Service\UserService;
 use Project\Model\PemohonRequest;
+use Project\Service\RusunService;
 use Project\Model\UserLoginRequest;
 use Project\Service\PemohonService;
 use Project\Service\SessionService;
 use Project\Repository\UserRepository;
+use Project\Repository\RusunRepository;
 use Project\Repository\BerkasRepository;
 use Project\Repository\PemohonRepository;
 use Project\Repository\SessionRepository;
@@ -21,12 +23,16 @@ class HomeController
     private UserService $userService;
     private SessionService $sessionService;
     private PemohonService $pemohonService;
+    private RusunService $rusunService;
 
     public function __construct()
     {
         $connection = Database::getConnection();
         $userRepository = new UserRepository($connection);
         $this->userService = new UserService($userRepository);
+
+        $rusunRepository = new RusunRepository($connection);
+        $this->rusunService = new RusunService($rusunRepository);
 
         $sessionRepository = new SessionRepository($connection);
         $this->sessionService = new SessionService($sessionRepository, $userRepository);
@@ -54,8 +60,11 @@ class HomeController
 
     public function huniRusun()
     {
+        $daftarRuangan = $this->rusunService->showDaftarRuangan();
+
         View::render('Home/huni_rusun', [
-            "title" => "SI Rusun"
+            "title" => "SI Rusun",
+            'ruangan' => $daftarRuangan
         ]);
     }
 
@@ -75,7 +84,7 @@ class HomeController
         $request->kode_rusun = $_POST['ruangan'];
 
 
-        $target_dir = SITE_ROOT . '/assets/file/uploads/';
+        $target_dir = 'assets/file/uploads/';
 
         $target_file = $target_dir . rand() . $_POST['nik_pemohon'] . rand() . basename($_FILES["ktp_pmhn"]["name"]);
         $tmpFile = $_FILES['ktp_pmhn']['tmp_name'];
@@ -145,8 +154,14 @@ class HomeController
 
         try {
             $this->pemohonService->submitHuniRusun($request);
-            echo "<script type='text/javascript'>alert('Submisi untuk menghuni rusun berhasil');</script>";
-            View::redirect('/');
+
+           // View::redirect('/huni_rusun');
+
+            // This is in the PHP file and sends a Javascript alert to the client
+            $message = "Permohonan anda telah berhasil diajukan";
+            echo "<script type='text/javascript'>alert('$message'); window.location = '/huni_rusun';</script>";
+            
+
         } catch (ValidationException $exception) {
             View::render('Home/huni_rusun', [
                 "title" => "SI Rusun",

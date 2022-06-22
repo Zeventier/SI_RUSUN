@@ -131,7 +131,7 @@ class PemohonService {
 
             $response = new ShowPemohonResponse();
             $response->pemohon = $pemohon;
-            $response->berkas = $berkas;
+            //$response->berkas = $berkas;
 
             Database::commitTransaction();
 
