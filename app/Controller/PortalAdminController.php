@@ -70,11 +70,11 @@ class PortalAdminController
         $pengumumanRepository = new PengumumanRepository($connection);
         $this->pemohonService = new PemohonService($pemohonRepository, $berkasRepository, $pengumumanRepository);
 
-        $penghuniRepository = new PenghuniRepository($connection);
-        $this->penghuniService = new PenghuniService($penghuniRepository, $userRepository, $pengumumanRepository);
-
         $rusunRepository = new RusunRepository($connection);
         $this->rusunService = new RusunService($rusunRepository);
+
+        $penghuniRepository = new PenghuniRepository($connection);
+        $this->penghuniService = new PenghuniService($penghuniRepository, $userRepository, $pengumumanRepository, $rusunRepository);
 
         $sewaRepository = new SewaRepository($connection);
         $this->sewaService = new SewaService($sewaRepository);
@@ -110,10 +110,12 @@ class PortalAdminController
     {
         $id_pengumuman = $_GET['id_pengumuman'];
         $dataPemohon = $this->pemohonService->showPemohon($id_pengumuman);
+        $daftarRuangan = $this->rusunService->showDaftarRuangan();
 
         View::render('Portal/Admin/edit_pemohon', [
             'title' => 'Portal Rusun Admin',
-            'data' => $dataPemohon
+            'data' => $dataPemohon,
+            'ruangan' => $daftarRuangan
         ]);
     }
 

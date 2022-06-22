@@ -3,6 +3,7 @@
 namespace Project\Service;
 
 use Project\Domain\User;
+use Project\Domain\Rusun;
 use Project\Config\Database;
 use Project\Domain\Penghuni;
 use Project\Domain\Pengumuman;
@@ -10,6 +11,7 @@ use Project\Model\PenghuniRequest;
 use Project\Model\PenghuniResponse;
 use Project\Repository\UserRepository;
 use Project\Model\ShowPenghuniResponse;
+use Project\Repository\RusunRepository;
 use Project\Exception\ValidationException;
 use Project\Repository\PenghuniRepository;
 use Project\Repository\PengumumanRepository;
@@ -19,13 +21,15 @@ use Project\Repository\PengumumanRepository;
 class PenghuniService {
     private PenghuniRepository $penghuniRepository;
     private PengumumanRepository $pengumumanRepository;
+    private RusunRepository $rusunRepository;
     private UserRepository $userRepository;
 
-    public function __construct(PenghuniRepository $penghuniRepository, UserRepository $userRepository, PengumumanRepository $pengumumanRepository)
+    public function __construct(PenghuniRepository $penghuniRepository, UserRepository $userRepository, PengumumanRepository $pengumumanRepository, RusunRepository $rusunRepository)
     {
         $this->penghuniRepository = $penghuniRepository;
         $this->userRepository = $userRepository;
         $this->pengumumanRepository = $pengumumanRepository;
+        $this->rusunRepository = $rusunRepository;
     }
 
     public function addPenghuni(PenghuniRequest $request, $id_pengumuman)
@@ -37,8 +41,10 @@ class PenghuniService {
 
             $penghuni = new Penghuni();
             $pengumuman = new Pengumuman();
+            $rusun = new Rusun();
 
             $pengumuman = $this->pengumumanRepository->findById($id_pengumuman);
+            $rusun = $this->rusunRepository->findById($request->kode_rusun);
 
             do {
                 $id_penghuni = rand();
@@ -68,6 +74,10 @@ class PenghuniService {
             $pengumuman->id_penghuni = $id_penghuni;
 
             $this->pengumumanRepository->update($pengumuman);
+
+            $rusun->keterangan = 'Terisi';
+
+            $this->rusunRepository->update($rusun);
 
             $response = new PenghuniResponse();
             $response->penghuni = $penghuni;
