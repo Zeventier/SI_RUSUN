@@ -1,3 +1,8 @@
+    <?php if (isset($model['error'])) {
+        $message = $model['error'];
+        echo "<script type='text/javascript'>alert('$message');</script>";
+    } ?>
+
     <header class="header">
         <a href="#" class="logo">SI<span>Rusun</span></a>
         <nav class="navbar">
@@ -59,13 +64,6 @@
                     </p>
                 </div>
 
-                <div class="nav-rule">
-                    <p class="num-rule">Tahap <span>1</span> dari 4</p>
-                    <div>
-                        <button id="nextBtn" onclick="nextPrev(1)" class="btn-rule">Lanjut</button>
-                        <button id="prevBtn" onclick="nextPrev(-1)" class="btn-rule">Kembali</button>
-                    </div>
-                </div>
             </div>
 
             <div class="tab">
@@ -99,9 +97,9 @@
                             <p>Kisaran Gaji Perbulan</p>
                             <select name="gaji_pemohon" required>
                                 <option value="">Select</option>
-                                <option value="1">Rp 0 - Rp 1.999.999,</option>
-                                <option value="2">Rp 2.000.000, - Rp 3.999.999,</option>
-                                <option value="3">Rp 4.000.000, - Rp 6.000.000,</option>
+                                <option value="Rp 0 - Rp 1.999.999,">Rp 0 - Rp 1.999.999,</option>
+                                <option value="Rp 2.000.000, - Rp 3.999.999,">Rp 2.000.000, - Rp 3.999.999,</option>
+                                <option value="Rp 4.000.000, - Rp 6.000.000,">Rp 4.000.000, - Rp 6.000.000,</option>
                             </select>
                         </div>
                         <div class="item">
@@ -111,13 +109,6 @@
                     </div>
                 </div>
 
-                <div class="nav-rule">
-                    <p class="num-rule">Tahap <span>2</span> dari 4</p>
-                    <div>
-                        <button class="btn-rule" id="nextBtn" onclick="nextPrev(1)">Lanjut</button>
-                        <button class="btn-rule" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
-                    </div>
-                </div>
             </div>
 
             <div class="tab">
@@ -140,31 +131,34 @@
                             <p>Kisaran Gaji Pasangan Perbulan</p>
                             <select name="gaji_psgn" required>
                                 <option value="">Select</option>
-                                <option value="1">Rp 0 - Rp 1.999.999,</option>
-                                <option value="2">Rp 2.000.000, - Rp 3.999.999,</option>
-                                <option value="3">Rp 4.000.000, - Rp 6.000.000,</option>
+                                <option value="Rp 0 - Rp 1.999.999,">Rp 0 - Rp 1.999.999,</option>
+                                <option value="Rp 2.000.000, - Rp 3.999.999,">Rp 2.000.000, - Rp 3.999.999,</option>
+                                <option value="Rp 4.000.000, - Rp 6.000.000,">Rp 4.000.000, - Rp 6.000.000,</option>
                             </select>
                         </div>
                         <div class="item">
                             <p>Pilih Ruangan</p>
                             <select name="ruangan" required>
                                 <option value="">Select</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                                <?php if (isset($model['ruangan'])) {
+                                    foreach ($model['ruangan'] as $value) {
+                                        if ($value['Keterangan'] == 'Terisi' || $value['Keterangan'] == 'Rusak')
+                                            continue;
+                                        else
+                                ?>
+                                        <option value="<?php echo $value['kode_rusun'] ?>">Ruang <?php echo $value['no_ruang'] ?> - Lantai <?php echo $value['lantai'] ?></option>
+                                    <?php }
+                                } else {
+                                    ?>
+                                    <option value="">Tidak ada ruangan tersedia</option>
+                                <?php
+                                }
+                                ?>
                             </select>
                         </div>
                     </div>
                 </div>
-                <div class="nav-rule">
-                    <p class="num-rule">Tahap <span>3</span> dari 4</p>
-                    <div>
-                        <button class="btn-rule" id="nextBtn" onclick="nextPrev(1)">Lanjut</button>
-                        <button class="btn-rule" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
-                    </div>
-                </div>
+
             </div>
 
             <div class="tab">
@@ -179,9 +173,7 @@
                             tahap ini.</span>
                         <div class="item">
                             <p>KTP Pemohon</p>
-                            <div class="item">
-                                <input type="file" accept="image/*,.pdf" name="ktp_pmhn"/>
-                            </div>
+                            <input type="file" accept="image/*,.pdf" name="ktp_pmhn" />
                         </div>
                         <div class="item">
                             <p>KTP Pasangan</p>
@@ -193,7 +185,7 @@
                         </div>
                         <div class="item">
                             <p>Surat Keterangan Memiliki Pekerjaan Tetap</p>
-                            <input type="file" accept="image/*,.pdf" name="srt_kerja"/>
+                            <input type="file" accept="image/*,.pdf" name="srt_kerja" />
                         </div>
                         <div class="item">
                             <p>Struk/Rincian Gaji</p>
@@ -206,13 +198,6 @@
                     </div>
                 </div>
 
-                <div class="nav-rule">
-                    <p class="num-rule">Tahap <span>3</span> dari 4</p>
-                    <div>
-                        <button class="btn-rule" id="nextBtn" onclick="nextPrev(1)">Lanjut</button>
-                        <button class="btn-rule" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
-                    </div>
-                </div>
             </div>
 
 
@@ -255,12 +240,12 @@
                     </div>
                 </div>
 
-                <div class="nav-rule">
-                    <p class="num-rule">Tahap <span>4</span> dari 4</p>
-                    <div>
-                        <button name="nextButtn" id="nextBtn" class="btn-rule" onclick="nextPrev(1)">Selesai</button>
-                        <button class="btn-rule" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
-                    </div>
+            </div>
+            <div class="nav-rule">
+                <p class="num-rule">Tahap <span id="tahap">1</span> dari 4</p>
+                <div>
+                    <button type="button" name="nextButtn" id="nextBtn" class="btn-rule" onclick="nextPrev(1)">Lanjut</button>
+                    <button type="button" class="btn-rule" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
                 </div>
             </div>
 
@@ -274,6 +259,7 @@
         function showTab(n) {
             // This function will display the specified tab of the form ...
             var x = document.getElementsByClassName("tab");
+            var tahap = document.getElementById("tahap");
             x[n].style.display = "block";
             // ... and fix the Previous/Next buttons:
             if (n == 0) {
@@ -281,6 +267,14 @@
             } else {
                 document.getElementById("prevBtn").style.display = "inline";
             }
+
+            if ((n + 1) == x.length) {
+                document.getElementById("nextBtn").innerHTML = "Selesai";
+            } else {
+                document.getElementById("nextBtn").innerHTML = "Lanjut";
+            }
+
+            tahap.innerHTML = n + 1
         }
 
         function nextPrev(n) {
@@ -304,15 +298,27 @@
 
         function validateForm() {
             // This function deals with validation of the form fields
-            var x, y, i, valid = true;
+            var x, y, z, i, valid = true;
             x = document.getElementsByClassName("tab");
             y = x[currentTab].getElementsByTagName("input");
+            z = x[currentTab].getElementsByTagName("select");
+
             // A loop that checks every input field in the current tab:
             for (i = 0; i < y.length; i++) {
                 // If a field is empty... 
-                if (y[i].value == "") {
+                if (y[i].value == "" && y[i].type != 'file') {
                     // add an "invalid" class to the field: 
                     y[i].className += " invalid";
+                    // and set the current valid status to false: 
+                    valid = false;
+                }
+            }
+
+            for (i = 0; i < z.length; i++) {
+                // If a field is empty... 
+                if (z[i].value == "") {
+                    // add an "invalid" class to the field: 
+                    z[i].className += " invalid";
                     // and set the current valid status to false: 
                     valid = false;
                 }

@@ -37,7 +37,7 @@ class RusunRepository
 
     public function readAll()
     {
-        $statement = $this->connection->prepare("SELECT kode_rusun, no_ruang, lantai, keterangan FROM rusun");
+        $statement = $this->connection->prepare("SELECT kode_rusun, no_ruang, lantai, keterangan FROM rusun ORDER BY lantai ASC, no_ruang ASC");
         $statement->execute();
 
         try {
