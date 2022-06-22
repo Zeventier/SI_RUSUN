@@ -141,16 +141,21 @@
                             <select name="ruangan" required>
                                 <option value="">Select</option>
                                 <?php if (isset($model['ruangan'])) {
+                                    $i = 0;
                                     foreach ($model['ruangan'] as $value) {
-                                        if ($value['keterangan'] == 'Terisi' || $value['keterangan'] == 'Rusak')
+                                        if ($value['keterangan'] == 'Terisi' || $value['keterangan'] == 'Rusak') {
+                                            $i++;
                                             continue;
-                                        else
+                                        } else
                                 ?>
                                         <option value="<?php echo $value['kode_rusun'] ?>">Ruang <?php echo $value['no_ruang'] ?> - Lantai <?php echo $value['lantai'] ?></option>
                                     <?php }
+                                    if ($i == sizeof($model['ruangan'])) { ?>
+                                        <option value="" disabled>Tidak ada ruangan tersedia</option>
+                                    <?php }
                                 } else {
                                     ?>
-                                    <option value="">Tidak ada ruangan tersedia</option>
+                                    <option value="" disabled>Tidak ada ruangan tersedia</option>
                                 <?php
                                 }
                                 ?>
