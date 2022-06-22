@@ -60,7 +60,7 @@
                         </p>
                     </div>
                     <p class="semi-bold">
-                        *Sebelum lanjut, pastikan anda telah membaca Syarat dan Ketentuan di atas.
+                        <i>*Sebelum lanjut, pastikan anda telah membaca Syarat dan Ketentuan di atas.</i>
                     </p>
                 </div>
 
@@ -75,23 +75,23 @@
                     <div class="list">
                         <div class="item">
                             <p>Nama Pemohon (Kepala Keluarga)</p>
-                            <input type="text" pattern="^[a-zA-Z@ ]+$" autocapitalize="words" id="nama_pemohon" name="nama_pemohon" value="<?php echo $_POST['nama_pemohon'] ?? "" ?>" required />
+                            <input type="text" pattern="^[a-zA-Z@ ]+$" autocapitalize="words" id="nama_pemohon" name="nama_pemohon" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $_POST['nama_pemohon'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Nomor Telepon</p>
-                            <input type="tel" minlength="10" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="no_telp" value="<?php echo $_POST['no_telp'] ?? "" ?>" required />
+                            <input type="text" maxlength="15" minlength="10" return false;" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="no_telp" oninput="this.value=this.value.replace(/(?![0-9+])./gmi,'')" value="<?php echo $_POST['no_telp'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Nomor Induk Kependudukan</p>
-                            <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="nik_pemohon" value="<?php echo $_POST['nik_pemohon'] ?? "" ?>" required />
+                            <input type="text" pattern="[0-9]" minlength="16" maxlength="16" name="nik_pemohon" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $_POST['nik_pemohon'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Nomor Kartu Keluarga</p>
-                            <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="no_kk" value="<?php echo $_POST['no_kk'] ?? "" ?>" required />
+                            <input type="text" pattern="[0-9]" minlength="16" maxlength="16" name="no_kk" oninput="this.value=this.value.replace(/(?![0-9+])./gmi,'')" value="<?php echo $_POST['no_kk'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Pekerjaan</p>
-                            <input type="text" name="kerja_pemohon" value="<?php echo $_POST['kerja_pemohon'] ?? "" ?>" required />
+                            <input type="text" pattern="^[a-zA-Z@ ]+$" maxlength="50" name="kerja_pemohon" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $_POST['kerja_pemohon'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Kisaran Gaji Perbulan</p>
@@ -104,7 +104,7 @@
                         </div>
                         <div class="item">
                             <p>Jumlah Penghuni</p>
-                            <input type="number" min="1" max="4" name="jlh_penghuni" value="<?php echo $_POST['jlh_penghuni'] ?? "" ?>" required />
+                            <input type="text" maxlength="1" oninput="this.value=this.value.replace(/(?![1-4])./gmi,'')" name="jlh_penghuni" value="<?php echo $_POST['jlh_penghuni'] ?? "" ?>" required />
                         </div>
                     </div>
                 </div>
@@ -120,12 +120,12 @@
                         <div class="item">
                             <p>Nama Pasangan</p>
                             <div class="item">
-                                <input type="text" name="nama_psgn" value="<?php echo $_POST['nama_psgn'] ?? "" ?>" required />
+                                <input type="text" name="nama_psgn" pattern="^[a-zA-Z@ ]+$" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $_POST['nama_psgn'] ?? "" ?>" required />
                             </div>
                         </div>
                         <div class="item">
                             <p>Pekerjaan Pasangan</p>
-                            <input type="text" name="kerja_psgn" value="<?php echo $_POST['kerja_psgn'] ?? "" ?>" required />
+                            <input type="text" name="kerja_psgn" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $_POST['kerja_psgn'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Kisaran Gaji Pasangan Perbulan</p>
@@ -234,18 +234,18 @@
                             </div>
                         </div>
                         <p class="semi-bold">
-                            *Informasi terkait permohonan yang diajukan paling lambat akan diumumkan 7 hari setelah permohonan
-                            terkirim dan dapat diakses pada halaman "Pengumuman".
+                            <i>*Informasi terkait permohonan yang diajukan paling lambat akan diumumkan 7 hari setelah permohonan
+                                terkirim dan dapat diakses pada halaman <b>"Pengumuman"</b>.</i>
                         </p>
                     </div>
                 </div>
 
             </div>
             <div class="nav-rule">
-                <p class="num-rule">Tahap <span id="tahap">1</span> dari 4</p>
+                <p class="num-rule">Tahap <span id="tahap">1</span> dari 5</p>
                 <div>
                     <button type="button" name="nextButtn" id="nextBtn" class="btn-rule" onclick="nextPrev(1)">Lanjut</button>
-                    <button type="button" class="btn-rule" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
+                    <button type="button" class="btn-cancel" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
                 </div>
             </div>
 

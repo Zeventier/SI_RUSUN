@@ -17,8 +17,10 @@
         <div class="form-input">
             <form method="post" action="/portal" class="login-form">
                 <h3>LogIn Portal Rusun</h3>
-                <input type="text" name="username" value="<?php echo $_POST['username'] ?? ""; ?>" placeholder="Username" class="box" required>
-                <input type="password" name="password" placeholder="Password" class="box" required>
+                <p>Username</p>
+                <input type="text" name="username" value="<?php echo $_POST['username'] ?? ""; ?>" class="box" required>
+                <p>Password</p>
+                <input type="password" name="password" class="box" required>
                 <a href="portal-rusun.html"><button type="submit" class="btn">login</button></a>
                 <div class="flex">
                     <a href="#" id="modal-btn">Lupa Password?</a>
@@ -33,7 +35,6 @@
                 </p>
                 <div class="small-text"><i class="fab fa-whatsapp"></i> <b>Telepon/WA</b><br>+62 822 5086 6070</div>
             </div>
-
         </div>
     </section>
 

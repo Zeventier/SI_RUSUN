@@ -12,9 +12,22 @@
   }
 }
 
+@media (max-width: 1730px) {
+  .header .logo {
+    margin-right: 40%;
+  }
+}
+
+
+@media (max-width: 1590px) {
+  .header .logo {
+    margin-right: 35%;
+  }
+}
+
 @media (max-width: 1501px) {
   .header .logo {
-    margin-right: 38%;
+    margin-right: 30%;
   }
 
   .rusunku .box .content {
@@ -25,7 +38,7 @@
 
 @media (max-width: 1385px) {
   .header .logo {
-    margin-right: 30%;
+    margin-right: 20%;
   }
 
   .rusunku .box .content {
@@ -40,7 +53,7 @@
   }
 
   .header .logo {
-    margin-right: 22%;
+    margin-right: 10%;
   }
 
   section {
@@ -50,6 +63,16 @@
   .rusunku .box .content {
     margin-left: 15%;
     margin-right: 15%;
+  }
+
+  .home .slide {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .home .slide .content {
+    text-align: center;
   }
 }
 
@@ -152,7 +175,11 @@
   }
 
   .home .slide .content h3 {
-    font-size: 3rem;
+    font-size: 6rem;
+  }
+
+  .home .slide .content h4 {
+    font-size: 4rem;
   }
 
   .home .swiper-button-next:hover,
@@ -166,6 +193,37 @@
     width: 60%;
   }
 
+  .guide .rule .list {
+    font-size: 1.5rem;
+  }
+
+  .guide .rule .semi-bold {
+    font-size: 1.5rem;
+  }
+
+  .nav-rule .btn-rule {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+
+  .nav-rule .btn-cancel {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+  }
+
+  .form-input .login-form {
+    width: 45rem;
+  }
+
+  select {
+    font-size: 1.5rem;
+  }
+
+  input[type='text'] {
+    font-size: 1.5rem;
+  }
+
 }
 
 @media (max-width: 640px) {
@@ -177,11 +235,42 @@
   .form-output .form h3 {
     font-size: 2rem;
   }
+
+  .form-output .form h4 {
+    font-size: 1.5rem;
+  }
+
+  .home .slide .content h3 {
+    font-size: 4rem;
+  }
+
+  .home .slide .content h4 {
+    font-size: 2.5rem;
+  }
+
+  select {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 450px) {
   html {
     font-size: 50%;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+  }
+
+  .home .slide .content h3 {
+    font-size: 3.5rem;
+  }
+
+  .home .slide .content h4 {
+    font-size: 2.5rem;
   }
 
   .about .row .content h3 {
@@ -192,21 +281,16 @@
     width: 90%;
   }
 
+  .num-rule {
+    padding: 1rem 1rem;
+    display: inline-block;
+    font-size: 1.4rem;
+  }
+
   .rusunku .box .content {
     margin-left: 20%;
     margin-right: 5%;
     width: 60%;
-  }
-
-  .num-rule {
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 1.3rem;
-  }
-
-  .nav-rule .btn-rule {
-    padding: 1rem 3rem;
-    font-size: 1.3rem;
   }
 
   .form-input .btn {
@@ -224,16 +308,31 @@
 }
 
 @media (max-width: 380px) {
-  .num-rule {
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 1rem;
+  .home .swiper-button-next {
+    top: 55%;
+    height: 5rem;
+    width: 5rem;
   }
 
-  .nav-rule .btn-rule {
+  .home .swiper-button-prev {
+    top: 55%;
+    height: 5rem;
+    width: 5rem;
+  }
+
+  .num-rule {
+    padding: 1rem 1rem;
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    margin-right: 10px;
+  }
+
+  /* .nav-rule .btn-rule {
     padding: 1rem 3rem;
     font-size: 1rem;
-  }
+    margin-bottom: 5px;
+  } */
 
   .form-input .btn {
     padding: 1rem 2rem;
@@ -252,6 +351,12 @@
 
 }
 
+@media (max-width: 360px) {
+  .nav-rule .btn-rule {
+    padding: 1rem 2rem;
+  }
+}
+
 @media (max-width: 302px) {
   .num-rule {
     display: inline-block;
@@ -260,6 +365,11 @@
   }
 
   .nav-rule .btn-rule {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .nav-rule .btn-cancel {
     padding: 1rem 2rem;
     font-size: 1rem;
   }

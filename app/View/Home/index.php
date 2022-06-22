@@ -128,11 +128,14 @@
       </div>
       <div class="rule">
          <h3>Tahap <span>3</span></h3>
-         <p>Pemohon mengisi formulir dengan memilih ruangan dan memilih metode pengumpulan berkas dan lanjut jika
-            mengumpulkan berkas secara online.</p>
+         <p>Pemohon mengisi formulir pasangan dan memilih ruangan.</p>
       </div>
       <div class="rule">
          <h3>Tahap <span>4</span></h3>
+         <p>Pemohon yang ingin mengumpulkan berkas secara online, harus melengkapi formulir lampiran.</p>
+      </div>
+      <div class="rule">
+         <h3>Tahap <span>5</span></h3>
          <p>Tahap akhir bahwa proses permohonan telah selesai dilakukan.</p>
       </div>
    </section>

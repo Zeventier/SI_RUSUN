@@ -8,6 +8,13 @@
   --light-bg: #eee;
   --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
   --border: .1rem solid rgba(0, 0, 0, .3);
+
+  /* Button Color */
+  --btn-primary: #f15025;
+  --btn-primary-hov: #e73908;
+  --btn-success: #238823;
+  --btn-success-hov: #1ec21e;
+  --btn-danger: #000;
 }
 
 @page {
@@ -56,6 +63,18 @@ input[type=number]::-webkit-outer-spin-button {
   appearance: none;
 }
 
+input[type='text'] {
+  font-size: 2rem;
+}
+
+select {
+  font-size: 2rem;
+}
+
+se {
+  background: #e8f0fe;
+}
+
 .heading {
   margin-bottom: 3rem;
   font-size: 3rem;
@@ -69,18 +88,19 @@ input[type=number]::-webkit-outer-spin-button {
   display: inline-block;
   margin-top: 1rem;
   padding: 1rem 3rem;
-  background: var(--black);
+  background: var(--btn-primary);
   color: var(--white);
   cursor: pointer;
-  font-size: 1.7rem;
+  font-size: 2rem;
   text-transform: capitalize;
   -webkit-transition: .2s linear;
   transition: .2s linear;
+  font-weight: 500;
+  border-radius: 5px;
 }
 
 .btn:hover {
-  background: var(--red);
-  color: var(--black);
+  background: var(--btn-primary-hov);
 }
 
 .header {
@@ -105,10 +125,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .header .logo {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--black);
   text-transform: capitalize;
-  margin-right: 40%;
+  margin-right: 45%;
 }
 
 .header .logo span {
@@ -116,10 +136,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .header .navbar a {
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: var(--black);
   text-transform: capitalize;
-  font-weight: 500;
+  font-weight: 550;
   margin: 0 1rem;
 }
 
@@ -177,7 +197,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .home .slide {
-  min-height: 60rem;
+  min-height: 83rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,19 +221,19 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .home .slide .content {
-  width: 85rem;
+  width: 120rem;
   position: relative;
 }
 
 .home .slide .content h3 {
-  font-size: 6rem;
+  font-size: 8rem;
   color: var(--black);
   text-transform: capitalize;
   text-transform: uppercase;
 }
 
 .home .slide .content h4 {
-  font-size: 4rem;
+  font-size: 6rem;
   color: var(--black);
   text-transform: capitalize;
   text-transform: uppercase;
@@ -301,10 +321,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .about .row .content p {
-  font-size: 1.5rem;
-  color: var(--light-color);
-  line-height: 2;
+  font-size: 1.8rem;
+  color: var(--black);
+  line-height: 1;
   padding: 1rem 2rem;
+  font-weight: 400;
+  margin-bottom: 15px;
 }
 
 .about .box-container {
@@ -366,7 +388,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .facility .box-container .box .image {
-  height: 30rem;
+  height: 35rem;
   overflow: hidden;
 }
 
@@ -394,7 +416,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .facility .box-container .box .content .info h3 {
-  font-size: 1.7rem;
+  font-size: 2rem;
   color: var(--black);
   text-transform: capitalize;
 }
@@ -451,7 +473,7 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 6px;
 }
 
-.form-input input,
+.login-form .form-input input,
 select {
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -469,6 +491,7 @@ select {
   padding: 7px 0;
   background: var(--white);
 }
+
 
 .form-input .item:hover p,
 .form-input .item:hover i,
@@ -545,16 +568,14 @@ a {
   margin-top: 10%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  width: 45rem;
-  background: var(--light-colors);
-  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
-  ;
+  width: 60rem;
+  background: var(--light);
   box-shadow: var(--box-shadow);
   padding: 5rem;
   text-align: center;
   -webkit-animation: fadeIn .2s linear;
   animation: fadeIn .2s linear;
-  background-color: rgb(250, 250, 250);
+  background-color: var(#f7f7f7);
 }
 
 .form-input .login-form h3 {
@@ -569,14 +590,16 @@ a {
   width: 100%;
   padding: 1.2rem 1.4rem;
   background: var(--light-bg);
-  font-size: 1.6rem;
-  color: var(--light-color);
+  font-size: 2rem;
+  color: var(--black);
   margin: .7rem 0;
+  border-radius: 5px;
 }
 
 .form-input .login-form .flex a {
   font-size: 1.5rem;
   color: var(--light-color);
+  font-weight: 500;
 }
 
 .form-input .login-form .flex a:hover {
@@ -585,19 +608,29 @@ a {
 }
 
 .form-input .login-form .btn {
-  width: 50%;
-  background-color: var(--black);
+  padding: 1rem 3rem;
+  background: var(--btn-primary);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
 .form-input .login-form .btn:hover {
-  background-color: var(--red);
+  background-color: var(--btn-primary-hov);
 }
 
 .form-input .login-form p {
-  font-size: 1.5rem;
-  color: var(--light-color);
-  line-height: 2;
+  font-size: 2rem;
+  color: var(--black);
   padding-top: 1.5rem;
+  font-weight: 500;
+  text-align: left;
 }
 
 .form-input textarea {
@@ -622,6 +655,7 @@ a {
   -webkit-animation: fadeIn .2s linear;
   animation: fadeIn .2s linear;
   background-color: rgb(250, 250, 250);
+  border-radius: 5px;
 }
 
 .form-output .form h3 {
@@ -662,10 +696,10 @@ a {
 }
 
 .form-output .form p {
-  font-size: 1.5rem;
-  color: var(--light-color);
+  font-size: 2rem;
+  color: var(--black);
   line-height: 2;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 }
 
 .login .modal {
@@ -698,7 +732,7 @@ a {
 }
 
 .login .close {
-  color: #aaaaaa;
+  color: var(--btn-primary);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -712,7 +746,7 @@ a {
   cursor: pointer;
 }
 
-.guide .modal {
+.guide .modal-box {
   display: none;
   position: fixed;
   z-index: 1;
@@ -733,8 +767,19 @@ a {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  height: 1200px;
+  height: 1800px;
 }
+
+.guide .modal-content-annonce {
+  font-size: 1.5rem;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 200px;
+}
+
 
 .guide .modal-content .small-text {
   padding-left: 10px;
@@ -742,15 +787,30 @@ a {
 }
 
 .guide .close {
-  color: #aaaaaa;
+  color: var(--btn-primary);
   float: right;
   font-size: 28px;
   font-weight: bold;
   align-items: center;
 }
 
-.login .close:hover,
+.login .close,
 .login .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.guide .close-box {
+  color: var(--btn-primary);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.login .close-box,
+.login .close-box:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -851,12 +911,14 @@ a {
   background: var(--light-bg);
   position: relative;
   margin-bottom: 3rem;
-  font-size: 1.4rem;
-  color: var(--light-color);
+  font-size: 2rem;
+  color: var(--black);
   line-height: 2;
+  font-weight: 500;
+  border-radius: 10px;
 }
 
-/* .guide .rule ::before {
+/* .guide .rule ::after {
   content: '';
   position: absolute;
   bottom: -1rem;
@@ -873,9 +935,14 @@ a {
   font-weight: 900;
 }
 
+.guide .rule h3 {
+  font-size: 2.25rem;
+  font-weight: 900;
+}
+
 .guide .rule .list {
   margin: 15px 30px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .guide .rule .list p {
@@ -907,6 +974,7 @@ a {
   text-transform: capitalize;
   -webkit-transition: .2s linear;
   transition: .2s linear;
+  border-radius: 5px;
 }
 
 .nav-rule span {
@@ -914,8 +982,8 @@ a {
   font-weight: 900;
 }
 
-.nav-rule .btn-rule {
-  padding: 1rem 3rem;
+/* .nav-rule .btn-rule {
+  padding: 1rem 5rem;
   background: var(--black);
   color: var(--white);
   cursor: pointer;
@@ -923,11 +991,50 @@ a {
   text-transform: capitalize;
   -webkit-transition: .2s linear;
   transition: .2s linear;
+  font-weight: 600;
 }
 
 .nav-rule .btn-rule:hover {
   background: var(--red);
-  color: var(--black);
+  color: var(--white);
+  font-weight: 600;
+} */
+
+.nav-rule .btn-rule {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: var(--btn-primary);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.nav-rule .btn-rule:hover {
+  background: var(--btn-primary-hov);
+}
+
+
+.nav-rule .btn-cancel {
+  padding: 1rem 3rem;
+  background: var(--btn-danger);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.nav-rule .btn-cancel:hover {
+  color: var(--white);
+  font-weight: 900;
 }
 
 .rusunku {
@@ -1125,6 +1232,132 @@ a {
   font-size: 5rem;
   margin: 50px 0 20px 0;
 }
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+.modal-content .rule {
+  font-size: 2rem;
+}
+
+.modal-content .rule input {
+  width: 100%;
+  border-radius: 6px;
+  padding: 2px 5px;
+}
+
+.modal-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: var(--btn-primary);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.modal-button:hover {
+  background: var(--btn-primary-hov);
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
 
 .toast {
   position: absolute;
