@@ -25,13 +25,13 @@
             </div>
             <div class="content">
                 <h3><i class="fas fa-building"></i> Rumah Susun</h3>
-                <p>1 Tower 4 Lantai, 58 Unit Hunian Type 36</p>
+                <p>1 Tower 4 Lantai, 58 Unit Hunian Type 36 (6 Hunian untuk Difabel).</p>
 
                 <h3><i class="fas fa-map-marker-alt"></i> Lokasi</h3>
-                <p>Jl. Teluk Kelayan, Kelurahan Kelayan Barat, Kecamatan Banjarmasin Selatan</p>
+                <p>Jl. Teluk Kelayan, Kelurahan Kelayan Barat, Kecamatan Banjarmasin Selatan.</p>
 
                 <h3><i class="far fa-building"></i> Luas Bangunan</h3>
-                <p>69,350 meter (panjang) x 21,150 meter (lebar)</p>
+                <p>69,350 meter (panjang) x 21,150 meter (lebar).</p>
 
                 <h3><i class="fas fa-wallet"></i> Iuran Unit Hunian</h3>
                 <p>Rp. 450.000/bulan</p>
