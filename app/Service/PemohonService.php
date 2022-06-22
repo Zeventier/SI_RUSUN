@@ -86,6 +86,7 @@ class PemohonService {
             $pengumuman->keterangan = 'Proses Seleksi';
             $pengumuman->id_pemohon = $id_pemohon;
             $pengumuman->id_penghuni = null;
+            $pengumuman->password = null;
 
             $this->pengumumanRepository->save($pengumuman);
 
