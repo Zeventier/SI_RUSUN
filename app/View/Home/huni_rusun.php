@@ -142,7 +142,7 @@
                                 <option value="">Select</option>
                                 <?php if (isset($model['ruangan'])) {
                                     foreach ($model['ruangan'] as $value) {
-                                        if ($value['Keterangan'] == 'Terisi' || $value['Keterangan'] == 'Rusak')
+                                        if ($value['keterangan'] == 'Terisi' || $value['keterangan'] == 'Rusak')
                                             continue;
                                         else
                                 ?>

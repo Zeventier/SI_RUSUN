@@ -71,7 +71,7 @@ class PortalAdminController
         $this->pemohonService = new PemohonService($pemohonRepository, $berkasRepository, $pengumumanRepository);
 
         $penghuniRepository = new PenghuniRepository($connection);
-        $this->penghuniService = new PenghuniService($penghuniRepository, $userRepository);
+        $this->penghuniService = new PenghuniService($penghuniRepository, $userRepository, $pengumumanRepository);
 
         $rusunRepository = new RusunRepository($connection);
         $this->rusunService = new RusunService($rusunRepository);
@@ -336,15 +336,18 @@ class PortalAdminController
     {
         $id_pengumuman = $_GET['id_pengumuman'];
         $dataPemohon = $this->pemohonService->showPemohon($id_pengumuman);
+        $daftarRuangan = $this->rusunService->showDaftarRuangan();
 
         View::render('Portal/Admin/tambah_penghuni', [
             'title' => 'Portal Rusun Admin',
-            'data' => $dataPemohon
+            'data' => $dataPemohon,
+            'ruangan' => $daftarRuangan
         ]);
     }
 
     public function postTambahPenghuni()
     {
+        $id_pengumuman = $_GET['id_pengumuman'];
         $request = new PenghuniRequest();
         $userRequest = new UserRegisterRequest();
 
@@ -359,6 +362,7 @@ class PortalAdminController
         $request->gaji_psgn = $_POST['gaji_psgn'];
         $request->tgl_huni = $_POST['tgl_huni'];
         $request->username = $_POST['username'];
+        $request->password = $_POST['password'];
         $request->kode_rusun = $_POST['ruangan'];
 
         $userRequest->username = $_POST['username'];
@@ -367,7 +371,7 @@ class PortalAdminController
 
         try {
             $this->userService->register($userRequest);
-            $this->penghuniService->addPenghuni($request);
+            $this->penghuniService->addPenghuni($request, $id_pengumuman);
 
             View::redirect('/portal/admin/pelayanan');
         } catch (ValidationException $exception) {

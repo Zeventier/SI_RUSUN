@@ -16,11 +16,11 @@ class PengumumanRepository
     public function save(Pengumuman $pengumuman): Pengumuman
     {
         $statement = $this->connection->prepare("INSERT INTO pengumuman(id_pengumuman, nama_pemohon, nik_pemohon, t_wawancara, 
-            t_hasil, keterangan, id_pemohon, id_penghuni) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            t_hasil, keterangan, id_pemohon, id_penghuni, password) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $statement->execute([
             $pengumuman->id_pengumuman, $pengumuman->nama_pemohon, $pengumuman->nik_pemohon, $pengumuman->t_wawancara, $pengumuman->t_hasil,
-            $pengumuman->keterangan, $pengumuman->id_pemohon, $pengumuman->id_penghuni
+            $pengumuman->keterangan, $pengumuman->id_pemohon, $pengumuman->id_penghuni, $pengumuman->password
         ]);
         return $pengumuman;
     }
@@ -28,10 +28,10 @@ class PengumumanRepository
     public function update(Pengumuman $pengumuman): Pengumuman
     {
         $statement = $this->connection->prepare("UPDATE pengumuman SET nama_pemohon = ?, nik_pemohon = ?, t_wawancara = ?, 
-            t_hasil = ?, keterangan = ?, id_penghuni = ? WHERE id_pengumuman = ?");
+            t_hasil = ?, keterangan = ?, id_penghuni = ?, password = ? WHERE id_pengumuman = ?");
         $statement->execute([
             $pengumuman->nama_pemohon, $pengumuman->nik_pemohon, $pengumuman->t_wawancara, $pengumuman->t_hasil,
-            $pengumuman->keterangan, $pengumuman->id_penghuni
+            $pengumuman->keterangan, $pengumuman->id_penghuni, $pengumuman->password, $pengumuman->id_pengumuman
         ]);
 
         return $pengumuman;
@@ -40,7 +40,7 @@ class PengumumanRepository
     public function readAll()
     {
         $statement = $this->connection->prepare("SELECT id_pengumuman, nama_pemohon, nik_pemohon, t_wawancara, 
-            t_hasil, keterangan, id_pemohon, id_penghuni FROM pengumuman");
+            t_hasil, keterangan, id_pemohon, id_penghuni, password FROM pengumuman");
         $statement->execute();
 
         try {
@@ -59,7 +59,7 @@ class PengumumanRepository
     public function findById(?int $id_pengumuman): ?Pengumuman
     {
         $statement = $this->connection->prepare("SELECT id_pengumuman, nama_pemohon, nik_pemohon, t_wawancara, 
-            t_hasil, keterangan, id_pemohon, id_penghuni FROM pengumuman WHERE id_pengumuman = ?");
+            t_hasil, keterangan, id_pemohon, id_penghuni, password FROM pengumuman WHERE id_pengumuman = ?");
         $statement->execute([$id_pengumuman]);
 
         try {
@@ -73,6 +73,7 @@ class PengumumanRepository
                 $pengumuman->keterangan = $row['keterangan'];
                 $pengumuman->id_pemohon = $row['id_pemohon'];
                 $pengumuman->id_penghuni = $row['id_penghuni'];
+                $pengumuman->password = $row['password'];
 
                 return $pengumuman;
             } else {

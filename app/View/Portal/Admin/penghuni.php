@@ -38,8 +38,8 @@
                             <td><?php echo $value['nama_wakil'] ?></td>
                             <td class="table-btn fit">
                                 <div class="btn-center">
-                                    <a href="portal/admin/edit_penghuni?id_penghuni=<?php echo $value['id_penghuni'] ?>" class="btn-table">Edit</a>
-                                    <a href="portal/admin/penghuni/delete?id_penghuni=<?php echo $value['id_penghuni'] ?>" class="btn-table">Hapus</a>
+                                    <a href="/portal/admin/edit_penghuni?id_penghuni=<?php echo $value['id_penghuni'] ?>" class="btn-table">Edit</a>
+                                    <a href="/portal/admin/penghuni/delete?id_penghuni=<?php echo $value['id_penghuni'] ?>" class="btn-table">Hapus</a>
                                 </div>
                             </td>
                         </tr>

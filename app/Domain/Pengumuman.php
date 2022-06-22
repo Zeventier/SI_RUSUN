@@ -12,4 +12,5 @@ class Pengumuman
     public ?string $keterangan = null;
     public ?int $id_pemohon = null;
     public ?int $id_penghuni = null;
+    public ?string $password = null;
 }

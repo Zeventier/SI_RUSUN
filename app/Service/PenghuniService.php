@@ -5,26 +5,30 @@ namespace Project\Service;
 use Project\Domain\User;
 use Project\Config\Database;
 use Project\Domain\Penghuni;
+use Project\Domain\Pengumuman;
 use Project\Model\PenghuniRequest;
 use Project\Model\PenghuniResponse;
 use Project\Repository\UserRepository;
 use Project\Model\ShowPenghuniResponse;
 use Project\Exception\ValidationException;
 use Project\Repository\PenghuniRepository;
+use Project\Repository\PengumumanRepository;
 
 
 
 class PenghuniService {
     private PenghuniRepository $penghuniRepository;
+    private PengumumanRepository $pengumumanRepository;
     private UserRepository $userRepository;
 
-    public function __construct(PenghuniRepository $penghuniRepository, UserRepository $userRepository)
+    public function __construct(PenghuniRepository $penghuniRepository, UserRepository $userRepository, PengumumanRepository $pengumumanRepository)
     {
         $this->penghuniRepository = $penghuniRepository;
         $this->userRepository = $userRepository;
+        $this->pengumumanRepository = $pengumumanRepository;
     }
 
-    public function addPenghuni(PenghuniRequest $request)
+    public function addPenghuni(PenghuniRequest $request, $id_pengumuman)
     {
         $this->validatePenghuniRequest($request);
 
@@ -32,6 +36,9 @@ class PenghuniService {
             Database::beginTransaction();
 
             $penghuni = new Penghuni();
+            $pengumuman = new Pengumuman();
+
+            $pengumuman = $this->pengumumanRepository->findById($id_pengumuman);
 
             do {
                 $id_penghuni = rand();
@@ -53,6 +60,14 @@ class PenghuniService {
             $penghuni->kode_rusun = $request->kode_rusun;
 
             $this->penghuniRepository->save($penghuni);
+
+            $pengumuman->nama_pemohon = $request->nama_wakil;
+            $pengumuman->nik_pemohon = $request->nik_wakil;
+            $pengumuman->keterangan = 'Lolos';
+            $pengumuman->password = $request->password;
+            $pengumuman->id_penghuni = $id_penghuni;
+
+            $this->pengumumanRepository->update($pengumuman);
 
             $response = new PenghuniResponse();
             $response->penghuni = $penghuni;
