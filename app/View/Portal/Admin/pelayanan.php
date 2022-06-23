@@ -36,7 +36,7 @@
                             <td><?php echo $value['keterangan'] ?></td>
                             <td class="table-btn">
                                 <div class="btn-center">
-                                    <a <?php if ($value['keterangan'] == 'Lolos' || $value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/tambah_penghuni?id_pengumuman=<?php echo $value['id_pengumuman'] ?>" class="btn-table">Tambah Ke Portal</a>
+                                    <a <?php if ($value['keterangan'] == 'Lolos' || $value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/tambah_penghuni?id_pengumuman=<?php echo $value['id_pengumuman'] ?>" class="btn-table-success">Tambah Ke Portal</a>
                                     <a <?php if ($value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/edit_pemohon?id_pengumuman=<?php echo $value['id_pengumuman'] ?>" class="btn-table">Kelola</a>
                                     <a <?php if ($value['keterangan'] == 'Lolos' || $value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/atur_jadwal?id=<?php echo $value['id_pengumuman'] ?>" class="btn-table">Atur Jadwal</a>
                                     <a href="" class="btn-table-warning">Lihat Berkas</a>
