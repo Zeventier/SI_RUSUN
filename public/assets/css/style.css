@@ -24,6 +24,30 @@
   margin: 0;
 }
 
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
 * {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -539,7 +563,8 @@ a {
 } */
 
 .form-input .item .disable {
-  color: #808080;
+  background-color: #e0dada;
+  color: var(--black);
 }
 
 .form-input .item .disable:hover {
@@ -580,7 +605,8 @@ a {
 }
 
 .form-input .single-input input {
-  width: 88%;
+  width: 100%;
+  margin-right: 10px;
 }
 
 .form-input .single .btn-rule {
@@ -749,6 +775,47 @@ a {
   color: var(--black);
   line-height: 2;
   padding-top: 1rem;
+}
+
+/* 
+.denah {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 10px;
+} */
+
+.denah .box-container {
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+}
+
+.denah .box-container .box {
+  cursor: initial;
+}
+
+.denah.box-container .box:hover .image img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.denah .box-container .box .image {
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.denah .box-container .box .image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50%;
+  width: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
 }
 
 .login .modal {
@@ -1519,32 +1586,26 @@ a {
   background: var(--btn-primary-hov);
 }
 
-/* Add Animation */
-@-webkit-keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0
-  }
-
-  to {
-    top: 0;
-    opacity: 1
-  }
+.modal-display {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: var(--btn-warning);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
 
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0
-  }
-
-  to {
-    top: 0;
-    opacity: 1
-  }
+.modal-display:hover {
+  background: var(--btn-warning-hov);
 }
 
-/* The Close Button */
 .close {
   color: white;
   float: right;
@@ -1576,7 +1637,8 @@ input[type='month'] {
 }
 
 .disable {
-  color: #808080;
+  background-color: #e0dada;
+  color: var(--black);
 }
 
 .disable:hover {
@@ -1593,6 +1655,43 @@ input[type='month'] {
 .select-month {
   border: 1px solid var(--black);
   border-radius: 4px;
+}
+
+
+.modal .modal-box-display {
+  padding: 50px;
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4;
+  border-radius: 5px;
+}
+
+.modal .modal-box-display p {
+  font-size: 2rem;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.modal .modal-box-display .close {
+  color: var(--btn-primary);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal .modal-box-display .close:hover,
+.modal .modal-box-display .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .toast {

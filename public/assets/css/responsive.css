@@ -248,6 +248,11 @@
     font-size: 2.5rem;
   }
 
+  .denah .box-container .box .image img {
+    height: 259px;
+    width: 259px;
+  }
+
   select {
     font-size: 1.5rem;
   }
@@ -328,11 +333,10 @@
     margin-right: 10px;
   }
 
-  /* .nav-rule .btn-rule {
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    margin-bottom: 5px;
-  } */
+  .denah .box-container .box .image img {
+    height: 200px;
+    width: 200px;
+  }
 
   .form-input .btn {
     padding: 1rem 2rem;
