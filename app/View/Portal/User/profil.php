@@ -121,8 +121,8 @@
                     <div class="nav-rule">
                         <p></p>
                         <div>
-                            <button class="btn-rule" type="submit" form="profile-rusunku">Simpan</button>
-                            <a href="/portal/user/rusunku" class="btn-rule">Batal</a>
+                            <button class="btn-success" type="submit" form="profile-rusunku">Simpan</button>
+                            <button onclick="location.href='/portal/user/rusunku'" class="btn-danger">Batal</button>
                         </div>
                     </div>
                 </form>

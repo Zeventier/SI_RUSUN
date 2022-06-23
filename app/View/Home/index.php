@@ -44,7 +44,6 @@
    <section class="facility" id="facility">
       <h1 class="heading"> Fasilitas Rusun </h1>
       <div class="box-container">
-
          <a href="/assets/img/fasilitas-1.jpeg" class="box">
             <div class="image">
                <img src="/assets/img/fasilitas-1.jpeg" alt="">
