@@ -39,6 +39,28 @@ class PengumumanService {
         }
     }
 
+    public function tolakPemohon($id_pengumuman)
+    {
+        try {
+            Database::beginTransaction();
+
+            $pengumuman = new Pengumuman();
+
+            $pengumuman = $this->pengumumanRepository->findById($id_pengumuman);
+
+            $pengumuman->keterangan = 'Ditolak';
+
+            $pengumuman = $this->pengumumanRepository->update($pengumuman);
+
+            Database::commitTransaction();
+
+        } catch (\Exception $exception) {
+            Database::rollbackTransaction();
+            throw $exception;
+        }
+    }
+    
+
     public function deletePemohon($id_pengumuman)
     {
         try {
@@ -59,17 +81,18 @@ class PengumumanService {
         }
     }
 
-    public function aturJadwal(AturJadwalRequest $aturJadwalRequest): AturJadwalResponse
+    public function aturJadwal($id_pengumuman, AturJadwalRequest $aturJadwalRequest): AturJadwalResponse
     {
         try {
             Database::beginTransaction();
 
             $pengumuman = new Pengumuman();
-
-            $pengumuman = $this->pengumumanRepository->findById($aturJadwalRequest->id_pengumuman);
+            // echo "<script>console.log('Debug Objects: " . $aturJadwalRequest->t_wawancara . "' );</script>";
+            $pengumuman = $this->pengumumanRepository->findById($id_pengumuman);
 
             $pengumuman->t_wawancara = $aturJadwalRequest->t_wawancara;
             $pengumuman->t_hasil = $aturJadwalRequest->t_hasil;
+            $pengumuman->keterangan = 'Wawancara';
 
             $pengumuman = $this->pengumumanRepository->update($pengumuman);
 
@@ -79,6 +102,23 @@ class PengumumanService {
             Database::commitTransaction();
 
             return $response;
+        } catch (\Exception $exception) {
+            Database::rollbackTransaction();
+            throw $exception;
+        }
+    }
+
+    public function getJadwal($id_pengumuman)
+    {
+        try {
+            Database::beginTransaction();
+
+            $pengumuman = new Pengumuman();
+            $pengumuman = $this->pengumumanRepository->findById($id_pengumuman);
+
+            Database::commitTransaction();
+
+            return $pengumuman;
         } catch (\Exception $exception) {
             Database::rollbackTransaction();
             throw $exception;

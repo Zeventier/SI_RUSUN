@@ -231,6 +231,23 @@ class PortalAdminController
         }
     }
 
+    public function tolakPemohon()
+    {
+        $pengumuman_id = $_GET['id'];
+
+        try {
+            $this->pengumumanService->tolakPemohon($pengumuman_id);
+
+            View::redirect('/portal/admin/pelayanan');
+        } catch (ValidationException $exception) {
+            View::render('Portal/Admin/pelayanan', [
+                "title" => "Portal Rusun Admin",
+                'error' => $exception->getMessage()
+            ]);
+        }
+    }
+
+
     public function deletePemohon()
     {
         $pengumuman_id = $_GET['id'];
@@ -249,8 +266,15 @@ class PortalAdminController
 
     public function aturJadwal()
     {
+        $id_pengumuman = $_GET['id'];
+
+        $jadwal = $this->pengumumanService->getJadwal($id_pengumuman);
+        $jadwal->t_wawancara = date('Y-m-d\TH:i:s', strtotime($jadwal->t_wawancara));
+        $jadwal->t_hasil = date('Y-m-d\TH:i:s', strtotime($jadwal->t_hasil));
+
         View::render('Portal/Admin/atur_jadwal', [
-            'title' => 'Portal Rusun Admin'
+            'title' => 'Portal Rusun Admin',
+            'jadwal' => $jadwal
         ]);
     }
 
@@ -258,17 +282,16 @@ class PortalAdminController
     {
         $request = new AturJadwalRequest();
 
-        $pengumuman_id = $_GET['id'];
-
+        $id_pengumuman = $_GET['id'];
         $t_wawancara = $_POST['t_wawancara'];
         $t_hasil = $_POST['t_hasil'];
 
-        $request->pengumuman_id = $pengumuman_id;
-        $request->t_wawancara = $t_wawancara;
-        $request->t_hasil = $t_hasil;
+        $request->pengumuman_id = $_GET['id'];
+        $request->t_wawancara = date("Y-m-d H:i:s", strtotime($t_wawancara));
+        $request->t_hasil = date("Y-m-d H:i:s", strtotime($t_hasil));
 
         try {
-            $this->pengumumanService->aturJadwal($request);
+            $this->pengumumanService->aturJadwal($id_pengumuman, $request);
 
             View::redirect('/portal/admin/pelayanan');
         } catch (ValidationException $exception) {
