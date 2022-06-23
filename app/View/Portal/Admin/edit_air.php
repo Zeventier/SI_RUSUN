@@ -22,17 +22,17 @@
                 <form method="post" action="/portal/admin/edit_air?id_air=<?php echo $_GET["id_air"]; ?>">
                     <div>
                         <p>Harga Awal Air/㎥</p>
-                        <input type="number" name="harga_awal" value="<?php echo $model['data']->harga_akhir; ?>" readonly />
+                        <input title="Tidak Dapat Dirubah" type="text" class="disable" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" name="harga_awal" value="<?php echo $model['data']->harga_akhir; ?>" readonly />
                     </div>
                     <div>
                         <p>Harga Baru Air/㎥</p>
-                        <input type="number" name="harga_akhir" required />
+                        <input type="text" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" name="harga_akhir" required />
                     </div>
                     <div class="nav-rule">
                         <div></div>
                         <div>
-                            <button class="btn-rule" type="submit">Ubah</button>
-                            <a href="/portal/admin/tagihan_penghuni?date=<?php echo date('Y-m') ?>" class="btn-rule">Batal</a>
+                            <button class="btn-success" type="submit">Ubah</button>
+                            <button onclick="location.href='/portal/admin/tagihan_penghuni?date=<?php echo date('Y-m') ?>'" class="btn-rule">Batal</button>
                         </div>
                     </div>
                 </form>

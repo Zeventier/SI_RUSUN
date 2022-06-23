@@ -39,7 +39,7 @@
                             <td><?php echo $value['keterangan'] ?></td>
                             <td class="table-btn fit">
                                 <div class="btn-center">
-                                    <a href="/portal/admin/form_ruangan?kode_ruangan=<?php echo $value['kode_rusun'] ?>" class="btn-table-success"> Edit </a>
+                                    <a href="/portal/admin/form_ruangan?kode_ruangan=<?php echo $value['kode_rusun'] ?>" class="btn-table-warning"> Edit </a>
                                     <a href="/portal/admin/ruangan/delete?kode_ruangan=<?php echo $value['kode_rusun'] ?>" class="btn-table-danger"> Hapus </a>
                                 </div>
                             </td>
@@ -60,8 +60,8 @@
             <div class="nav-rule">
                 <div></div>
                 <div>
-                    <button onclick="location.href='/portal/admin/form_ruangan'" class="btn-table-success">Tambah</button>
-                    <button onclick="location.href='/portal/admin/home'" class="btn-table-danger">Kembali</button>
+                    <button onclick="location.href='/portal/admin/form_ruangan'" class="btn-success">Tambah</button>
+                    <button onclick="location.href='/portal/admin/home'" class="btn-danger">Kembali</button>
                 </div>
             </div>
         </div>

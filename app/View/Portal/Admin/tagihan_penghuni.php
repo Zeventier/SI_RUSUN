@@ -21,15 +21,15 @@
             <div class="nav-rule">
                 <div class="form-input">
                     <div class="list">
-                        <div class="single-item">
+                        <div class="bulan">
                             <p>Pilih Waktu</p>
                             <input type="month" name="date" />
                         </div>
                     </div>
                 </div>
                 <div id="not-print">
-                    <button type="submit" class="btn-rule">Pilih</button>
-                    <button onclick="window.print('rule')" class=" btn-rule">Cetak</button>
+                    <button type="submit" class="btn-success">Pilih</button>
+                    <button onclick="window.print('rule')" class=" btn-warning">Cetak</button>
                 </div>
             </div>
         </form>
@@ -80,7 +80,8 @@
         <div class="space nav-rule">
             <div></div>
             <div>
-                <a id="not-print" href="/portal/admin/edit_air?id_air=<?php echo $model['air'][0]['id_air'] ?? "" ?>" class="btn-rule">Ubah Harga Air</a>
+                <a id="not-print" href="" class="btn-success">Tambah Tagihan</a>
+                <a id="not-print" href="/portal/admin/edit_air?id_air=<?php echo $model['air'][0]['id_air'] ?? "" ?>" class="btn-warning">Ubah Harga Air</a>
                 <a id="not-print" href="/portal/admin/home" class="btn-rule">Kembali</a>
             </div>
         </div>
