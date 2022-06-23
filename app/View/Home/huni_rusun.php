@@ -79,7 +79,7 @@
                         </div>
                         <div class="item">
                             <p>Nomor Telepon</p>
-                            <input type="text" maxlength="15" minlength="10" return false;" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="no_telp" oninput="this.value=this.value.replace(/(?![0-9+])./gmi,'')" value="<?php echo $_POST['no_telp'] ?? "" ?>" required />
+                            <input type="text" maxlength="15" minlength="10" pattern="^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$" name="no_telp" oninput="this.value=this.value.replace(/(?![0-9+])./gmi,'')" value="<?php echo $_POST['no_telp'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Nomor Induk Kependudukan</p>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="item">
                             <p>Nomor Kartu Keluarga</p>
-                            <input type="text" pattern="[0-9]" minlength="16" maxlength="16" name="no_kk" oninput="this.value=this.value.replace(/(?![0-9+])./gmi,'')" value="<?php echo $_POST['no_kk'] ?? "" ?>" required />
+                            <input type="text" pattern="[0-9]" minlength="16" maxlength="16" name="no_kk" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $_POST['no_kk'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Pekerjaan</p>
