@@ -1585,6 +1585,16 @@ input[type='month'] {
   color: #808080;
 }
 
+.disable-print {
+  border: 1px solid var(--black);
+  color: var(--black);
+}
+
+.select-month {
+  border: 1px solid var(--black);
+  border-radius: 4px;
+}
+
 .toast {
   position: absolute;
   top: 25px;

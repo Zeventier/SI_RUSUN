@@ -22,20 +22,21 @@
             <div class="list">
                 <form method="post" action="/portal/admin/edit_penghuni?id_penghuni=<?php echo $_GET['id_penghuni'] ?>" id="edit-penghuni">
                     <div class="item">
-                        <p>Nama Wakil (Kepala Keluarga)</p>
-                        <input type="text" value="<?php echo $model['data']->penghuni->nama_wakil ?? "" ?>" name="nama_wakil" required />
+
+                        <p>Nama Pemohon (Kepala Keluarga))</p>
+                        <input autocapitalize="words" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)"" value="<?php echo $model['data']->penghuni->nama_wakil ?? "" ?>" name="nama_wakil" required />
                     </div>
                     <div class="item">
                         <p>Nomor Induk Kependudukan Pemohon</p>
-                        <input type="tel" value="<?php echo $model['data']->penghuni->nik_wakil ?? "" ?>" pattern="[0-9]+" minlength="16" maxlength="16" name="nik_wakil" required />
+                        <input type="text" minlength="16" maxlength="16" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $model['data']->penghuni->nik_wakil ?? "" ?>" name="nik_wakil" required />
                     </div>
                     <div class="item">
                         <p>Nomor Kartu Keluarga</p>
-                        <input type="tel" value="<?php echo $model['data']->penghuni->nomor_kk ?? "" ?>" pattern="[0-9]+" minlength="16" maxlength="16" name="no_kk" required />
+                        <input type="text" minlength="16" maxlength="16" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $model['data']->penghuni->nomor_kk ?? "" ?>"  name="no_kk" required />
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
-                        <input type="text" value="<?php echo $model['data']->penghuni->kerja_wakil ?? "" ?>" name="kerja_wakil" required />
+                        <input type="text" pattern="^[a-zA-Z@ ]$" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->penghuni->kerja_wakil ?? "" ?>" name="kerja_wakil" required />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Perbulan</p>
@@ -54,15 +55,15 @@
                     </div>
                     <div class="item">
                         <p>Jumlah Penghuni</p>
-                        <input type="number" min="1" max="4" value="<?php echo $model['data']->penghuni->jlh_penghuni ?? "" ?>" name="jlh_penghuni" required />
+                        <input type="text" maxlength="1" oninput="this.value=this.value.replace(/(?![1-4])./gmi,'')" min="1" max="4"  value="<?php echo $model['data']->penghuni->jlh_penghuni ?? "" ?>" name="jlh_penghuni" required />
                     </div>
                     <div class="item">
                         <p>Nama Pasangan</p>
-                        <input type="text" value="<?php echo $model['data']->penghuni->nama_psgn ?? "" ?>" name="nama_psgn" required />
+                        <input type="text" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->penghuni->nama_psgn ?? "" ?>" name="nama_psgn" required />
                     </div>
                     <div class="item">
                         <p>Pekerjaan Pasangan</p>
-                        <input type="text" value="<?php echo $model['data']->penghuni->kerja_psgn ?? "" ?>" name="kerja_psgn" required />
+                        <input type="text" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->penghuni->kerja_psgn ?? "" ?>" name="kerja_psgn" required />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Pasangan Perbulan</p>
@@ -80,7 +81,6 @@
                         </select>
                     </div>
                     <div class="item">
-                        <p>Kode Rusun</p>
                         <select name="ruangan">
                             <option value="">Select</option>
                             <?php if (isset($model['ruangan'])) {
@@ -108,15 +108,15 @@
                     </div>
                     <div class="item">
                         <p>Tanggal Mulai Menghuni</p>
-                        <input type="text" value="<?php echo $model['data']->penghuni->tgl_huni ?? "" ?>" name="tgl_huni" required />
+                        <input title="Tidak Dapat Dirubah" type="text" class="disable" value="<?php echo $model['data']->penghuni->tgl_huni ?? "" ?>" name="tgl_huni" required />
                     </div>
                     <div class="item">
                         <p>Username</p>
-                        <input type="text" value="<?php echo $model['data']->penghuni->username ?? "" ?>" name="username" readonly />
+                        <input title="Tidak Dapat Dirubah" type="text" class="disable"value="<?php echo $model['data']->penghuni->username ?? "" ?>" name="username" readonly />
                     </div>
                     <div class="item">
                         <p>Password</p>
-                        <input type="password" value="<?php echo $model['data']->user->password ?? "" ?>" name="password" readonly />
+                        <input title="Tidak Dapat Dirubah" class="disable" type="password" value="<?php echo $model['data']->user->password ?? "" ?>" name="password" readonly />
                     </div>
                 </form>
             </div>
