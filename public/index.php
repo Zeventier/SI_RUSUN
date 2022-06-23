@@ -71,6 +71,7 @@ Router::add('GET', '/portal/user', PortalUserController::class, 'beranda', [Must
 Router::add('GET', '/portal/user/beranda', PortalUserController::class, 'beranda', [MustLoginMiddleware::class]);
 Router::add('GET', '/portal/user/rusunku', PortalUserController::class, 'rusunku', [MustLoginMiddleware::class]);
 Router::add('GET', '/portal/user/profil', PortalUserController::class, 'profil', [MustLoginMiddleware::class]);
+Router::add('POST', '/portal/user/profil', PortalUserController::class, 'postProfil', [MustLoginMiddleware::class]);
 Router::add('GET', '/portal/user/tagihan', PortalUserController::class, 'tagihan', [MustLoginMiddleware::class]);
 Router::add('GET', '/portal/user/pemberitahuan', PortalUserController::class, 'pemberitahuan', [MustLoginMiddleware::class]);
 Router::add('GET', '/portal/user/keluhan', PortalUserController::class, 'keluhan', [MustLoginMiddleware::class]);

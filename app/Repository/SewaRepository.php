@@ -95,10 +95,10 @@ class SewaRepository
         }
     }
 
-    public function findByUsername($username): ?Sewa
+    public function findByUsername($username, $year, $month): ?Sewa
     {
-        $statement = $this->connection->prepare("SELECT id_sewa, sewa_rusun, debit_air, keterangan, deadline, username FROM sewa WHERE username = ? ORDER BY deadline ASC");
-        $statement->execute([$username]);
+        $statement = $this->connection->prepare("SELECT id_sewa, sewa_rusun, debit_air, keterangan, deadline, username FROM sewa WHERE username = ? AND YEAR(deadline) = ? AND MONTH(deadline) = ? ORDER BY deadline ASC");
+        $statement->execute([$username, $year, $month]);
 
         try {
             if ($row = $statement->fetch()) {

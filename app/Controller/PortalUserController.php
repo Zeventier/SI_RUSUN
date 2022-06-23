@@ -9,6 +9,8 @@ use Project\Config\Database;
 use Project\Service\AirService;
 use Project\Service\SewaService;
 use Project\Service\UserService;
+use Project\Service\RusunService;
+use Project\Model\PenghuniRequest;
 use Project\Service\KeluhanService;
 use Project\Service\SessionService;
 use Project\Service\PenghuniService;
@@ -28,7 +30,8 @@ class PortalUserController
     private SewaService $sewaService;
     private PenghuniService $penghuniService;
     private KeluhanService $keluhanService;
-    private airService $airService;
+    private AirService $airService;
+    private RusunService $rusunService;
 
     public function __construct()
     {
@@ -52,6 +55,9 @@ class PortalUserController
 
         $airRepository = new AirRepository($connection);
         $this->airService = new AirService($airRepository);
+
+        $this->rusunService = new RusunService($rusunRepository);
+
     }
 
     public function beranda()
@@ -71,6 +77,7 @@ class PortalUserController
     public function profil()
     {
         $user = $this->sessionService->current();
+        $daftarRuangan = $this->rusunService->showDaftarRuangan();
 
         $response = $this->penghuniService->showPenghuniUsername($user->username);
 
@@ -78,16 +85,50 @@ class PortalUserController
         View::render('Portal/User/profil', [
             'title' => 'Portal Rusun User',
             'penghuni' => $response->penghuni,
-            'user' => $response->user
+            'user' => $response->user,
+            'ruangan' => $daftarRuangan
         ]);
+    }
+
+    public function postProfil()
+    {
+        $id_penghuni = $_GET['id_penghuni'];
+
+        $request = new PenghuniRequest();
+
+        $request->nama_wakil = $_POST['nama_wakil'];
+        $request->nik_wakil = $_POST['nik_wakil'];
+        $request->nomor_kk = $_POST['nomor_kk'];
+        $request->kerja_wakil = $_POST['kerja_wakil'];
+        $request->gaji_wakil = $_POST['gaji_wakil'];
+        $request->jlh_penghuni = $_POST['jlh_penghuni'];
+        $request->nama_psgn = $_POST['nama_psgn'];
+        $request->kerja_psgn = $_POST['kerja_psgn'];
+        $request->gaji_psgn = $_POST['gaji_psgn'];
+        $request->tgl_huni = $_POST['tgl_huni'];
+        $request->username = $_POST['username'];
+        $request->kode_rusun = $_POST['ruangan'];
+
+        try {
+            $this->penghuniService->editPenghuni($id_penghuni, $request);
+
+            View::redirect('/portal/user/rusunku');
+        } catch (ValidationException $exception) {
+            View::render('Portal/Usern', [
+                "title" => "Portal Rusun User",
+                'error' => $exception->getMessage()
+            ]);
+        }
     }
 
     public function tagihan()
     {
+        $year = date('Y', strtotime($_GET['date']));
+        $month = date('m', strtotime($_GET['date']));
         $user = $this->sessionService->current();
 
         $tagihan = new Sewa();
-        $tagihan = $this->sewaService->showTagihanUsername($user->username);
+        $tagihan = $this->sewaService->showTagihanUsername($user->username, $year, $month);
         $air = $this->airService->getHargaAir();
 
         View::render('Portal/User/tagihan', [
