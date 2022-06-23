@@ -31,6 +31,7 @@ Router::add('GET', '/portal/admin/logout', PortalAdminController::class, 'logout
 
 Router::add('GET', '/portal/admin/pelayanan', PortalAdminController::class, 'pelayanan', [MustLoginMiddleware::class]);
 Router::add('GET', '/portal/admin/pelayanan/delete', PortalAdminController::class, 'deletePemohon', [MustLoginMiddleware::class]);
+Router::add('GET', '/portal/admin/pelayanan/tolak', PortalAdminController::class, 'tolakPemohon', [MustLoginMiddleware::class]);
 
 Router::add('GET', '/portal/admin/ruangan', PortalAdminController::class, 'ruangan', [MustLoginMiddleware::class]);
 Router::add('GET', '/portal/admin/ruangan/delete', PortalAdminController::class, 'deleteRuangan', [MustLoginMiddleware::class]);
