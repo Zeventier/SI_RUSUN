@@ -19,6 +19,7 @@ Router::add('GET', '/', HomeController::class, 'index', []);
 Router::add('GET', '/huni_rusun', HomeController::class, 'huniRusun', []);
 Router::add('POST', '/huni_rusun', HomeController::class, 'postHuniRusun', []);
 Router::add('GET', '/pengumuman', HomeController::class, 'pengumuman', []);
+Router::add('POST', '/pengumuman', HomeController::class, 'postPengumuman', []);
 Router::add('GET', '/portal', HomeController::class, 'portal', [MustNotLoginMiddleware::class]);
 Router::add('POST', '/portal', HomeController::class, 'postPortalLogin', [MustNotLoginMiddleware::class]);
 Router::add('GET', '/about', HomeController::class, 'about', []);

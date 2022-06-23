@@ -84,6 +84,34 @@ class PengumumanRepository
         }
     }
 
+    public function findByNameNik($nama_pemohon, $nik_pemohon)
+    {
+        $statement = $this->connection->prepare("SELECT id_pengumuman, nama_pemohon, nik_pemohon, t_wawancara, 
+            t_hasil, keterangan, id_pemohon, id_penghuni, password FROM pengumuman WHERE nama_pemohon = ? AND nik_pemohon = ?");
+        $statement->execute([$nama_pemohon, $nik_pemohon]);
+
+        try {
+            if ($row = $statement->fetch()) {
+                $pengumuman = new Pengumuman();
+                $pengumuman->id_pengumuman = $row['id_pengumuman'];
+                $pengumuman->nama_pemohon = $row['nama_pemohon'];
+                $pengumuman->nik_pemohon = $row['nik_pemohon'];
+                $pengumuman->t_wawancara = $row['t_wawancara'];
+                $pengumuman->t_hasil = $row['t_hasil'];
+                $pengumuman->keterangan = $row['keterangan'];
+                $pengumuman->id_pemohon = $row['id_pemohon'];
+                $pengumuman->id_penghuni = $row['id_penghuni'];
+                $pengumuman->password = $row['password'];
+
+                return $pengumuman;
+            } else {
+                return null;
+            }
+        } finally {
+            $statement->closeCursor();
+        }
+    }
+
     public function delete($id_pengumuman)
     {
         $statement = $this->connection->prepare("DELETE FROM pengumuman WHERE id_pengumuman = ?");

@@ -4,6 +4,7 @@ namespace Project\Controller;
 
 use Project\App\View;
 use Project\Config\Database;
+use Project\Domain\Pengumuman;
 use Project\Service\UserService;
 use Project\Model\PemohonRequest;
 use Project\Service\RusunService;
@@ -11,11 +12,13 @@ use Project\Model\UserLoginRequest;
 use Project\Service\PemohonService;
 use Project\Service\SessionService;
 use Project\Repository\UserRepository;
+use Project\Service\PengumumanService;
 use Project\Repository\RusunRepository;
 use Project\Repository\BerkasRepository;
 use Project\Repository\PemohonRepository;
 use Project\Repository\SessionRepository;
 use Project\Exception\ValidationException;
+use Project\Repository\PenghuniRepository;
 use Project\Repository\PengumumanRepository;
 
 class HomeController
@@ -24,6 +27,7 @@ class HomeController
     private SessionService $sessionService;
     private PemohonService $pemohonService;
     private RusunService $rusunService;
+    private PengumumanService $pengumumanService;
 
     public function __construct()
     {
@@ -41,6 +45,9 @@ class HomeController
         $berkasRepository = new BerkasRepository($connection);
         $pengumumanRepository = new PengumumanRepository($connection);
         $this->pemohonService = new PemohonService($pemohonRepository, $berkasRepository, $pengumumanRepository);
+
+        $penghuniRepository = new PenghuniRepository($connection);
+        $this->pengumumanService = new PengumumanService($pengumumanRepository, $pemohonRepository, $berkasRepository, $penghuniRepository, $rusunRepository);
     }
 
 
@@ -56,6 +63,29 @@ class HomeController
         View::render('Home/pengumuman', [
             "title" => "SI Rusun"
         ]);
+    }
+
+    public function postPengumuman()
+    {
+        $pengumuman = new Pengumuman();
+        $pengumuman->nama_pemohon = $_POST['nama_pemohon'];
+        $pengumuman->nik_pemohon = $_POST['nik_pemohon'];
+
+        $response = $this->pengumumanService->showPengumuman($pengumuman->nama_pemohon, $pengumuman->nik_pemohon);
+
+        $response->pengumuman->t_wawancara = date('Y-m-d\TH:i:s', strtotime($pengumuman->t_wawancara));
+        $response->pengumuman->t_hasil = date('Y-m-d\TH:i:s', strtotime($pengumuman->t_hasil));
+
+        if($pengumuman == null) {
+            // This is in the PHP file and sends a Javascript alert to the client
+            $message = "Nama atau NIK tidak ada";
+            echo "<script type='text/javascript'>alert('$message'); window.location = '/pengumuman';</script>";
+        } else {
+            View::render('Home/hasil_pengumuman', [
+                "title" => "SI Rusun",
+                'data' => $response
+            ]);
+        }
     }
 
     public function huniRusun()
