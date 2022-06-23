@@ -119,10 +119,10 @@ select {
 }
 
 select[readonly] {
-  background: #eee;
+  background-color: #e0dada !important;
   pointer-events: none;
   touch-action: none;
-  color: #808080;
+  color: var(--black);
 }
 
 option :disabled {

@@ -58,6 +58,12 @@
                 ?>
             </table>
         </div>
+        <div class="nav-rule">
+            <div></div>
+            <div>
+                <button onclick="location.href='/portal/admin/home'" class="btn-danger">Kembali</button>
+            </div>
+        </div>
 
     </section>
 
