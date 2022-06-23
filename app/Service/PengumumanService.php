@@ -2,28 +2,66 @@
 
 namespace Project\Service;
 
+use Project\Domain\Rusun;
 use Project\Domain\Pemohon;
 use Project\Config\Database;
+use Project\Domain\Penghuni;
 use Project\Domain\Pengumuman;
 use Project\Model\AturJadwalRequest;
 use Project\Model\AturJadwalResponse;
-use Project\Model\PengumumanResponse;
+use Project\Repository\RusunRepository;
 use Project\Repository\BerkasRepository;
 use Project\Repository\PemohonRepository;
+use Project\Repository\PenghuniRepository;
 use Project\Repository\PengumumanRepository;
 
 class PengumumanService {
     private PengumumanRepository $pengumumanRepository;
     private PemohonRepository $pemohonRepository;
     private BerkasRepository $berkasRepository;
+    private PenghuniRepository $penghuniRepository;
+    private RusunRepository $rusunRepository;
 
-    public function __construct(PengumumanRepository $pengumumanRepository, PemohonRepository $pemohonRepository, BerkasRepository $berkasRepository)
+    public function __construct(PengumumanRepository $pengumumanRepository, PemohonRepository $pemohonRepository, BerkasRepository $berkasRepository, PenghuniRepository $penghuniRepository, RusunRepository $rusunRepository)
     {
         $this->pengumumanRepository = $pengumumanRepository;
 
         $this->pemohonRepository = $pemohonRepository;
 
         $this->berkasRepository = $berkasRepository;
+
+        $this->penghuniRepository = $penghuniRepository;
+
+        $this->rusunRepository = $rusunRepository;
+    }
+
+    public function showPengumuman($nama_pemohon, $nik_pemohon)
+    {
+        try {
+            Database::beginTransaction();
+
+            $pengumuman = new Pengumuman();
+            $penghuni = new Penghuni();
+            $ruangan = new Rusun();
+
+            $pengumuman = $this->pengumumanRepository->findByNameNik($nama_pemohon, $nik_pemohon);
+            $penghuni = $this->penghuniRepository->findById($pengumuman->id_penghuni);
+            $ruangan = $this->rusunRepository->findById($penghuni->kode_rusun ?? -1);
+
+            $response = (object) [
+                'pengumuman' => $pengumuman,
+                'penghuni' => $penghuni,
+                'ruangan' => $ruangan
+            ];
+
+
+            Database::commitTransaction();
+
+            return $response;
+        } catch (\Exception $exception) {
+            Database::rollbackTransaction();
+            throw $exception;
+        }
     }
 
     public function showDaftarPemohon()

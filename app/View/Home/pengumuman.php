@@ -21,12 +21,12 @@
         <h1 class="heading"> PERIKSA INFO JADWAL & PENGUMUMAN HASIL</h1>
         </div>
         <div class="form-input">
-            <form action="" class="login-form">
+            <form method="post" action="/pengumuman" class="login-form">
                 <p>Nama Pemohon</p>
-                <input type="text" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" class="box" required>
+                <input name="nama_pemohon" type="text" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" class="box" required>
                 <p>NIK Pemohon</p>
-                <input type="text" minlength="16" maxlength="16" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" class="box" required>
-                <button href="#Modal-Pengumuman" class="modal-button">Periksa</button>
+                <input name="nik_pemohon" type="text" minlength="16" maxlength="16" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" class="box" required>
+                <button type="submit" class="modal-button">Periksa</button>
                 <div class="flex">
                     <a href="#" id="modal-btn">Hasil Belum Diumumkan?</a>
                 </div>
@@ -84,7 +84,7 @@
     </section>
 
 
-    <script>
+    <!-- <script>
         // Get the button that opens the modal
         var btn = document.querySelectorAll("button.modal-button");
 
@@ -95,20 +95,17 @@
         var spans = document.getElementsByClassName("close");
 
         // When the user clicks the button, open the modal
-        for (var i = 0; i < btn.length; i++) {
-            btn[i].onclick = function(e) {
-                e.preventDefault();
-                modal = document.querySelector(e.target.getAttribute("href"));
-                modal.style.display = "block";
-            }
+        btn[0].onclick = function(e) {
+            e.preventDefault();
+            modal = document.querySelector(e.target.getAttribute("href"));
+            modal.style.display = "block";
         }
-
+        
         // When the user clicks on <span> (x), close the modal
-        for (var i = 0; i < spans.length; i++) {
-            spans[i].onclick = function() {
-                for (var index in modals) {
-                    if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
-                }
+
+        spans[0].onclick = function() {
+            for (var index in modals) {
+                if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
             }
         }
 
@@ -121,6 +118,8 @@
             }
         }
 
+
+        
         var modal_box = document.getElementById("modal-box");
         var button = document.getElementById("modal-btn");
         var span = document.getElementsByClassName("close-box")[0];
@@ -135,5 +134,5 @@
                 modal_box.style.display = "none";
             }
         }
-    </script>
+    </script> -->
     <script src="assets/js/script.js"></script>
