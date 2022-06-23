@@ -81,6 +81,11 @@ input:disabled {
   color: #808080;
 }
 
+input[type="datetime-local"] {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
 select {
   font-size: 2rem;
 }
@@ -566,8 +571,7 @@ a {
 }
 
 .form-input .single input {
-  width: 88%;
-
+  width: 100%;
 }
 
 .form-input .single .btn-rule {
@@ -581,10 +585,8 @@ a {
   transition: .2s linear;
 }
 
-
 .form-input .single-item {
   display: inline;
-  flex-wrap: wrap;
 }
 
 .form-input .single-item input {
@@ -1327,6 +1329,64 @@ a {
   background: var(--btn-success-hov);
 }
 
+.btn-success {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: var(--btn-success);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.btn-success:hover {
+  background: var(--btn-success-hov);
+}
+
+.btn-danger {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: var(--btn-primary);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+
+.btn-danger:hover {
+  background: var(--btn-primary-hov);
+}
+
+.btn-warning {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: var(--btn-warning);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.btn-warning:hover {
+  background: var(--btn-warning-hov);
+}
+
 .ver .modal {
   text-align: center;
   display: none;
@@ -1490,22 +1550,31 @@ a {
   cursor: pointer;
 }
 
-.modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
+input[type='month'] {
+  background-color: var(--btn-success);
+  padding: 5px;
+  height: 50px;
+  width: 200px;
+  font-size: 2rem;
   color: white;
+  font-weight: 500;
 }
 
-.modal-body {
-  padding: 2px 16px;
+.bulan p {
+  font-size: 2rem;
+  color: var(--black);
+  font-weight: 500;
 }
 
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
+.disable {
+  color: #808080;
 }
 
+.disable:hover {
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px 0 var(--btn-primary-hov);
+  color: #808080;
+}
 
 .toast {
   position: absolute;

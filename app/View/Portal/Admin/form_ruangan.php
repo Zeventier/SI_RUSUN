@@ -23,8 +23,7 @@
              <form method="post" action="/portal/admin/form_ruangan" id="edit-ruang">
                  <div class="item">
                      <p>Nomor Rusun</p>
-
-                     <input type="text" name="no_ruangan" value="<?php echo $model['data']->no_ruang ?? "" ?>" required />
+                     <input type="text" maxlength="3" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" name="no_ruangan" value="<?php echo $model['data']->no_ruang ?? "" ?>" required />
                  </div>
                  <div class="item">
                      <p>Lantai</p>
@@ -46,7 +45,7 @@
                  </div>
                  <div class="item">
                      <p>Harga Sewa</p>
-                     <input type="text" name="" required />
+                     <input type="text" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" name="" required />
                  </div>
                  <div class="item">
                      <p>Keterangan</p>
@@ -66,8 +65,8 @@
                  <div class="nav-rule">
                      <div></div>
                      <div>
-                         <button class="btn-rule" type="submit" form="edit-ruang">Simpan</button>
-                         <a href="/portal/admin/ruangan" class="btn-rule">Kembali</a>
+                         <button class="btn-success" type="submit" form="edit-ruang">Simpan</button>
+                         <button onclick="location.href='/portal/admin/ruangan'" class="btn-danger">Kembali</button>
                      </div>
                  </div>
              </form>
