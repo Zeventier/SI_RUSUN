@@ -30,7 +30,7 @@
                 </div>
                 <div id="not-print">
                     <button type="submit" class="btn-success">Pilih</button>
-                    <button onclick="window.print()" class=" btn-warning">Cetak</button>
+                    <button onclick="window.print()" class="btn-warning">Cetak</button>
                 </div>
             </div>
         </form>

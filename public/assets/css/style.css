@@ -101,6 +101,11 @@ option :disabled {
   background-color: var(--light-color);
 }
 
+textarea {
+  font-size: 1.7rem;
+  color: var(--black);
+}
+
 .heading {
   margin-bottom: 3rem;
   font-size: 3rem;

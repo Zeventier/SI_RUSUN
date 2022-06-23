@@ -32,13 +32,14 @@
             <div class="list">
                 <form method="post" action="/portal/admin/tanggapan?id_keluhan=<?php echo $_GET['id_keluhan']; ?>">
                     <div class="item">
-                        <textarea rows="4" cols="170" name="tanggapan"> Masukan Tanggapan Anda Disini ....</textarea>
+                        <p> Masukan Tanggapan Anda Disini ....</p>
+                        <textarea rows="4" cols="170" name="tanggapan"></textarea>
                     </div>
 
                     <div class="nav-rule">
                         <div>
-                            <button class=" btn-rule" type="submit">Kirim</button>
-                            <a href="/portal/admin/keluhan?date=<?php echo date('Y-m') ?>" class="btn-rule">Batal</a>
+                            <button class=" btn-success" type="submit">Kirim</button>
+                            <button onclick="location.href='/portal/admin/keluhan?date=<?php echo date('Y-m') ?>'" class="btn-rule">Batal</button>
                         </div>
                     </div>
                 </form>
