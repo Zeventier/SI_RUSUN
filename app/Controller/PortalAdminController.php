@@ -430,7 +430,7 @@ class PortalAdminController
     {
         $dataRuangan = new Rusun();
     
-        if(isset($_GET['kode_ruangan'])) {
+        if($_GET['kode_ruangan'] != null) {
             $kode_ruangan = $_GET['kode_ruangan'];
             $dataRuangan = $this->rusunService->showRuangan($kode_ruangan);
         }
@@ -448,7 +448,7 @@ class PortalAdminController
         $ruangan->lantai = $_POST['lantai'];
         $ruangan->keterangan = $_POST['keterangan'];
 
-        if(isset($_GET['kode_ruangan'])) {
+        if($_GET['kode_ruangan'] != null) {
             try {
                 $kode_ruangan = $_GET['kode_ruangan'];
 

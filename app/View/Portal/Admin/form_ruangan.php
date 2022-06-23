@@ -20,7 +20,7 @@
 
      <div class="rule">
          <div class="list">
-             <form method="post" action="/portal/admin/form_ruangan?kode_ruangan=<?php echo $_GET["kode_ruangan"] ?? ''; ?> id="edit-ruang">
+             <form method="post" action="/portal/admin/form_ruangan?kode_ruangan=<?php echo $_GET["kode_ruangan"] ?? ''; ?>" id="edit-ruang">
                  <div class="item">
                      <p>Nomor Rusun</p>
                      <input type="text" maxlength="3" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" name="no_ruangan" value="<?php echo $model['data']->no_ruang ?? "" ?>" required />

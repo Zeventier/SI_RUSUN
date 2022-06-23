@@ -40,7 +40,7 @@ class PengumumanRepository
     public function readAll()
     {
         $statement = $this->connection->prepare("SELECT id_pengumuman, nama_pemohon, nik_pemohon, t_wawancara, 
-            t_hasil, keterangan, id_pemohon, id_penghuni, password FROM pengumuman");
+            t_hasil, keterangan, id_pemohon, id_penghuni, password FROM pengumuman ORDER BY FIELD(keterangan,'Proses Seleksi','Wawancara','Lolos', 'Ditolak'), nama_pemohon");
         $statement->execute();
 
         try {
