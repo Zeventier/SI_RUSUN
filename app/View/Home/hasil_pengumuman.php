@@ -19,11 +19,11 @@
 
 
     <div id="Modal-Pengumuman" class="modal" style="display: block;">
-        <div class="modal-content">
+        <div class="modal-box-display">
             <span id="close" class="close"><i class="fas fa-times"></i></span>
 
             <?php if ($model['data']->pengumuman->keterangan == 'Wawancara') { ?>
-                
+
                 <h1 class="heading"> Informasi Jadwal Wawancara</h1>
                 <div class="rule">
                     <form action="" class="login-form">

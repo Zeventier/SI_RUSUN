@@ -1657,6 +1657,43 @@ input[type='month'] {
   border-radius: 4px;
 }
 
+
+.modal .modal-box-display {
+  padding: 50px;
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4;
+  border-radius: 5px;
+}
+
+.modal .modal-box-display p {
+  font-size: 2rem;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.modal .modal-box-display .close {
+  color: var(--btn-primary);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal .modal-box-display .close:hover,
+.modal .modal-box-display .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .toast {
   position: absolute;
   top: 25px;
