@@ -23,19 +23,19 @@
                 <form method="post" action="/portal/admin/edit_penghuni?id_penghuni=<?php echo $_GET['id_penghuni'] ?>" id="edit-penghuni">
                     <div class="item">
                         <p>Nama Pemohon (Kepala Keluarga)</p>
-                        <input type="text" name="nama_wakil" required />
+                        <input autocapitalize="words" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" name="nama_wakil" required />
                     </div>
                     <div class="item">
                         <p>Nomor Induk Kependudukan Pemohon</p>
-                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="nik_wakil" required />
+                        <input type="text" minlength="16" maxlength="16" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" pattern="[0-9]" minlength="16" maxlength="16" name="nik_wakil" required />
                     </div>
                     <div class="item">
                         <p>Nomor Kartu Keluarga</p>
-                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" name="no_kk" required />
+                        <input type="text" minlength="16" maxlength="16" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" pattern="[0-9]+" minlength="16" maxlength="16" name="no_kk" required />
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
-                        <input type="text" name="kerja_wakil" required />
+                        <input type="text" pattern="^[a-zA-Z@ ]$" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" name="kerja_wakil" required />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Perbulan</p>
@@ -54,15 +54,15 @@
                     </div>
                     <div class="item">
                         <p>Jumlah Penghuni</p>
-                        <input type="number" min="1" max="4" name="jlh_penghuni" required />
+                        <input type="text" maxlength="1" oninput="this.value=this.value.replace(/(?![1-4])./gmi,'')" min="1" max="4" name="jlh_penghuni" required />
                     </div>
                     <div class="item">
                         <p>Nama Pasangan</p>
-                        <input type="text" name="nama_psgn" required />
+                        <input type="text" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" name="nama_psgn" required />
                     </div>
                     <div class="item">
                         <p>Pekerjaan Pasangan</p>
-                        <input type="text" name="kerja_psgn" required />
+                        <input type="text" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" name="kerja_psgn" required />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Pasangan Perbulan</p>
@@ -81,19 +81,19 @@
                     </div>
                     <div class="item">
                         <p>Kode Rusun</p>
-                        <input type="text" name="ruangan" required />
+                        <input class="disable" type="text" value="<?php echo $model['penghuni']->kode_rusun ?? "" ?>" name="kode_rusun" readonly />
                     </div>
                     <div class="item">
                         <p>Tanggal Mulai Menghuni</p>
-                        <input type="text" name="tgl_huni" required />
+                        <input title="Tidak Dapat Dirubah" type="text" class="disable" value="<?php echo $model['penghuni']->tgl_huni ?? "" ?>" name="tgl_huni" readonly />
                     </div>
                     <div class="item">
                         <p>Username</p>
-                        <input type="text" name="username" readonly />
+                        <input title="Tidak Dapat Dirubah" type="text" class="disable" value="<?php echo $model['penghuni']->username ?? "" ?>" name="username" readonly />
                     </div>
                     <div class="item">
                         <p>Password</p>
-                        <input type="text" name="password" readonly />
+                        <input title="Tidak Dapat Dirubah" type="password" class="disable" value="<?php echo $model['user']->password ?? "" ?>" name="password" readonly />
                     </div>
                 </form>
             </div>

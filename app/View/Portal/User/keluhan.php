@@ -23,7 +23,8 @@
                     <p>Keluhan</p>
                     <div class="item">
                         <form method="post" action="/portal/user/keluhan">
-                            <textarea rows="5" name="keluhan">Masukan Keluhan Anda Disini....</textarea>
+                            <p>Masukan Keluhan Anda Disini....</p>
+                            <textarea rows="5" name="keluhan"></textarea>
                             <div class="nav-rule">
                                 <div></div>
                                 <div>
