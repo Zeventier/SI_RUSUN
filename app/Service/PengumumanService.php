@@ -45,7 +45,7 @@ class PengumumanService {
             $ruangan = new Rusun();
 
             $pengumuman = $this->pengumumanRepository->findByNameNik($nama_pemohon, $nik_pemohon);
-            $penghuni = $this->penghuniRepository->findById($pengumuman->id_penghuni);
+            $penghuni = $this->penghuniRepository->findById($pengumuman->id_penghuni ?? -1);
             $ruangan = $this->rusunRepository->findById($penghuni->kode_rusun ?? -1);
 
             $response = (object) [
