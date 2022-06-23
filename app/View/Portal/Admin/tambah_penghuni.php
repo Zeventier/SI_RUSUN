@@ -47,7 +47,7 @@
                             <option value="Rp 2.000.000, - Rp 3.999.999," <?php if ($model['data']->pemohon->gaji_pemohon == 'Rp 2.000.000, - Rp 3.999.999,') {
                                                                                 echo "selected";
                                                                             } ?>>Rp 2.000.000, - Rp 3.999.999,</option>
-                            <option value="Rp 2.000.000, - Rp 3.999.999," <?php if ($model['data']->pemohon->gaji_pemohon == 'Rp 2.000.000, - Rp 3.999.999,') {
+                            <option value="Rp 4.000.000, - Rp 6.000.000," <?php if ($model['data']->pemohon->gaji_pemohon == 'Rp 4.000.000, - Rp 6.000.000,') {
                                                                                 echo "selected";
                                                                             } ?>>Rp 4.000.000, - Rp 6.000.000,</option>
                         </select>
@@ -74,7 +74,7 @@
                             <option value="Rp 2.000.000, - Rp 3.999.999," <?php if ($model['data']->pemohon->gaji_psgn == 'Rp 2.000.000, - Rp 3.999.999,') {
                                                                                 echo "selected";
                                                                             } ?>>Rp 2.000.000, - Rp 3.999.999,</option>
-                            <option value="Rp 2.000.000, - Rp 3.999.999," <?php if ($model['data']->pemohon->gaji_psgn == 'Rp 2.000.000, - Rp 3.999.999,') {
+                            <option value="Rp 4.000.000, - Rp 6.000.000," <?php if ($model['data']->pemohon->gaji_psgn == 'Rp 4.000.000, - Rp 6.000.000,') {
                                                                                 echo "selected";
                                                                             } ?>>Rp 4.000.000, - Rp 6.000.000,</option>
                         </select>

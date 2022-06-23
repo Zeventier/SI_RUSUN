@@ -124,20 +124,39 @@ class PemohonService {
 
             $pemohon = new Pemohon();
             $pengumuman = new Pengumuman();
+
+            $pengumuman = $this->pengumumanRepository->findById($id_pengumuman);
+            $pemohon = $this->pemohonRepository->findById($pengumuman->id_pemohon);
+
+            $response = new ShowPemohonResponse();
+            $response->pemohon = $pemohon;
+
+            Database::commitTransaction();
+
+            return $response;
+            
+        } catch (\Exception $exception) {
+            Database::rollbackTransaction();
+            throw $exception;
+        }
+    }
+
+    public function showBerkas($id_pengumuman)
+    {
+        try {
+            Database::beginTransaction();
+
+            $pemohon = new Pemohon();
+            $pengumuman = new Pengumuman();
             $berkas = new Berkas();
 
             $pengumuman = $this->pengumumanRepository->findById($id_pengumuman);
             $pemohon = $this->pemohonRepository->findById($pengumuman->id_pemohon);
             $berkas = $this->berkasRepository->findById($pemohon->id_berkas);
 
-            $response = new ShowPemohonResponse();
-            $response->pemohon = $pemohon;
-            //$response->berkas = $berkas;
-
             Database::commitTransaction();
 
-            return $response;
-            
+            return $berkas;
         } catch (\Exception $exception) {
             Database::rollbackTransaction();
             throw $exception;
@@ -152,21 +171,10 @@ class PemohonService {
             Database::beginTransaction();
 
             $pemohon = new Pemohon();
-            $berkas = new Berkas();
             $pengumuman = new Pengumuman();
 
             $pengumuman = $this->pengumumanRepository->findById($id_pengumuman);
             $pemohon = $this->pemohonRepository->findById($pengumuman->id_pemohon);
-            $berkas = $this->berkasRepository->findById($pemohon->id_berkas);
-
-            $berkas->ktp_pmhn = $request->ktp_pmhn;
-            $berkas->ktp_psgn = $request->ktp_psgn;
-            $berkas->kartu_kk = $request->kartu_kk;
-            $berkas->srt_kerja = $request->srt_kerja;
-            $berkas->struk_gaji = $request->struk_gaji;
-            $berkas->srt_nikah = $request->srt_nikah;
-
-            $this->berkasRepository->update($berkas);
 
             $pemohon->nama_pemohon = $request->nama_pemohon;
             $pemohon->notelp_pemohon = $request->notelp_pemohon;

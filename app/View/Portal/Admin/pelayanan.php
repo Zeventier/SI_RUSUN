@@ -39,9 +39,9 @@
                                     <a <?php if ($value['keterangan'] == 'Lolos' || $value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/tambah_penghuni?id_pengumuman=<?php echo $value['id_pengumuman'] ?>" class="btn-table-success">Tambah Ke Portal</a>
                                     <a <?php if ($value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/edit_pemohon?id_pengumuman=<?php echo $value['id_pengumuman'] ?>" class="btn-table-success">Kelola</a>
                                     <a <?php if ($value['keterangan'] == 'Lolos' || $value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/atur_jadwal?id=<?php echo $value['id_pengumuman'] ?>" class="btn-table-warning">Atur Jadwal</a>
-                                    <a href="" class="btn-table-warning">Lihat Berkas</a>
-                                    <a <?php if ($value['keterangan'] == 'Lolos' || $value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/pelayanan/tolak?id=<?php echo $value['id_pengumuman'] ?>" class="btn-table-danger">Tolak</a>
-                                    <a href="/portal/admin/pelayanan/delete?id=<?php echo $value['id_pengumuman'] ?>" class="btn-table-danger">Hapus</a>
+                                    <a href="/portal/admin/berkas_pemohon?id_pengumuman=<?php echo $value['id_pengumuman'] ?>" class="btn-table-warning">Lihat Berkas</a>
+                                    <a <?php if ($value['keterangan'] == 'Lolos' || $value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/pelayanan/tolak?id=<?php echo $value['id_pengumuman'] ?>" class="btn-table-danger" onclick="return confirm('Apakah anda yakin?')">Tolak</a>
+                                    <a href="/portal/admin/pelayanan/delete?id=<?php echo $value['id_pengumuman'] ?>" class="btn-table-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                                 </div>
                             </td>
                         </tr>
@@ -50,7 +50,7 @@
                 } else {
                     ?>
                     <tr>
-                        <td colspan="5">
+                        <td colspan=" 5">
                             <center>No data</center>
                         </td>
                     </tr>
