@@ -76,7 +76,7 @@ class HomeController
         $response->pengumuman->t_wawancara = date('Y-m-d\TH:i:s', strtotime($pengumuman->t_wawancara));
         $response->pengumuman->t_hasil = date('Y-m-d\TH:i:s', strtotime($pengumuman->t_hasil));
 
-        if($pengumuman == null) {
+        if($response->pengumuman == null) {
             // This is in the PHP file and sends a Javascript alert to the client
             $message = "Nama atau NIK tidak ada";
             echo "<script type='text/javascript'>alert('$message'); window.location = '/pengumuman';</script>";
