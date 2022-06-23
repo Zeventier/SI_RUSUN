@@ -22,7 +22,7 @@
             <table>
                 <tr>
                     <th>Nama Pemohon</th>
-                    <th>NIK</th>
+                    <th>Nomor Induk Keluarga</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
 
@@ -39,6 +39,7 @@
                                     <a <?php if ($value['keterangan'] == 'Lolos' || $value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/tambah_penghuni?id_pengumuman=<?php echo $value['id_pengumuman'] ?>" class="btn-table">Tambah Ke Portal</a>
                                     <a <?php if ($value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/edit_pemohon?id_pengumuman=<?php echo $value['id_pengumuman'] ?>" class="btn-table">Kelola</a>
                                     <a <?php if ($value['keterangan'] == 'Lolos' || $value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/atur_jadwal?id=<?php echo $value['id_pengumuman'] ?>" class="btn-table">Atur Jadwal</a>
+                                    <a href="" class="btn-table-warning">Lihat Berkas</a>
                                     <a <?php if ($value['keterangan'] == 'Lolos' || $value['keterangan'] == 'Ditolak') echo 'onclick="return false;" style="cursor: not-allowed;"' ?> href="/portal/admin/pelayanan/tolak?id=<?php echo $value['id_pengumuman'] ?>" class="btn-table">Tolak</a>
                                     <a href="/portal/admin/pelayanan/delete?id=<?php echo $value['id_pengumuman'] ?>" class="btn-table">Hapus</a>
                                 </div>

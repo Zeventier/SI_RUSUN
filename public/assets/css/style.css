@@ -15,6 +15,8 @@
   --btn-success: #238823;
   --btn-success-hov: #1ec21e;
   --btn-danger: #000;
+  --btn-warning: #1976d2;
+  --btn-warning-hov: #2196f3;
 }
 
 @page {
@@ -67,8 +69,31 @@ input[type='text'] {
   font-size: 2rem;
 }
 
+input[type='date'] {
+  font-size: 2rem;
+}
+
+input[type='password'] {
+  font-size: 2rem;
+}
+
+input:disabled {
+  color: #808080;
+}
+
 select {
   font-size: 2rem;
+}
+
+select[readonly] {
+  background: #eee;
+  pointer-events: none;
+  touch-action: none;
+  color: #808080;
+}
+
+option :disabled {
+  background-color: var(--light-color);
 }
 
 se {
@@ -148,10 +173,10 @@ se {
 }
 
 .header .navbar-portal a {
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: var(--black);
   text-transform: capitalize;
-  font-weight: 500;
+  font-weight: 550;
   margin: 0 1rem;
 }
 
@@ -428,14 +453,15 @@ se {
 }
 
 .form-input .rule {
-  padding: 0.2rem;
+  padding: 1.5rem;
   background: var(--light-bg);
   position: relative;
   margin-bottom: 3rem;
-  margin-top: 4rem;
-  font-size: 1.4rem;
-  color: var(--light-color);
+  font-size: 2rem;
+  color: var(--black);
   line-height: 2;
+  font-weight: 500;
+  border-radius: 10px;
 }
 
 .form-input .rule::before {
@@ -457,7 +483,7 @@ se {
 
 .form-input .rule .list {
   margin: 15px 30px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 
@@ -477,13 +503,15 @@ se {
 select {
   margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .form-input input {
   width: calc(100% - 10px);
   padding: 5px;
+  margin-bottom: 10px;
   background: var(--white);
+  border-radius: 5px;
 }
 
 .form-input select {
@@ -493,11 +521,21 @@ select {
 }
 
 
-.form-input .item:hover p,
+/* .form-input .item:hover p,
 .form-input .item:hover i,
 input:hover::placeholder,
 a {
   color: #095484;
+} */
+
+.form-input .item .disable {
+  color: #808080;
+}
+
+.form-input .item .disable:hover {
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px 0 var(--btn-primary-hov);
+  color: #808080;
 }
 
 .form-input .item input:hover,
@@ -1136,19 +1174,84 @@ a {
   background: var(--black);
   color: var(--white);
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-transform: capitalize;
   -webkit-transition: .2s linear;
   transition: .2s linear;
+  border-radius: 5px;
+  font-weight: 500;
 }
 
 .table-content .table .btn-table:hover {
   background: var(--red);
-  color: var(--black);
+}
+
+.table-content .table .btn-table-danger {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 0.6rem;
+  background: var(--btn-primary);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.table-content .table .btn-table-danger:hover {
+  background: var(--btn-primary-hov);
+}
+
+.table-content .table .btn-table-success {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 0.6rem;
+  background: var(--btn-success);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.table-content .table .btn-table-success:hover {
+  background: var(--btn-success-hov);
+}
+
+.table-content .table .btn-table-warning {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 0.6rem;
+  background: var(--btn-warning);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.table-content .table .btn-table-warning:hover {
+  background: var(--btn-warning-hov);
 }
 
 .table-content .table th {
   background-color: var(--light-bg);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.table-content .table td {
+  font-size: 1.8rem;
+  font-weight: 500;
 }
 
 .table-content .table td,
@@ -1177,6 +1280,51 @@ a {
 .table-content .table th,
 .table-content .table td {
   padding: 15px;
+}
+
+.btn-table-danger a {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.7rem;
+}
+
+.btn-table-danger {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: var(--btn-primary);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+
+.btn-table-danger:hover {
+  background: var(--btn-primary-hov);
+}
+
+.btn-table-success {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: var(--btn-success);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.btn-table-success:hover {
+  background: var(--btn-success-hov);
 }
 
 .ver .modal {

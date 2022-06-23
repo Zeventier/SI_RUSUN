@@ -23,23 +23,23 @@
                 <form method="post" action="/portal/admin/tambah_penghuni?id_pengumuman=<?php echo $_GET['id_pengumuman']; ?>">
                     <div class="item">
                         <p>Nama Pemohon (Kepala Keluarga)</p>
-                        <input type="text" id="nama_pemohon" value="<?php echo $model['data']->pemohon->nama_pemohon; ?>" name="nama_wakil" required />
+                        <input class="disable" readonly="readonly" title=" Tidak Bisa Dirubah" type="text" pattern="^[a-zA-Z@ ]+$" autocapitalize="words" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->nama_pemohon; ?>" name="nama_wakil" />
                     </div>
                     <div class="item">
-                        <p>Nomor Induk Kependudukan Pemohon</p>
-                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" value="<?php echo $model['data']->pemohon->nik_pemohon; ?>" name="nik_wakil" required />
+                        <p>Nomor Induk Kependudukan</p>
+                        <input class="disable" readonly="readonly" title="Tidak Bisa Dirubah" type="text" minlength="16" maxlength="16" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $model['data']->pemohon->nik_pemohon; ?>" name="nik_wakil" />
                     </div>
                     <div class="item">
                         <p>Nomor Kartu Keluarga</p>
-                        <input type="tel" pattern="[0-9]+" minlength="16" maxlength="16" value="<?php echo $model['data']->pemohon->nomor_kk; ?>" name="no_kk" required />
+                        <input class="disable" readonly="readonly" title="Tidak Bisa Dirubah" type="text" minlength="16" maxlength="16" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $model['data']->pemohon->nomor_kk; ?>" name="no_kk" />
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
-                        <input type="text" value="<?php echo $model['data']->pemohon->kerja_pemohon; ?>" name="kerja_wakil" required />
+                        <input class="disable" readonly="readonly" title="Tidak Bisa Dirubah" type="text" pattern="^[a-zA-Z@ ]+$" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->kerja_pemohon; ?>" name="kerja_wakil" />
                     </div>
                     <div class="item">
-                        <p>Kisaran Gaji Perbulan</p>
-                        <select name="gaji_wakil" required>
+                        <p>Kisaran Gaji Perbulan </p>
+                        <select name="gaji_wakil" readonly="readonly">
                             <option value="">Select</option>
                             <option value="Rp 0 - Rp 1.999.999," <?php if ($model['data']->pemohon->gaji_pemohon == 'Rp 0 - Rp 1.999.999,') {
                                                                         echo "selected";
@@ -54,19 +54,19 @@
                     </div>
                     <div class="item">
                         <p>Jumlah Penghuni</p>
-                        <input type="number" min="1" max="4" value="<?php echo $model['data']->pemohon->jlh_penghuni; ?>" name="jlh_penghuni" required />
+                        <input class="disable" readonly="readonly" title="Tidak Bisa Dirubah" type="text" maxlength="1" oninput="this.value=this.value.replace(/(?![1-4])./gmi,'')" value="<?php echo $model['data']->pemohon->jlh_penghuni; ?>" name="jlh_penghuni" />
                     </div>
                     <div class="item">
                         <p>Nama Pasangan</p>
-                        <input type="text" value="<?php echo $model['data']->pemohon->nama_psgn; ?>" name="nama_psgn" required />
+                        <input class="disable" readonly="readonly" title="Tidak Bisa Dirubah" type="text" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->nama_psgn; ?>" name="nama_psgn" />
                     </div>
                     <div class="item">
                         <p>Pekerjaan Pasangan</p>
-                        <input type="text" value="<?php echo $model['data']->pemohon->kerja_psgn; ?>" name="kerja_psgn" required />
+                        <input class="disable" readonly="readonly" title="Tidak Bisa Dirubah" type="text" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->kerja_psgn; ?>" name="kerja_psgn" />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Pasangan Perbulan</p>
-                        <select name="gaji_psgn" required>
+                        <select name="gaji_psgn" readonly="readonly">
                             <option value="">Select</option>
                             <option value="Rp 0 - Rp 1.999.999," <?php if ($model['data']->pemohon->gaji_psgn == 'Rp 0 - Rp 1.999.999,') {
                                                                         echo "selected";
@@ -81,7 +81,7 @@
                     </div>
                     <div class="item">
                         <p>Pilih Ruangan</p>
-                        <select name="ruangan" required>
+                        <select name="ruangan" readonly="readonly">
                             <option value="">Select</option>
                             <?php if (isset($model['ruangan'])) {
                                 $i = 0;
@@ -96,11 +96,11 @@
                                                                                         } ?>>Ruang <?php echo $value['no_ruang'] ?> - Lantai <?php echo $value['lantai'] ?></option>
                                 <?php }
                                 if ($i == sizeof($model['ruangan'])) { ?>
-                                    <option value="" disabled>Tidak ada ruangan tersedia</option>
+                                    <option value="">Tidak ada ruangan tersedia</option>
                                 <?php }
                             } else {
                                 ?>
-                                <option value="" disabled>Tidak ada ruangan tersedia</option>
+                                <option value="">Tidak ada ruangan tersedia</option>
                             <?php
                             }
                             ?>
@@ -122,8 +122,8 @@
                     <div class="nav-rule">
                         <p></p>
                         <div>
-                            <button class="btn-rule" type="submit">Tambah</button>
-                            <a href="/portal/admin" class="btn-rule">Batal</a>
+                            <button class="btn-table-success" type="submit">Tambah</button>
+                            <button class="btn-table-danger" onclick="location.href='/portal/admin'">Batal</button>
                         </div>
                     </div>
                 </form>
@@ -131,4 +131,4 @@
         </div>
     </section>
 
-    <script src="assets/js/script.js"></script>
+    <script src=" assets/js/script.js"></script>
