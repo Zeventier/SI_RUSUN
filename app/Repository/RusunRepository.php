@@ -26,7 +26,7 @@ class RusunRepository
 
     public function update(Rusun $rusun): Rusun
     {
-        $statement = $this->connection->prepare("UPDATE rusun SET no_ruang = ?, lantai = ?, keterangan = ?) 
+        $statement = $this->connection->prepare("UPDATE rusun SET no_ruang = ?, lantai = ?, keterangan = ? 
         WHERE kode_rusun = ?");
         $statement->execute([
             $rusun->no_ruang, $rusun->lantai, $rusun->keterangan, $rusun->kode_rusun
