@@ -6,6 +6,7 @@ use Project\App\View;
 use Project\Domain\Air;
 use Project\Domain\Sewa;
 use Project\Domain\Rusun;
+use Project\Domain\Berkas;
 use Project\Domain\Keluhan;
 use Project\Config\Database;
 use Project\Domain\Tanggapan;
@@ -63,12 +64,10 @@ class PortalAdminController
 
         $pengumumanRepository = new PengumumanRepository($connection);
         $pemohonRepository = new PemohonRepository($connection);
-        $this->pengumumanService = new PengumumanService($pengumumanRepository, $pemohonRepository);
-
-        $pemohonRepository = new PemohonRepository($connection);
         $berkasRepository = new BerkasRepository($connection);
-        $pengumumanRepository = new PengumumanRepository($connection);
+
         $this->pemohonService = new PemohonService($pemohonRepository, $berkasRepository, $pengumumanRepository);
+        $this->pengumumanService = new PengumumanService($pengumumanRepository, $pemohonRepository, $berkasRepository);
 
         $rusunRepository = new RusunRepository($connection);
         $this->rusunService = new RusunService($rusunRepository);
@@ -119,14 +118,15 @@ class PortalAdminController
         ]);
     }
 
-    public function kelolaPemohon()
+    public function berkasPemohon()
     {
+        $dataBerkas = new Berkas();
         $id_pengumuman = $_GET['id_pengumuman'];
-        $dataPemohon = $this->pemohonService->showPemohon($id_pengumuman);
+        $dataBerkas = $this->pemohonService->showBerkas($id_pengumuman);
 
-        View::render('Portal/Admin/kelola_pemohon', [
+        View::render('Portal/Admin/berkas_pemohon', [
             'title' => 'Portal Rusun Admin',
-            'data' => $dataPemohon
+            'data' => $dataBerkas
         ]);
     }
 
@@ -146,78 +146,6 @@ class PortalAdminController
         $request->kerja_psgn = $_POST['kerja_psgn'];
         $request->gaji_psgn = $_POST['gaji_psgn'];
         $request->kode_rusun = $_POST['ruangan'];
-
-        $target_dir = "/assets/file/uploads/";
-        $target_file = $target_dir . $_POST['nik_pemohon'] . basename($_FILES["ktp_pmhn"]["name"]);
-        $tmpFile = $_FILES['ktp_pmhn']['tmp_name'];
-
-        $upload = move_uploaded_file($tmpFile, $target_file);
-
-        if ($upload) {
-            $request->ktp_pmhn = $target_file;
-        } else {
-            $request->ktp_pmhn = null;
-        }
-
-        $target_dir = "/assets/file/uploads/";
-        $target_file = $target_dir . $_POST['nik_pemohon'] . basename($_FILES["ktp_psgn"]["name"]);
-        $tmpFile = $_FILES['ktp_psgn']['tmp_name'];
-
-        $upload = move_uploaded_file($tmpFile, $target_file);
-
-        if ($upload) {
-            $request->ktp_psgn = $target_file;
-        } else {
-            $request->ktp_psgn = null;
-        }
-
-        $target_dir = "/assets/file/uploads/";
-        $target_file = $target_dir . $_POST['nik_pemohon'] . basename($_FILES["kartu_kk"]["name"]);
-        $tmpFile = $_FILES['kartu_kk']['tmp_name'];
-
-        $upload = move_uploaded_file($tmpFile, $target_file);
-
-        if ($upload) {
-            $request->kartu_kk = $target_file;
-        } else {
-            $request->kartu_kk = null;
-        }
-
-        $target_dir = "/assets/file/uploads/";
-        $target_file = $target_dir . $_POST['nik_pemohon'] . basename($_FILES["srt_kerja"]["name"]);
-        $tmpFile = $_FILES['srt_kerja']['tmp_name'];
-
-        $upload = move_uploaded_file($tmpFile, $target_file);
-
-        if ($upload) {
-            $request->srt_kerja = $target_file;
-        } else {
-            $request->srt_kerja = null;
-        }
-
-        $target_dir = "/assets/file/uploads/";
-        $target_file = $target_dir . $_POST['nik_pemohon'] . basename($_FILES["struk_gaji"]["name"]);
-        $tmpFile = $_FILES['struk_gaji']['tmp_name'];
-
-        $upload = move_uploaded_file($tmpFile, $target_file);
-
-        if ($upload) {
-            $request->struk_gaji = $target_file;
-        } else {
-            $request->struk_gaji = null;
-        }
-
-        $target_dir = "/assets/file/uploads/";
-        $target_file = $target_dir . $_POST['nik_pemohon'] . basename($_FILES["srt_nikah"]["name"]);
-        $tmpFile = $_FILES['srt_nikah']['tmp_name'];
-
-        $upload = move_uploaded_file($tmpFile, $target_file);
-
-        if ($upload) {
-            $request->srt_nikah = $target_file;
-        } else {
-            $request->srt_nikah = null;
-        }
 
         try {
             $this->pemohonService->editPemohon($id_pengumuman, $request);

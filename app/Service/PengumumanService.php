@@ -8,18 +8,22 @@ use Project\Domain\Pengumuman;
 use Project\Model\AturJadwalRequest;
 use Project\Model\AturJadwalResponse;
 use Project\Model\PengumumanResponse;
+use Project\Repository\BerkasRepository;
 use Project\Repository\PemohonRepository;
 use Project\Repository\PengumumanRepository;
 
 class PengumumanService {
     private PengumumanRepository $pengumumanRepository;
     private PemohonRepository $pemohonRepository;
+    private BerkasRepository $berkasRepository;
 
-    public function __construct(PengumumanRepository $pengumumanRepository, PemohonRepository $pemohonRepository)
+    public function __construct(PengumumanRepository $pengumumanRepository, PemohonRepository $pemohonRepository, BerkasRepository $berkasRepository)
     {
         $this->pengumumanRepository = $pengumumanRepository;
 
         $this->pemohonRepository = $pemohonRepository;
+
+        $this->berkasRepository = $berkasRepository;
     }
 
     public function showDaftarPemohon()
@@ -67,11 +71,15 @@ class PengumumanService {
             Database::beginTransaction();
 
             $pengumuman = new Pengumuman();
+            $pemohon = new Pemohon();
 
             $pengumuman = $this->pengumumanRepository->findById($id_pengumuman);
+            $pemohon = $this->pemohonRepository->findById($pengumuman->id_pemohon);
+
 
             $this->pengumumanRepository->delete($id_pengumuman);
             $this->pemohonRepository->delete($pengumuman->id_pemohon);
+            $this->berkasRepository->delete($pemohon->id_berkas);
 
             Database::commitTransaction();
 

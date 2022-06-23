@@ -59,7 +59,7 @@ class PemohonRepository {
     public function findById(?int $id_pemohon): ?Pemohon
     {
         $statement = $this->connection->prepare("SELECT id_pemohon, nama_pemohon, notelp_pemohon, nik_pemohon, nomor_kk, 
-            kerja_pemohon, gaji_pemohon, jlh_penghuni, nama_psgn, kerja_psgn, gaji_psgn, kode_rusun FROM pemohon WHERE id_pemohon = ?");
+            kerja_pemohon, gaji_pemohon, jlh_penghuni, nama_psgn, kerja_psgn, gaji_psgn, kode_rusun, id_berkas FROM pemohon WHERE id_pemohon = ?");
         $statement->execute([$id_pemohon]);
 
         try {
@@ -77,6 +77,7 @@ class PemohonRepository {
                 $pemohon->kerja_psgn = $row['kerja_psgn'];
                 $pemohon->gaji_psgn = $row['gaji_psgn'];
                 $pemohon->kode_rusun = $row['kode_rusun'];
+                $pemohon->id_berkas = $row['id_berkas'];
 
                 return $pemohon;
             } else {

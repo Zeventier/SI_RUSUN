@@ -57,7 +57,7 @@ Router::add('POST', '/portal/admin/edit_air', PortalAdminController::class, 'pos
 
 Router::add('GET', '/portal/admin/edit_pemohon', PortalAdminController::class, 'editPemohon', [MustLoginMiddleware::class]);
 Router::add('POST', '/portal/admin/edit_pemohon', PortalAdminController::class, 'postEditPemohon', [MustLoginMiddleware::class]);
-Router::add('GET', '/portal/admin/kelola_pemohon', PortalAdminController::class, 'kelolaPemohon', [MustLoginMiddleware::class]);
+Router::add('GET', '/portal/admin/berkas_pemohon', PortalAdminController::class, 'berkasPemohon', [MustLoginMiddleware::class]);
 
 Router::add('GET', '/portal/admin/penghuni', PortalAdminController::class, 'penghuni', [MustLoginMiddleware::class]);
 Router::add('GET', '/portal/admin/penghuni/delete', PortalAdminController::class, 'deletePenghuni', [MustLoginMiddleware::class]);
