@@ -44,13 +44,13 @@
                         <h3>Selamat Anda lolos pengajuan penghunian rusun! </h3>
                         <p>Berikut ini adalah informasi akun portal rusun anda:</p>
                         <p>Username</p>
-                        <input value="<?php echo $model['data']->penghuni->username ?? '';  ?>" class="box" readonly>
+                        <input value="<?php echo $model['data']->penghuni->username ?? '';  ?>" class="box-annonce" readonly>
                         <p>Password</p>
-                        <input value="<?php echo $model['data']->pengumuman->password ?? '';  ?>" class="box" readonly>
+                        <input value="<?php echo $model['data']->pengumuman->password ?? '';  ?>" class=box-annonce readonly>
                         <p>Lantai</p>
-                        <input value="<?php echo $model['data']->ruangan->lantai ?? '';  ?>" class="box" readonly>
+                        <input value="<?php echo $model['data']->ruangan->lantai ?? '';  ?>" class=box-annonce readonly>
                         <p>Ruang Rusun</p>
-                        <input value="<?php echo $model['data']->ruangan->no_ruang ?? '';  ?>" class="box" readonly>
+                        <input value="<?php echo $model['data']->ruangan->no_ruang ?? '';  ?>" class=box-annonce readonly>
                     </form>
                 </div>
 

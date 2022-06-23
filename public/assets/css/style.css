@@ -722,14 +722,13 @@ a {
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   width: 60rem;
-  background: var(--light-colors);
+  background: #EEEEEE;
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
   ;
   box-shadow: var(--box-shadow);
   padding: 5rem;
   -webkit-animation: fadeIn .2s linear;
   animation: fadeIn .2s linear;
-  background-color: rgb(250, 250, 250);
   border-radius: 5px;
 }
 
@@ -749,6 +748,18 @@ a {
   font-size: 1.6rem;
   color: var(--light-color);
   margin: .7rem 0;
+  border-radius: 5px;
+}
+
+.form-output .form .box-annonce {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  background: var(--white);
+  font-size: 2rem;
+  color: var(--black);
+  margin: .7rem 0;
+  font-weight: 500;
+  border-radius: 5px;
 }
 
 .form-output .form .flex a {
