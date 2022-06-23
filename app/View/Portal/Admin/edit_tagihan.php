@@ -24,12 +24,12 @@
                     <div class="item">
                         <p>Username</p>
                         <div class="item">
-                            <input type="text" name="username" value="<?php echo $model['data']->username ?>" required />
+                            <input type="text" name="username" value="<?php echo $model['data']->username ?>" required disabled />
                         </div>
                     </div>
                     <div class="item">
                         <p>Tanggal Akhir Pembayaran</p>
-                        <input type="date" name="deadline" value="<?php echo $model['data']->deadline ?>" required />
+                        <input type="datetime-local" name="deadline" value="<?php echo $model['data']->deadline ?>" required />
                     </div>
                     <div class="item">
                         <div class="double-item">
@@ -39,7 +39,7 @@
                             </div>
                             <div class="rows">
                                 <p>Biaya Air/bulan</p>
-                                <input type="text" name="biaya_air" required />
+                                <input type="text" value="<?php echo $model['air'][0]['harga_akhir'] ?? ""; ?>" name="" disabled />
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="item">
                         <p>Total Tagihan</p>
-                        <input type="text" name="total_tagihan" required />
+                        <input type="text" value="<?php echo ($model['data']->sewa_rusun + $model['data']->debit_air * $model['air'][0]['harga_akhir']) ?>" name="total_tagihan" required />
                     </div>
                     <div class="item">
                         <p>Keterangan</p>

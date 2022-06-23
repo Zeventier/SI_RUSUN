@@ -350,14 +350,51 @@ class PortalAdminController
         ]);
     }
 
+    public function tambahTagihan()
+    {
+        $dataPenghuni = $this->penghuniService->showDaftarPenghuni();
+        $air = $this->airService->getHargaAir();
+
+        View::render('Portal/Admin/tambah_tagihan', [
+            'title' => 'Portal Rusun Admin',
+            'data' => $dataPenghuni,
+            'air' => $air
+        ]);
+    }
+
+    public function postTambahTagihan()
+    {
+        $tagihan = new Sewa();
+
+        $tagihan->sewa_rusun = $_POST['sewa_rusun'];
+        $tagihan->debit_air = $_POST['debit_air'];
+        $tagihan->keterangan = $_POST['keterangan'];
+        $tagihan->deadline = $_POST['deadline'];
+        $tagihan->username = $_POST['username'];
+
+        try {
+            $this->sewaService->tambahTagihan($tagihan);
+
+            View::redirect('/portal/admin/tagihan_penghuni?date=' . date('Y-m'));
+        } catch (ValidationException $exception) {
+            View::render('Portal/Admin/edit_tagihan', [
+                "title" => "Portal Rusun Admin",
+                'error' => $exception->getMessage()
+            ]);
+        }
+    }
+
     public function editTagihan()
     {
         $id_tagihan = $_GET['id_tagihan'];
+        $air = $this->airService->getHargaAir();
         $dataTagihan = $this->sewaService->showTagihan($id_tagihan);
+        $dataTagihan->deadline = date('Y-m-d\TH:i:s', strtotime($dataTagihan->deadline));
 
         View::render('Portal/Admin/edit_tagihan', [
             'title' => 'Portal Rusun Admin',
-            'data' => $dataTagihan
+            'data' => $dataTagihan,
+            'air' => $air
         ]);
     }
 
@@ -375,7 +412,7 @@ class PortalAdminController
         try {
             $this->sewaService->editTagihan($tagihan);
 
-            View::redirect('/portal/admin/tagihan_penghuni');
+            View::redirect('/portal/admin/tagihan_penghuni?date=' . date('Y-m'));
         } catch (ValidationException $exception) {
             View::render('Portal/Admin/edit_tagihan', [
                 "title" => "Portal Rusun Admin",
@@ -506,20 +543,20 @@ class PortalAdminController
     {
         $id_penghuni = $_GET['id_penghuni'];
         $dataPenghuni = $this->penghuniService->showPenghuni($id_penghuni);
+        $daftarRuangan = $this->rusunService->showDaftarRuangan();
 
         View::render('Portal/Admin/edit_penghuni', [
             'title' => 'Portal Rusun Admin',
-            'data' => $dataPenghuni
+            'data' => $dataPenghuni,
+            'ruangan' => $daftarRuangan
         ]);
     }
 
     public function postEditPenghuni()
     {
         $id_penghuni = $_GET['id_penghuni'];
-        $username = $_POST['username'];
 
         $request = new PenghuniRequest();
-        $userRequest = new UserEditRequest();
 
         $request->nama_wakil = $_POST['nama_wakil'];
         $request->nik_wakil = $_POST['nik_wakil'];
@@ -534,14 +571,10 @@ class PortalAdminController
         $request->username = $_POST['username'];
         $request->kode_rusun = $_POST['ruangan'];
 
-        $userRequest->password = $_POST['password'];
-        $userRequest->status = 'user';
-
         try {
-            $this->userService->editUser($username, $userRequest);
-            $this->penghuniService->addPenghuni($id_penghuni, $request);
+            $this->penghuniService->editPenghuni($id_penghuni, $request);
 
-            View::redirect('/portal/admin/pelayanan');
+            View::redirect('/portal/admin/penghuni');
         } catch (ValidationException $exception) {
             View::render('Portal/Admin/pelayanan', [
                 "title" => "Portal Rusun Admin",
