@@ -15,7 +15,7 @@
 
     <section class="form-input">
         <div>
-            <h1 class="heading"> Username - Kode Rusun</h1>
+            <h1 class="heading"> <?php echo $model['penghuni']->username ?> - Kode Rusun</h1>
         </div>
 
         <div class="rule">
@@ -81,7 +81,7 @@
                     </div>
                     <div class="item">
                         <p>Password</p>
-                        <input type="password" value="<?php echo $model['user']->password ?? "" ?>"name="password" readonly />
+                        <input type="password" value="<?php echo $model['user']->password ?? "" ?>" name="password" readonly />
                     </div>
                 </form>
             </div>

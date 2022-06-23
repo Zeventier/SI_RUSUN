@@ -52,9 +52,9 @@
                             <td><?php echo $value['username'] ?></td>
                             <td><?php echo $value['deadline'] ?></td>
                             <td><?php echo $value['debit_air'] ?></td>
-                            <td><?php echo $model['air']->harga_akhir * $value['debit_air'] ?></td>
+                            <td><?php echo $model['air'][0]['harga_akhir'] * $value['debit_air'] ?></td>
                             <td><?php echo $value['sewa_rusun'] ?></td>
-                            <td><?php echo $model['air']->harga_akhir * $value['debit_air'] + $value['sewa_rusun'] ?></td>
+                            <td><?php echo $model['air'][0]['harga_akhir'] * $value['debit_air'] + $value['sewa_rusun'] ?></td>
                             <td><?php echo $value['keterangan'] ?></td>
                             <td id="not-print" class="table-btn">
                                 <div class="btn-center">
@@ -80,7 +80,7 @@
         <div class="space nav-rule">
             <div></div>
             <div>
-                <a id="not-print" href="" class="btn-success">Tambah Tagihan</a>
+                <a id="not-print" href="/portal/admin/tambah_tagihan" class="btn-success">Tambah Tagihan</a>
                 <a id="not-print" href="/portal/admin/edit_air?id_air=<?php echo $model['air'][0]['id_air'] ?? "" ?>" class="btn-warning">Ubah Harga Air</a>
                 <a id="not-print" href="/portal/admin/home" class="btn-rule">Kembali</a>
             </div>
