@@ -23,8 +23,8 @@
                 <form method="post" action="/portal/admin/edit_penghuni?id_penghuni=<?php echo $_GET['id_penghuni'] ?>" id="edit-penghuni">
                     <div class="item">
 
-                        <p>Nama Pemohon (Kepala Keluarga))</p>
-                        <input autocapitalize="words" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)"" value="<?php echo $model['data']->penghuni->nama_wakil ?? "" ?>" name="nama_wakil" required />
+                        <p>Nama Pemohon (Kepala Keluarga)</p>
+                        <input type="text" autocapitalize="words" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)"" value=" <?php echo $model['data']->penghuni->nama_wakil ?? "" ?>" name="nama_wakil" required />
                     </div>
                     <div class="item">
                         <p>Nomor Induk Kependudukan Pemohon</p>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="item">
                         <p>Nomor Kartu Keluarga</p>
-                        <input type="text" minlength="16" maxlength="16" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $model['data']->penghuni->nomor_kk ?? "" ?>"  name="no_kk" required />
+                        <input type="text" minlength="16" maxlength="16" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $model['data']->penghuni->nomor_kk ?? "" ?>" name="no_kk" required />
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="item">
                         <p>Jumlah Penghuni</p>
-                        <input type="text" maxlength="1" oninput="this.value=this.value.replace(/(?![1-4])./gmi,'')" min="1" max="4"  value="<?php echo $model['data']->penghuni->jlh_penghuni ?? "" ?>" name="jlh_penghuni" required />
+                        <input type="text" maxlength="1" oninput="this.value=this.value.replace(/(?![1-4])./gmi,'')" min="1" max="4" value="<?php echo $model['data']->penghuni->jlh_penghuni ?? "" ?>" name="jlh_penghuni" required />
                     </div>
                     <div class="item">
                         <p>Nama Pasangan</p>
@@ -112,7 +112,7 @@
                     </div>
                     <div class="item">
                         <p>Username</p>
-                        <input title="Tidak Dapat Dirubah" type="text" class="disable"value="<?php echo $model['data']->penghuni->username ?? "" ?>" name="username" readonly />
+                        <input title="Tidak Dapat Dirubah" type="text" class="disable" value="<?php echo $model['data']->penghuni->username ?? "" ?>" name="username" readonly />
                     </div>
                     <div class="item">
                         <p>Password</p>
