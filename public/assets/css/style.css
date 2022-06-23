@@ -101,10 +101,6 @@ option :disabled {
   background-color: var(--light-color);
 }
 
-se {
-  background: #e8f0fe;
-}
-
 .heading {
   margin-bottom: 3rem;
   font-size: 3rem;
@@ -572,6 +568,10 @@ a {
 
 .form-input .single input {
   width: 100%;
+}
+
+.form-input .single-input input {
+  width: 88%;
 }
 
 .form-input .single .btn-rule {

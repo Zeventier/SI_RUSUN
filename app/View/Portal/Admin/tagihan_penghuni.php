@@ -58,8 +58,8 @@
                             <td><?php echo $value['keterangan'] ?></td>
                             <td id="not-print" class="table-btn">
                                 <div class="btn-center">
-                                    <a href="/portal/admin/edit_tagihan?id_tagihan=<?php echo $value['id_sewa'] ?>" class="btn-table">Edits</a>
-                                    <a href="#" class="btn-table">Tandai Lunas</a>
+                                    <a href="/portal/admin/edit_tagihan?id_tagihan=<?php echo $value['id_sewa'] ?>" class="btn-warning">Edits</a>
+                                    <a href="#" class="btn-success">Tandai Lunas</a>
                                 </div>
                             </td>
                         </tr>

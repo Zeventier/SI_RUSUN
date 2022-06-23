@@ -6,7 +6,7 @@
             <a href="/portal/user/pemberitahuan">Pemberitahuan</a>
             <a href="/portal/user/keluhan">Keluhan</a>
             <a href="/portal/user/logout"> Logout</a>
-        </nav>>
+        </nav>
 
         <div class="icons">
             <div id="portal-btn" class="fas fa-bars"></div>
