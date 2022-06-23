@@ -60,7 +60,7 @@
                         </p>
                     </div>
                     <p class="semi-bold">
-                        <i>*Sebelum lanjut, pastikan anda telah membaca Syarat dan Ketentuan di atas.</i>
+                        <span><i>*Sebelum lanjut, pastikan anda telah membaca Syarat dan Ketentuan di atas.</i></span>
                     </p>
                 </div>
 
@@ -136,6 +136,9 @@
                                 <option value="Rp 4.000.000, - Rp 6.000.000,">Rp 4.000.000, - Rp 6.000.000,</option>
                             </select>
                         </div>
+
+                        <span><i>*Jika Anda memiliki anggota keluarga <b>Difabel</b> dan atau Lansia harap memilih ruangan dilantai 1.</i></span>
+
                         <div class="item">
                             <p>Pilih Ruangan</p>
                             <select name="ruangan" required>
@@ -178,27 +181,27 @@
                             tahap ini.</span>
                         <div class="item">
                             <p>KTP Pemohon</p>
-                            <input type="file" accept="image/*,.pdf" name="ktp_pmhn" />
+                            <input type="file" accept="image/*" name="ktp_pmhn" />
                         </div>
                         <div class="item">
                             <p>KTP Pasangan</p>
-                            <input type="file" accept="image/*,.pdf" name="ktp_psgn" />
+                            <input type="file" accept="image/*" name="ktp_psgn" />
                         </div>
                         <div class="item">
                             <p>Kartu Keluarga</p>
-                            <input type="file" accept="image/*,.pdf" name="kartu_kk" />
+                            <input type="file" accept="image/*" name="kartu_kk" />
                         </div>
                         <div class="item">
                             <p>Surat Keterangan Memiliki Pekerjaan Tetap</p>
-                            <input type="file" accept="image/*,.pdf" name="srt_kerja" />
+                            <input type="file" accept="image/*" name="srt_kerja" />
                         </div>
                         <div class="item">
                             <p>Struk/Rincian Gaji</p>
-                            <input type="file" accept="image/*,.pdf" name="struk_gaji" />
+                            <input type="file" accept="image/*" name="struk_gaji" />
                         </div>
                         <div class="item">
                             <p>Surat Nikah</p>
-                            <input type="file" accept="image/*,.pdf" name="srt_nikah" />
+                            <input type="file" accept="image/*" name="srt_nikah" />
                         </div>
                     </div>
                 </div>
