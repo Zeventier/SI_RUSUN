@@ -15,10 +15,12 @@ use Project\Service\PenghuniService;
 use Project\Repository\AirRepository;
 use Project\Repository\SewaRepository;
 use Project\Repository\UserRepository;
+use Project\Repository\RusunRepository;
 use Project\Repository\KeluhanRepository;
 use Project\Repository\SessionRepository;
 use Project\Exception\ValidationException;
 use Project\Repository\PenghuniRepository;
+use Project\Repository\PengumumanRepository;
 
 class PortalUserController 
 {
@@ -41,7 +43,9 @@ class PortalUserController
         $this->sewaService = new SewaService($sewaRepository);
 
         $penghuniRepository = new PenghuniRepository($connection);
-        $this->penghuniService = new PenghuniService($penghuniRepository, $userRepository);
+        $pengumumanRepository = new PengumumanRepository($connection);
+        $rusunRepository = new RusunRepository($connection);
+        $this->penghuniService = new PenghuniService($penghuniRepository, $userRepository, $pengumumanRepository, $rusunRepository);
 
         $keluhanRepository = new KeluhanRepository($connection);
         $this->keluhanService = new KeluhanService($keluhanRepository);
