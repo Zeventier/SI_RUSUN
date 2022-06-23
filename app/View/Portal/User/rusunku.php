@@ -26,7 +26,7 @@
                     </div>
                     <div class="content">
                         <h3>Tagihan</h3>
-                        <a href="/portal/user/tagihan" class="btn">mulai
+                        <a href="/portal/user/tagihan?date=<?php echo date('Y-m') ?>" class="btn">mulai
                         </a>
                     </div>
 

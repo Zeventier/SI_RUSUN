@@ -39,7 +39,7 @@
                     <div class="nav-rule">
                         <div>
                             <button class=" btn-success" type="submit">Kirim</button>
-                            <button onclick="location.href='/portal/admin/keluhan?date=<?php echo date('Y-m') ?>'" class="btn-rule">Batal</button>
+                            <button type="button" onclick="location.href='/portal/admin/keluhan?date=<?php echo date('Y-m') ?>'" class="btn-rule">Batal</button>
                         </div>
                     </div>
                 </form>

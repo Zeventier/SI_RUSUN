@@ -17,53 +17,65 @@
         <div>
             <h1 class="heading"> Informasi Tagihan Bulanan</h1>
         </div>
+        <form method="get" class="of" action="/portal/user/tagihan">
+            <div class="nav-rule">
+                <div class="form-input">
+                    <div class="list">
+                        <div class="bulan">
+                            <p>Pilih Waktu</p>
+                            <input type="month" name="date" />
+                        </div>
+                    </div>
+                </div>
+                <div id="not-print">
+                    <button type="submit" class="btn-success">Pilih</button>
+                </div>
+            </div>
+        </form>
         <div id="print" class="rule">
             <div class="list">
-                <form action="/">
-                    <div class="item">
-                        <p>Bulan</p>
-                        <select class="select-month" required>
-                            <option value="">Select</option>
-                            <option value="1">Januari</option>
-                            <option value="2">Februari</option>
-                            <option value="3">Maret</option>
-                        </select>
-                    </div>
-                    <div class="item">
-                        <p>Username</p>
+                <form>
+                    <?php if ($model['data'] != null) { ?>
                         <div class="item">
-                            <input class="disable-print" type="text" value="<?php echo $model['data']->username ?? "" ?>" name="username" readonly />
+                            <p>Username</p>
+                            <div class="item">
+                                <input class="disable-print" type="text" value="<?php echo $model['data']->username ?? "" ?>" name="username" readonly />
+                            </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <p>Keterangan</p>
-                        <input class="disable-print" type="text" value="<?php echo $model['data']->keterangan ?? "" ?>" name="keterangan" readonly />
-                    </div>
-                    <div class="item">
-                        <p>Tanggal Akhir Pembayaran</p>
-                        <input class="disable-print" type="text" value="<?php echo $model['data']->deadline ?? "" ?>" name="deadline" readonly />
-                    </div>
+                        <div class="item">
+                            <p>Keterangan</p>
+                            <input class="disable-print" type="text" value="<?php echo $model['data']->keterangan ?? "" ?>" name="keterangan" readonly />
+                        </div>
+                        <div class="item">
+                            <p>Tanggal Akhir Pembayaran</p>
+                            <input class="disable-print" type="text" value="<?php echo $model['data']->deadline ?? "" ?>" name="deadline" readonly />
+                        </div>
 
-                    <div class="item">
-                        <div class="double-item">
-                            <div class="rows">
-                                <p>Debit Air</p>
-                                <input class="disable-print" type="text" value="<?php echo $model['data']->debit_air ?? "" ?>" name="debit_air" readonly />
-                            </div>
-                            <div class="rows">
-                                <p>Biaya Air/bulan</p>
-                                <input class="disable-print" type="text" value="<?php echo $model['air'][0]['harga_akhir'] ?? "" ?>" name="air" readonly />
+                        <div class="item">
+                            <div class="double-item">
+                                <div class="rows">
+                                    <p>Debit Air</p>
+                                    <input class="disable-print" type="text" value="<?php echo $model['data']->debit_air ?? "" ?>" name="debit_air" readonly />
+                                </div>
+                                <div class="rows">
+                                    <p>Biaya Air/bulan</p>
+                                    <input class="disable-print" type="text" value="<?php echo $model['air'][0]['harga_akhir'] ?? "" ?>" name="air" readonly />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <p>Biaya Sewa Rusun/bulan</p>
-                        <input class="disable-print" type="text" value="<?php echo $model['data']->sewa_rusun ?? "" ?>" name="sewa_rusun" readonly />
-                    </div>
-                    <div class="item">
-                        <p>Total Tagihan</p>
-                        <input class="disable-print" type="text" value="<?php echo ($model['data']->sewa_rusun + $model['data']->debit_air * $model['air'][0]['harga_akhir']) ?>" name="total" readonly />
-                    </div>
+                        <div class="item">
+                            <p>Biaya Sewa Rusun/bulan</p>
+                            <input class="disable-print" type="text" value="<?php echo $model['data']->sewa_rusun ?? "" ?>" name="sewa_rusun" readonly />
+                        </div>
+                        <div class="item">
+                            <p>Total Tagihan</p>
+                            <input class="disable-print" type="text" value="<?php echo ($model['data']->sewa_rusun + $model['data']->debit_air * $model['air'][0]['harga_akhir']) ?>" name="total" readonly />
+                        </div>
+                    <?php } else { ?>
+                        <div class="item">
+                            <p>Tidak ada tagihan pada bulan dan tahun ini!</p>
+                        </div>
+                    <?php } ?>
                 </form>
             </div>
         </div>

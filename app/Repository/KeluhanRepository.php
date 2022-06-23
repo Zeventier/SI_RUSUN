@@ -80,7 +80,7 @@ class KeluhanRepository
         $statement = $this->connection->prepare("SELECT keluhan.id_keluhan, keluhan.waktu, keluhan.keluhan, keluhan.username, tanggapan.tanggapan, penghuni.kode_rusun FROM keluhan 
                                                     LEFT JOIN tanggapan ON keluhan.id_keluhan = tanggapan.id_keluhan
                                                     LEFT JOIN penghuni ON keluhan.username = penghuni.username
-                                                    WHERE YEAR(keluhan.waktu) = ? AND MONTH(keluhan.waktu) = ?");
+                                                    WHERE YEAR(keluhan.waktu) = ? AND MONTH(keluhan.waktu) = ? ORDER BY tanggapan.tanggapan, keluhan.waktu DESC");
         $statement->execute([$year, $month]);
 
         try {

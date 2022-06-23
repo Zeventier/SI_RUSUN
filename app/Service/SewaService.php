@@ -33,13 +33,13 @@ class SewaService {
         }
     }
 
-    public function showTagihanUsername($username)
+    public function showTagihanUsername($username, $year, $month)
     {
         try {
             Database::beginTransaction();
 
             $tagihan = new Sewa();
-            $tagihan = $this->sewaRepository->findByUsername($username);
+            $tagihan = $this->sewaRepository->findByUsername($username, $year, $month);
 
             Database::commitTransaction();
 
