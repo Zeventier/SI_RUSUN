@@ -67,13 +67,14 @@ class PortalAdminController
         $berkasRepository = new BerkasRepository($connection);
 
         $this->pemohonService = new PemohonService($pemohonRepository, $berkasRepository, $pengumumanRepository);
-        $this->pengumumanService = new PengumumanService($pengumumanRepository, $pemohonRepository, $berkasRepository);
 
         $rusunRepository = new RusunRepository($connection);
         $this->rusunService = new RusunService($rusunRepository);
 
         $penghuniRepository = new PenghuniRepository($connection);
         $this->penghuniService = new PenghuniService($penghuniRepository, $userRepository, $pengumumanRepository, $rusunRepository);
+
+        $this->pengumumanService = new PengumumanService($pengumumanRepository, $pemohonRepository, $berkasRepository, $penghuniRepository, $rusunRepository);
 
         $sewaRepository = new SewaRepository($connection);
         $this->sewaService = new SewaService($sewaRepository);
