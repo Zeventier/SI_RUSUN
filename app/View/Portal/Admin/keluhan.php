@@ -22,15 +22,15 @@
                 <div class="form-input">
                     <div class="list">
 
-                        <div class="single-item">
+                        <div class="bulan">
                             <p>Pilih Waktu</p>
                             <input type="month" name="date" />
                         </div>
                     </div>
                 </div>
                 <div id="not-print">
-                    <button type="submit" class="btn-rule">Pilih</button>
-                    <button onclick="window.print()" class=" btn-rule">Cetak</button>
+                    <button type="submit" class="btn-success">Pilih</button>
+                    <button onclick="window.print()" class=" btn-warning">Cetak</button>
                 </div>
             </div>
         </form>
@@ -57,9 +57,9 @@
                             <td><?php echo $value['tanggapan'] ?></td>
                             <td id="not-print" class="table-btn">
                                 <?php if ($value['tanggapan'] == null) { ?>
-                                <div class="btn-center">
-                                    <a href="/portal/admin/tanggapan?id_keluhan=<?php echo $value['id_keluhan'] ?>" class="btn-table">Tanggapi</a>
-                                </div>
+                                    <div class="btn-center">
+                                        <a href="/portal/admin/tanggapan?id_keluhan=<?php echo $value['id_keluhan'] ?>" class="btn-danger">Tanggapi</a>
+                                    </div>
                                 <?php } ?>
                             </td>
                         </tr>

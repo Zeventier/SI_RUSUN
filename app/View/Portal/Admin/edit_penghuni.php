@@ -102,7 +102,7 @@
         <div class="nav-rule">
             <p></p>
             <div>
-                <button class="btn-rule" type="submit" form="edit-penghuni">Simpan</button>
+                <button class="btn-success" type="submit" form="edit-penghuni">Simpan</button>
                 <a href="/portal/admin/penghuni" class="btn-rule">Batal</a>
             </div>
     </section>
