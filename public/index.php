@@ -42,6 +42,8 @@ Router::add('GET', '/portal/admin/tambah_penghuni', PortalAdminController::class
 Router::add('POST', '/portal/admin/tambah_penghuni', PortalAdminController::class, 'postTambahPenghuni', [MustLoginMiddleware::class]);
 
 Router::add('GET', '/portal/admin/tagihan_penghuni', PortalAdminController::class, 'tagihanPenghuni', [MustLoginMiddleware::class]);
+Router::add('GET', '/portal/admin/tambah_tagihan', PortalAdminController::class, 'tambahTagihan', [MustLoginMiddleware::class]);
+Router::add('POST', '/portal/admin/tambah_tagihan', PortalAdminController::class, 'postTambahTagihan', [MustLoginMiddleware::class]);
 Router::add('GET', '/portal/admin/edit_tagihan', PortalAdminController::class, 'editTagihan', [MustLoginMiddleware::class]);
 Router::add('POST', '/portal/admin/edit_tagihan', PortalAdminController::class, 'postEditTagihan', [MustLoginMiddleware::class]);
 

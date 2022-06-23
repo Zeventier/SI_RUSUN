@@ -75,7 +75,7 @@
                     <div class="list">
                         <div class="item">
                             <p>Nama Pemohon (Kepala Keluarga)</p>
-                            <input type="text" pattern="^[a-zA-Z@ ]+$" autocapitalize="words" id="nama_pemohon" name="nama_pemohon" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $_POST['nama_pemohon'] ?? "" ?>" required />
+                            <input type="text" autocapitalize="words" id="nama_pemohon" name="nama_pemohon" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $_POST['nama_pemohon'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Nomor Telepon</p>
@@ -83,15 +83,15 @@
                         </div>
                         <div class="item">
                             <p>Nomor Induk Kependudukan</p>
-                            <input type="text" pattern="[0-9]" minlength="16" maxlength="16" name="nik_pemohon" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $_POST['nik_pemohon'] ?? "" ?>" required />
+                            <input type="text" minlength="16" maxlength="16" name="nik_pemohon" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $_POST['nik_pemohon'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Nomor Kartu Keluarga</p>
-                            <input type="text" pattern="[0-9]" minlength="16" maxlength="16" name="no_kk" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $_POST['no_kk'] ?? "" ?>" required />
+                            <input type="text" minlength="16" maxlength="16" name="no_kk" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $_POST['no_kk'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Pekerjaan</p>
-                            <input type="text" pattern="^[a-zA-Z@ ]+$" maxlength="50" name="kerja_pemohon" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $_POST['kerja_pemohon'] ?? "" ?>" required />
+                            <input type="text" maxlength="50" name="kerja_pemohon" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $_POST['kerja_pemohon'] ?? "" ?>" required />
                         </div>
                         <div class="item">
                             <p>Kisaran Gaji Perbulan</p>

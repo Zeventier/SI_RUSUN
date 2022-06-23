@@ -15,7 +15,7 @@
 
     <section class="form-input">
         <div>
-            <h1 class="heading"> Username - Kode Rusun</h1>
+            <h1 class="heading"> <?php echo $model['penghuni']->username ?> - Kode Rusun</h1>
         </div>
 
         <div class="rule">
@@ -35,7 +35,7 @@
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
-                        <input type="text" pattern="^[a-zA-Z@ ]$" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['penghuni']->kerja_wakil ?? "" ?>" name="kerja_wakil" required />
+                        <input type="text" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['penghuni']->kerja_wakil ?? "" ?>" name="kerja_wakil" required />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Perbulan</p>
@@ -81,7 +81,7 @@
                     </div>
                     <div class="item">
                         <p>Password</p>
-                        <input title="Tidak Dapat Dirubah" type="password" class="disable" value="<?php echo $model['user']->password ?? "" ?>" name="password" readonly />
+                        <input type="password" title="Tidak Dapat Dirubah" type="password" class="disable" value="<?php echo $model['user']->password ?? "" ?>" name="password" readonly />
                     </div>
                 </form>
             </div>

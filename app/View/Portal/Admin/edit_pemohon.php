@@ -24,7 +24,7 @@
                     <div class="item">
                         <p>Nama Pemohon (Kepala Keluarga)</p>
                         <div class="item">
-                            <input type="text"autocapitalize="words" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->nama_pemohon ?>" name="nama_pemohon" />
+                            <input type="text" autocapitalize="words" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->nama_pemohon ?>" name="nama_pemohon" />
                         </div>
                     </div>
                     <div class="item">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
-                        <input type="text" pattern="^[a-zA-Z@ ]$" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->kerja_pemohon ?>" name="kerja_pemohon" />
+                        <input type="text" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->kerja_pemohon ?>" name="kerja_pemohon" />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Perbulan</p>

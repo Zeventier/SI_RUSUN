@@ -26,7 +26,7 @@ class SewaRepository
 
     public function update(Sewa $sewa): Sewa
     {
-        $statement = $this->connection->prepare("UPDATE sewa SET sewa_rusun = ?, debit_air = ?, keterangan = ?, deadline = ?, username = ?) 
+        $statement = $this->connection->prepare("UPDATE sewa SET sewa_rusun = ?, debit_air = ?, keterangan = ?, deadline = ?, username = ? 
         WHERE id_sewa = ?");
         $statement->execute([
             $sewa->sewa_rusun, $sewa->debit_air, $sewa->keterangan, $sewa->deadline, $sewa->username, $sewa->id_sewa

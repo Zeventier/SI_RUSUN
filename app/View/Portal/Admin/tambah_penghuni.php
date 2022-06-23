@@ -23,7 +23,7 @@
                 <form method="post" action="/portal/admin/tambah_penghuni?id_pengumuman=<?php echo $_GET['id_pengumuman']; ?>">
                     <div class="item">
                         <p>Nama Pemohon (Kepala Keluarga)</p>
-                        <input class="disable" readonly="readonly" title=" Tidak Bisa Dirubah" type="text" pattern="^[a-zA-Z@ ]+$" autocapitalize="words" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->nama_pemohon; ?>" name="nama_wakil" />
+                        <input class="disable" readonly="readonly" title=" Tidak Bisa Dirubah" type="text"  autocapitalize="words" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->nama_pemohon; ?>" name="nama_wakil" />
                     </div>
                     <div class="item">
                         <p>Nomor Induk Kependudukan</p>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
-                        <input class="disable" readonly="readonly" title="Tidak Bisa Dirubah" type="text" pattern="^[a-zA-Z@ ]+$" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->kerja_pemohon; ?>" name="kerja_wakil" />
+                        <input class="disable" readonly="readonly" title="Tidak Bisa Dirubah" type="text" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->kerja_pemohon; ?>" name="kerja_wakil" />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Perbulan </p>
