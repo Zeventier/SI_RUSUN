@@ -67,6 +67,35 @@ class SewaService {
         }
     }
 
+    public function tambahTagihan(Sewa $sewa)
+    {
+        try {
+            Database::beginTransaction();
+
+            do {
+                $id_sewa = rand();
+                $sewaCheck = $this->sewaRepository->findById($id_sewa);
+            } while ($sewaCheck != null);
+
+            $tagihan = new Sewa();
+            $tagihan->id_sewa = $id_sewa;
+            $tagihan->sewa_rusun = $sewa->sewa_rusun;
+            $tagihan->debit_air = $sewa->debit_air;
+            $tagihan->keterangan = $sewa->keterangan;
+            $tagihan->deadline = $sewa->deadline;
+            $tagihan->username = $sewa->username;
+            
+            $tagihan = $this->sewaRepository->save($tagihan);
+
+            Database::commitTransaction();
+
+            return $tagihan;
+        } catch (\Exception $exception) {
+            Database::rollbackTransaction();
+            throw $exception;
+        }
+    }
+
     public function editTagihan(Sewa $tagihan_request)
     {
         try {

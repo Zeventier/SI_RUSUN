@@ -100,6 +100,14 @@ class PenghuniService {
 
             $penghuni = new Penghuni();
 
+            $penghuniOld = new Penghuni();
+            $rusunOld = new Rusun();
+            $rusunNew = new Rusun();
+
+            $penghuniOld = $this->penghuniRepository->findById($id_penghuni);
+            $rusunOld = $this->rusunRepository->findById($penghuniOld->kode_rusun);
+            $rusunNew = $this->rusunRepository->findById($request->kode_rusun);
+
             $penghuni->id_penghuni = $id_penghuni;
             $penghuni->nama_wakil = $request->nama_wakil;
             $penghuni->nik_wakil = $request->nik_wakil;
@@ -115,6 +123,12 @@ class PenghuniService {
             $penghuni->kode_rusun = $request->kode_rusun;
 
             $this->penghuniRepository->update($penghuni);
+
+            $rusunOld->keterangan = 'Kosong';
+            $rusunNew->keterangan = 'Terisi';
+
+            $this->rusunRepository->update($rusunOld);
+            $this->rusunRepository->update($rusunNew);
 
             $response = new PenghuniResponse();
             $response->penghuni = $penghuni;
