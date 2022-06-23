@@ -20,7 +20,7 @@
 
      <div class="rule">
          <div class="list">
-             <form method="post" action="/portal/admin/form_ruangan" id="edit-ruang">
+             <form method="post" action="/portal/admin/form_ruangan?kode_ruangan=<?php echo $_GET["kode_ruangan"] ?? ''; ?> id="edit-ruang">
                  <div class="item">
                      <p>Nomor Rusun</p>
 
@@ -43,10 +43,6 @@
                                                 echo "selected";
                                             } ?>>4</option>
                      </select>
-                 </div>
-                 <div class="item">
-                     <p>Harga Sewa</p>
-                     <input type="text" name="" required />
                  </div>
                  <div class="item">
                      <p>Keterangan</p>
