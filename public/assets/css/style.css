@@ -577,6 +577,7 @@ a {
 
 .form-input .single-input input {
   width: 88%;
+  margin-right: 10px;
 }
 
 .form-input .single .btn-rule {

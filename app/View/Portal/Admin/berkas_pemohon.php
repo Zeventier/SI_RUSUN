@@ -20,35 +20,35 @@
 
         <div class="rule">
             <div class="list">
-                <div class="item single">
+                <div class="item single-input">
                     <p>KTP Pemohon</p>
                     <input type="text" value="<?php echo $model['data']->ktp_pmhn ?? ''; ?>" name="ktp_wakil" />
-                    <button class="btn-rule">Cetak</button>
+                    <button class="btn-warning">Cetak</button>
                 </div>
-                <div class="item single">
+                <div class="item single-input">
                     <p>KTP Pasangan</p>
                     <input type="text" value="<?php echo $model['data']->ktp_psgn ?? ''; ?>" name="name" />
-                    <button class="btn-rule">Cetak</button>
+                    <button class="btn-warning">Cetak</button>
                 </div>
-                <div class="item single">
+                <div class="item single-input">
                     <p>Kartu Keluarga</p>
                     <input type="text" value="<?php echo $model['data']->kartu_kk ?? ''; ?>" name="name" />
-                    <button class="btn-rule">Cetak</button>
+                    <button class="btn-warning">Cetak</button>
                 </div>
-                <div class="item single">
+                <div class="item single-input">
                     <p>Surat Keterangan Memiliki Pekerjaan Tetap</p>
                     <input type="text" value="<?php echo $model['data']->srt_kerja ?? ''; ?>" name="name" />
-                    <button class="btn-rule">Cetak</button>
+                    <button class="btn-warning">Cetak</button>
                 </div>
-                <div class="item single">
+                <div class="item single-input">
                     <p>Struk/Rincian Gaji</p>
                     <input type="text" value="<?php echo $model['data']->struk_gaji ?? ''; ?>" name="name" />
-                    <button class="btn-rule">Cetak</button>
+                    <button class="btn-warning">Cetak</button>
                 </div>
-                <div class="item single">
+                <div class="item single-input">
                     <p>Surat Nikah</p>
                     <input type="text" value="<?php echo $model['data']->srt_nikah ?? ''; ?>" name="name" />
-                    <button class="btn-rule">Cetak</button>
+                    <button class="btn-warning">Cetak</button>
                 </div>
             </div>
         </div>
