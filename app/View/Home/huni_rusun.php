@@ -136,6 +136,24 @@
                                 <option value="Rp 4.000.000, - Rp 6.000.000,">Rp 4.000.000, - Rp 6.000.000,</option>
                             </select>
                         </div>
+                        <!-- 
+                        <div class="box-container">
+                            <a href="/assets/img/Denah-Rusun.jpg" class="box">
+                                <div class="image">
+                                    <img class="denah" src="/assets/img/Denah-Rusun.jpg" alt="">
+                                </div>
+                            </a>
+                        </div> -->
+
+                        <div class="denah" id="facility">
+                            <div class="box-container">
+                                <a href="/assets/img/Denah-Rusun.jpg" class="box">
+                                    <div class="image">
+                                        <img src="/assets/img/Denah-Rusun.jpg" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
 
                         <span><i>*Jika Anda memiliki anggota keluarga <b>Difabel</b> dan atau Lansia harap memilih ruangan dilantai 1.</i></span>
 
@@ -260,6 +278,10 @@
         </form>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+    <script>
+        lightGallery(document.querySelector('.denah .box-container'));
+    </script>
     <script>
         var currentTab = 0; // Current tab is set to be the first tab (0)
         showTab(currentTab); // Display the current tab
@@ -349,4 +371,5 @@
             alert(message);
         }
     </script>
+
     <script src="/assets/js/script.js"></script>

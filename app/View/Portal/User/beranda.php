@@ -177,6 +177,29 @@
         </div>
     </section>
 
+    <section class="guide">
+        <h1 class="heading">Prosedur Keluar Dari Hunian</h1>
+        <div class="rule">
+            <div class="list">
+                <p><span>1. </span>
+                    Penghuni rusun menghubungi admin.
+                </p>
+
+                <p><span>2. </span>
+                    Penghuni menyelesaikan administrasi berupa tunggakan tagihan, biaya perbaikan untuk kerusakan fatal, dan biaya administrasi lainnya.
+                </p>
+
+                <p><span>3. </span>
+                    Admin membuat berita acara keluar dari hunian.
+                </p>
+
+                <p><span>4. </span>
+                    Proses selesai.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section class="footer">
         <div class="credit"> @Sistem Informasi Rusunawa <span>Teluk Kelayan</span></div>
     </section>
