@@ -23,7 +23,7 @@
         <div class="form-input">
             <form action="" class="login-form">
                 <p>Nama Pemohon</p>
-                <input type="text" pattern="^[a-zA-Z@ ]+$" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" class="box" required>
+                <input type="text" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" class="box" required>
                 <p>NIK Pemohon</p>
                 <input type="text" minlength="16" maxlength="16" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" class="box" required>
                 <button href="#Modal-Pengumuman" class="modal-button">Periksa</button>

@@ -35,7 +35,7 @@
                     </div>
                     <div class="item">
                         <p>Pekerjaan</p>
-                        <input type="text" pattern="^[a-zA-Z@ ]$" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['penghuni']->kerja_wakil ?? "" ?>" name="kerja_wakil" required />
+                        <input type="text" maxlength="50" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['penghuni']->kerja_wakil ?? "" ?>" name="kerja_wakil" required />
                     </div>
                     <div class="item">
                         <p>Kisaran Gaji Perbulan</p>
