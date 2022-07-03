@@ -134,6 +134,18 @@ textarea {
   color: var(--black);
 }
 
+.disabled-input {
+  background-color: #e0dada !important;
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: var(--black);
+}
+
+.disabled-input select[required] {
+  color: var(--black) !important;
+}
+
 .heading {
   margin-bottom: 3rem;
   font-size: 3rem;

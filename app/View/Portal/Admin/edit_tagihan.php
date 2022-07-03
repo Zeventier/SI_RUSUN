@@ -38,8 +38,8 @@
                                 <input type="text" name="debit_air" value="<?php echo $model['data']->debit_air; ?>" required />
                             </div>
                             <div class="rows">
-                                <p>Biaya Air/bulan</p>
-                                <input type="text" value="<?php echo $model['air'][0]['harga_akhir'] ?? ""; ?>" name="" disabled />
+                                <p>Harga Air/Debit</p>
+                                <input type="text" value="<?php echo $model['air'][0]['harga_akhir'] ?? ""; ?>" name="biaya_air" disabled />
                             </div>
                         </div>
                     </div>
@@ -77,3 +77,24 @@
     </section>
 
     <script src="assets/js/script.js"></script>
+    <script>
+        var debit_air = document.getElementsByName('debit_air')[0];
+        var biaya_air = document.getElementsByName('biaya_air')[0];
+        var sewa_rusun = document.getElementsByName('sewa_rusun')[0];
+        var total_tagihan = document.getElementsByName('total_tagihan')[0];
+
+
+        function sumTotal() {
+            var harga_air = 0;
+            var harga_rusun = 0;
+
+            if (debit_air.value != '') harga_air = parseInt(debit_air.value);
+            if (sewa_rusun.value != '') harga_rusun = parseInt(sewa_rusun.value);
+
+            var sum = harga_air * parseInt(biaya_air.value) + harga_rusun;
+            total_tagihan.value = sum;
+        }
+
+        debit_air.addEventListener('keyup', sumTotal);
+        sewa_rusun.addEventListener('keyup', sumTotal);
+    </script>

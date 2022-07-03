@@ -30,9 +30,9 @@
                         <p>Nama Pemohon</p>
                         <input type="text" value="<?php echo $model['data']->pengumuman->nama_pemohon ?? '';  ?>" class="box" readonly>
                         <p>Tanggal Wawancara</p>
-                        <input type="datetime-local" min="2022-01-01T00:00" value="<?php echo $model['data']->pengumuman->t_wawancara ?? '';  ?>" name="t_wawancara" class="box" readonly>
+                        <input type="datetime-local" value="<?php echo $model['data']->pengumuman->t_wawancara ?? '';  ?>" name="t_wawancara" class="box" readonly>
                         <p>Tanggal Hasil</p>
-                        <input type="datetime-local" min="2022-01-01T00:00" value="<?php echo $model['data']->pengumuman->t_hasil ?? '';  ?>" name="t_hasil" class="box" readonly>
+                        <input type="datetime-local" value="<?php echo $model['data']->pengumuman->t_hasil ?? '';  ?>" name="t_hasil" class="box" readonly>
                     </form>
                 </div>
 

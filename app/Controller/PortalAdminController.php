@@ -50,7 +50,7 @@ class PortalAdminController
     private AirService $airService;
     private KeluhanService $keluhanService;
     private TanggapanService $tanggapanService;
-    
+
 
     public function __construct()
     {
@@ -150,7 +150,7 @@ class PortalAdminController
 
         try {
             $this->pemohonService->editPemohon($id_pengumuman, $request);
-            
+
             View::redirect('/portal/admin/pelayanan');
         } catch (ValidationException $exception) {
             View::render('Portal/Admin/edit_pemohon', [
@@ -198,8 +198,11 @@ class PortalAdminController
         $id_pengumuman = $_GET['id'];
 
         $jadwal = $this->pengumumanService->getJadwal($id_pengumuman);
-        $jadwal->t_wawancara = date('Y-m-d\TH:i:s', strtotime($jadwal->t_wawancara));
-        $jadwal->t_hasil = date('Y-m-d\TH:i:s', strtotime($jadwal->t_hasil));
+
+        if ($jadwal->t_wawancara != null && $jadwal->t_hasil) {
+            $jadwal->t_wawancara = date('Y-m-d\TH:i:s', strtotime($jadwal->t_wawancara));
+            $jadwal->t_hasil = date('Y-m-d\TH:i:s', strtotime($jadwal->t_hasil));
+        }
 
         View::render('Portal/Admin/atur_jadwal', [
             'title' => 'Portal Rusun Admin',
@@ -207,7 +210,7 @@ class PortalAdminController
         ]);
     }
 
-    public function postAturJadwal() 
+    public function postAturJadwal()
     {
         $request = new AturJadwalRequest();
 
@@ -277,7 +280,7 @@ class PortalAdminController
         try {
             $this->tanggapanService->addTanggapan($tanggapan);
 
-            View::redirect('/portal/admin/keluhan?date='. date('Y-m'));
+            View::redirect('/portal/admin/keluhan?date=' . date('Y-m'));
         } catch (ValidationException $exception) {
             View::render('Portal/Admin/tanggapan', [
                 "title" => "Portal Rusun Admin",
@@ -329,8 +332,14 @@ class PortalAdminController
 
             View::redirect('/portal/admin/pelayanan');
         } catch (ValidationException $exception) {
-            View::render('Portal/Admin/pelayanan', [
-                "title" => "Portal Rusun Admin",
+            $id_pengumuman = $_GET['id_pengumuman'];
+            $dataPemohon = $this->pemohonService->showPemohon($id_pengumuman);
+            $daftarRuangan = $this->rusunService->showDaftarRuangan();
+
+            View::render('Portal/Admin/tambah_penghuni', [
+                'title' => 'Portal Rusun Admin',
+                'data' => $dataPemohon,
+                'ruangan' => $daftarRuangan,
                 'error' => $exception->getMessage()
             ]);
         }
@@ -467,8 +476,8 @@ class PortalAdminController
     public function formRuangan()
     {
         $dataRuangan = new Rusun();
-    
-        if($_GET['kode_ruangan'] != null) {
+
+        if (isset($_GET['kode_ruangan'])) {
             $kode_ruangan = $_GET['kode_ruangan'];
             $dataRuangan = $this->rusunService->showRuangan($kode_ruangan);
         }
@@ -486,7 +495,7 @@ class PortalAdminController
         $ruangan->lantai = $_POST['lantai'];
         $ruangan->keterangan = $_POST['keterangan'];
 
-        if($_GET['kode_ruangan'] != null) {
+        if ($_GET['kode_ruangan'] != null) {
             try {
                 $kode_ruangan = $_GET['kode_ruangan'];
 
@@ -499,8 +508,7 @@ class PortalAdminController
                     'error' => $exception->getMessage()
                 ]);
             }
-        }
-        else {
+        } else {
             try {
                 $this->rusunService->addRuangan($ruangan);
 
@@ -528,7 +536,7 @@ class PortalAdminController
                 'error' => $exception->getMessage()
             ]);
         }
-    } 
+    }
 
     public function penghuni()
     {

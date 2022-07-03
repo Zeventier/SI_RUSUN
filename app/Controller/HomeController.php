@@ -73,14 +73,14 @@ class HomeController
 
         $response = $this->pengumumanService->showPengumuman($pengumuman->nama_pemohon, $pengumuman->nik_pemohon);
 
-        if($response->pengumuman == null) {
+        if ($response->pengumuman == null) {
             // This is in the PHP file and sends a Javascript alert to the client
             $message = "Nama atau NIK tidak ada";
             echo "<script type='text/javascript'>alert('$message'); window.location = '/pengumuman';</script>";
         } else {
-            $response->pengumuman->t_wawancara = date('Y-m-d\TH:i:s', strtotime($pengumuman->t_wawancara));
-            $response->pengumuman->t_hasil = date('Y-m-d\TH:i:s', strtotime($pengumuman->t_hasil));
-            
+            $response->pengumuman->t_wawancara = date('Y-m-d\TH:i:s', strtotime($response->pengumuman->t_wawancara));
+            $response->pengumuman->t_hasil = date('Y-m-d\TH:i:s', strtotime($response->pengumuman->t_hasil));
+
             View::render('Home/hasil_pengumuman', [
                 "title" => "SI Rusun",
                 'data' => $response
@@ -185,13 +185,11 @@ class HomeController
         try {
             $this->pemohonService->submitHuniRusun($request);
 
-           // View::redirect('/huni_rusun');
+            // View::redirect('/huni_rusun');
 
             // This is in the PHP file and sends a Javascript alert to the client
             $message = "Permohonan anda telah berhasil diajukan";
             echo "<script type='text/javascript'>alert('$message'); window.location = '/huni_rusun';</script>";
-            
-
         } catch (ValidationException $exception) {
             View::render('Home/huni_rusun', [
                 "title" => "SI Rusun",
@@ -207,7 +205,8 @@ class HomeController
         ]);
     }
 
-    public function postPortalLogin() {
+    public function postPortalLogin()
+    {
         $request = new UserLoginRequest();
         $request->username = $_POST['username'];
         $request->password = $_POST['password'];
@@ -216,10 +215,10 @@ class HomeController
             $response = $this->userService->login($request);
             $this->sessionService->create($response->user->username);
 
-            if($response->user->status == 'admin') {
+            if ($response->user->status == 'admin') {
                 View::redirect('/portal/admin/pelayanan');
             }
-            if($response->user->status == 'user') {
+            if ($response->user->status == 'user') {
                 View::redirect('/portal/user/');
             }
         } catch (ValidationException $exception) {

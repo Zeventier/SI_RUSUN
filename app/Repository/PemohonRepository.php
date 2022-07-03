@@ -4,7 +4,8 @@ namespace Project\Repository;
 
 use Project\Domain\Pemohon;
 
-class PemohonRepository {
+class PemohonRepository
+{
     private \PDO $connection;
 
     public function __construct(\PDO $connection)
@@ -19,7 +20,7 @@ class PemohonRepository {
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $statement->execute([
             $pemohon->id_pemohon, $pemohon->nama_pemohon, $pemohon->notelp_pemohon, $pemohon->nik_pemohon, $pemohon->nomor_kk, $pemohon->kerja_pemohon,
-            $pemohon->gaji_pemohon, $pemohon->jlh_penghuni, $pemohon->nama_psgn, $pemohon->kerja_psgn, $pemohon->gaji_psgn, $pemohon->kode_rusun, 
+            $pemohon->gaji_pemohon, $pemohon->jlh_penghuni, $pemohon->nama_psgn, $pemohon->kerja_psgn, $pemohon->gaji_psgn, $pemohon->kode_rusun,
             $pemohon->id_berkas
         ]);
         return $pemohon;
@@ -28,10 +29,10 @@ class PemohonRepository {
     public function update(Pemohon $pemohon): Pemohon
     {
         $statement = $this->connection->prepare("UPDATE pemohon SET nama_pemohon = ?, notelp_pemohon = ?, nik_pemohon = ?, nomor_kk = ?, 
-            kerja_pemohon = ?, gaji_pemohon = ?, jlh_penghuni = ?, nama_psgn = ?, kerja_psgn = ?, gaji_psgn = ? WHERE id_pemohon = ?");
+            kerja_pemohon = ?, gaji_pemohon = ?, jlh_penghuni = ?, nama_psgn = ?, kerja_psgn = ?, gaji_psgn = ?, kode_rusun = ? WHERE id_pemohon = ?");
         $statement->execute([
             $pemohon->nama_pemohon, $pemohon->notelp_pemohon, $pemohon->nik_pemohon, $pemohon->nomor_kk, $pemohon->kerja_pemohon,
-            $pemohon->gaji_pemohon, $pemohon->jlh_penghuni, $pemohon->nama_psgn, $pemohon->kerja_psgn, $pemohon->gaji_psgn, $pemohon->id_pemohon
+            $pemohon->gaji_pemohon, $pemohon->jlh_penghuni, $pemohon->nama_psgn, $pemohon->kerja_psgn, $pemohon->gaji_psgn, $pemohon->kode_rusun, $pemohon->id_pemohon
         ]);
 
         return $pemohon;
@@ -44,7 +45,7 @@ class PemohonRepository {
         $statement->execute();
 
         try {
-            if($statement->rowCount() > 0) {
+            if ($statement->rowCount() > 0) {
                 $pemohon = $statement->fetchAll();
 
                 return $pemohon;
@@ -84,14 +85,14 @@ class PemohonRepository {
                 return null;
             }
         } finally {
-                $statement->closeCursor();
+            $statement->closeCursor();
         }
     }
 
     public function delete($id_pemohon)
     {
         $statement = $this->connection->prepare("DELETE FROM pemohon WHERE id_pemohon = ?");
-        
+
         return $statement->execute([$id_pemohon]);
     }
 

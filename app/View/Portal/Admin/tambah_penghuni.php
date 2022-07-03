@@ -1,3 +1,7 @@
+    <?php if (isset($model['error'])) {
+        $message = $model['error'];
+        echo "<script type='text/javascript'>alert('$message');</script>";
+    } ?>
     <header class="header">
         <a href="#" class="logo">Portal<span>Rusun</span></a>
         <nav class="navbar-portal">
@@ -23,7 +27,7 @@
                 <form method="post" action="/portal/admin/tambah_penghuni?id_pengumuman=<?php echo $_GET['id_pengumuman']; ?>">
                     <div class="item">
                         <p>Nama Pemohon (Kepala Keluarga)</p>
-                        <input class="disable" readonly="readonly" title=" Tidak Bisa Dirubah" type="text"  autocapitalize="words" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->nama_pemohon; ?>" name="nama_wakil" />
+                        <input class="disable" readonly="readonly" title=" Tidak Bisa Dirubah" type="text" autocapitalize="words" maxlength="100" onkeydown="return /[a-z ]/i.test(event.key)" value="<?php echo $model['data']->pemohon->nama_pemohon; ?>" name="nama_wakil" />
                     </div>
                     <div class="item">
                         <p>Nomor Induk Kependudukan</p>
@@ -81,7 +85,7 @@
                     </div>
                     <div class="item">
                         <p>Pilih Ruangan</p>
-                        <select name="ruangan" readonly="readonly">
+                        <select name="ruangan" class="disabled-input" required>
                             <option value="">Select</option>
                             <?php if (isset($model['ruangan'])) {
                                 $i = 0;
