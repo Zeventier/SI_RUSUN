@@ -59,7 +59,12 @@
                     </div>
                     <div class="item">
                         <p>Biaya Sewa Rusun/bulan</p>
-                        <input type="number" name="sewa_rusun" required />
+                        <select name="sewa_rusun" required>
+                            <option value="">Select</option>
+                            <option value="300000" >300000</option>
+                            <option value="450000" >450000</option>
+                            <option value="550000" >550000</option>
+                        </select>
                     </div>
                     <div class="item">
                         <p>Total Tagihan</p>
