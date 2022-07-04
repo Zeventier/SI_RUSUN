@@ -24,7 +24,7 @@
                     <div class="item">
                         <p>Username</p>
                         <div class="item">
-                            <input type="text" name="username" value="<?php echo $model['data']->username ?>" required disabled />
+                            <input type="text" name="username" value="<?php echo $model['data']->username ?>" required readonly />
                         </div>
                     </div>
                     <div class="item">
@@ -35,7 +35,7 @@
                         <div class="double-item">
                             <div class="rows">
                                 <p>Debit Air</p>
-                                <input type="text" name="debit_air" value="<?php echo $model['data']->debit_air; ?>" required />
+                                <input type="text" name="debit_air" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" value="<?php echo $model['data']->debit_air; ?>" required />
                             </div>
                             <div class="rows">
                                 <p>Harga Air/Debit</p>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="item">
                         <p>Total Tagihan</p>
-                        <input type="text" value="<?php echo ($model['data']->sewa_rusun + $model['data']->debit_air * $model['air'][0]['harga_akhir']) ?>" name="total_tagihan" required />
+                        <input type="text" value="<?php echo ($model['data']->sewa_rusun + $model['data']->debit_air * $model['air'][0]['harga_akhir']) ?>" name="total_tagihan" disabled />
                     </div>
                     <div class="item">
                         <p>Keterangan</p>
