@@ -40,7 +40,7 @@
                             <td class="table-btn fit">
                                 <div class="btn-center">
                                     <a href="/portal/admin/form_ruangan?kode_ruangan=<?php echo $value['kode_rusun'] ?>" class="btn-table-warning"> Edit </a>
-                                    <a href="/portal/admin/ruangan/delete?kode_ruangan=<?php echo $value['kode_rusun'] ?>" class="btn-table-danger"> Hapus </a>
+                                    <a href="/portal/admin/ruangan/delete?kode_ruangan=<?php echo $value['kode_rusun'] ?>" class="btn-table-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Hapus </a>
                                 </div>
                             </td>
                         </tr>

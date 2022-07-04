@@ -55,11 +55,10 @@
                             <td><?php echo $model['air'][0]['harga_akhir'] * $value['debit_air'] ?></td>
                             <td><?php echo $value['sewa_rusun'] ?></td>
                             <td><?php echo $model['air'][0]['harga_akhir'] * $value['debit_air'] + $value['sewa_rusun'] ?></td>
-                            <td><?php echo $value['keterangan'] ?></td>
+                            <td class="paid"><?php echo $value['keterangan'] ?></td>
                             <td id="not-print" class="table-btn">
                                 <div class="btn-center">
                                     <a href="/portal/admin/edit_tagihan?id_tagihan=<?php echo $value['id_sewa'] ?>" class="btn-warning">Edits</a>
-                                    <a href="#" class="btn-success">Tandai Lunas</a>
                                 </div>
                             </td>
                         </tr>

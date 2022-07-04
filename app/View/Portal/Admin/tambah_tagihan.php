@@ -52,7 +52,7 @@
                                 <input type="number" name="debit_air" required />
                             </div>
                             <div class="rows">
-                                <p>Biaya Air/bulan</p>
+                                <p>Harga Air/Debit</p>
                                 <input type="number" value="<?php echo $model['air'][0]['harga_akhir'] ?? ""; ?>" name="biaya_air" disabled />
                             </div>
                         </div>
