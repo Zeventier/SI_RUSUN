@@ -1395,6 +1395,14 @@ a {
   font-size: 1.7rem;
 }
 
+.table .paid {
+  color: var(--btn-success-hov);
+}
+
+.table .unpaid {
+  color: var(--btn-primary-hov);
+}
+
 .btn-table-danger {
   display: inline-block;
   margin-top: 1rem;
