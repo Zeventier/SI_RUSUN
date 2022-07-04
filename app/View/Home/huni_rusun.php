@@ -136,14 +136,6 @@
                                 <option value="Rp 4.000.000, - Rp 6.000.000,">Rp 4.000.000, - Rp 6.000.000,</option>
                             </select>
                         </div>
-                        <!-- 
-                        <div class="box-container">
-                            <a href="/assets/img/Denah-Rusun.jpg" class="box">
-                                <div class="image">
-                                    <img class="denah" src="/assets/img/Denah-Rusun.jpg" alt="">
-                                </div>
-                            </a>
-                        </div> -->
 
                         <div class="denah" id="facility">
                             <div class="box-container">
@@ -199,27 +191,33 @@
                             tahap ini.</span>
                         <div class="item">
                             <p>KTP Pemohon</p>
-                            <input type="file" accept="image/*" name="ktp_pmhn" />
+                            <small>*Foto dengan ekstensi .jpeg .jpg .png</small>
+                            <input type="file" id="ktp" accept=".jpg, .jpeg, .png" name="ktp_pmhn" />
                         </div>
                         <div class="item">
                             <p>KTP Pasangan</p>
-                            <input type="file" accept="image/*" name="ktp_psgn" />
+                            <small>*Foto dengan ekstensi .jpeg .jpg .png</small>
+                            <input type="file" accept=" .png, .jpg, .jpeg" name="ktp_psgn" />
                         </div>
                         <div class="item">
                             <p>Kartu Keluarga</p>
-                            <input type="file" accept="image/*" name="kartu_kk" />
+                            <small>*Foto dengan ekstensi .jpeg .jpg .png</small>
+                            <input type="file" accept=".jpg, .jpeg, .png" name="kartu_kk" />
                         </div>
                         <div class="item">
                             <p>Surat Keterangan Memiliki Pekerjaan Tetap</p>
-                            <input type="file" accept="image/*" name="srt_kerja" />
+                            <small>*Foto dengan ekstensi .jpeg .jpg .png</small>
+                            <input type="file" accept=".jpg, .jpeg, .png" name="srt_kerja" />
                         </div>
                         <div class="item">
                             <p>Struk/Rincian Gaji</p>
-                            <input type="file" accept="image/*" name="struk_gaji" />
+                            <small>*Foto dengan ekstensi .jpeg .jpg .png</small>
+                            <input type="file" accept=".jpg, .jpeg, .png" name="struk_gaji" />
                         </div>
                         <div class="item">
                             <p>Surat Nikah</p>
-                            <input type="file" accept="image/*" name="srt_nikah" />
+                            <small>*Foto dengan ekstensi .jpeg .jpg .png</small>
+                            <input type="file" accept=".jpg, .jpeg, .png" name="srt_nikah" />
                         </div>
                     </div>
                 </div>

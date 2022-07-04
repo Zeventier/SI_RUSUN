@@ -134,6 +134,12 @@ textarea {
   color: var(--black);
 }
 
+small {
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 500;
+}
+
 .disabled-input {
   background-color: #e0dada !important;
   opacity: 0.6;
@@ -1002,9 +1008,9 @@ a {
 
 .tab input,
 select {
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  margin: 0;
 }
 
 .tab input {
