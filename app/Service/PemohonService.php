@@ -163,6 +163,102 @@ class PemohonService {
         }
     }
 
+    public function uploadBerkas(Berkas $request, $id_pengumuman)
+    {
+        try {
+            Database::beginTransaction();
+
+            $pemohon = new Pemohon();
+            $pengumuman = new Pengumuman();
+            $berkas = new Berkas();
+            $oldBerkas = new Berkas();
+            $flag = false;
+
+            $pengumuman = $this->pengumumanRepository->findById($id_pengumuman);
+            $pemohon = $this->pemohonRepository->findById($pengumuman->id_pemohon);
+            $oldBerkas = $this->berkasRepository->findById($pemohon->id_berkas);
+
+            $berkas->id_berkas = $pemohon->id_berkas;
+        
+            if($request->ktp_pmhn != null) {
+                $berkas->ktp_pmhn = $request->ktp_pmhn;
+                if($oldBerkas->ktp_pmhn != null) {
+                    PemohonService::unlinkFile($oldBerkas->ktp_pmhn);
+                }
+                $flag = true;
+            }
+            
+            if ($request->ktp_psgn != null) {
+                $berkas->ktp_psgn = $request->ktp_psgn;
+                if ($oldBerkas->ktp_psgn != null) {
+                    PemohonService::unlinkFile($oldBerkas->ktp_psgn);
+                }
+                $flag = true;
+            }
+            
+            if ($request->kartu_kk != null) {
+                $berkas->kartu_kk = $request->kartu_kk;
+                if($oldBerkas->kartu_kk != null) {
+                    PemohonService::unlinkFile($oldBerkas->kartu_kk);
+                }
+                $flag = true;
+            }
+            
+            if ($request->srt_kerja != null) {
+                $berkas->srt_kerja = $request->srt_kerja;
+                if($oldBerkas->srt_kerja != null) {
+                    PemohonService::unlinkFile($oldBerkas->srt_kerja);
+                }
+                $flag = true;
+            }
+            
+            if ($request->struk_gaji != null) {
+                $berkas->struk_gaji = $request->struk_gaji;
+                if($oldBerkas->struk_gaji != null) {
+                    PemohonService::unlinkFile($oldBerkas->struk_gaji);
+                }
+                $flag = true;
+            }
+            
+            if ($request->srt_nikah != null) {
+                $berkas->srt_nikah = $request->srt_nikah;
+                if($oldBerkas->srt_nikah != null) {
+                    PemohonService::unlinkFile($oldBerkas->srt_nikah);
+                }
+                $flag = true;
+            }
+
+            if($flag){
+                $this->berkasRepository->update($berkas);
+            }
+           
+            Database::commitTransaction();
+
+        } catch (\Exception $exception) {
+            Database::rollbackTransaction();
+            throw $exception;
+        }
+    }
+
+    function unlinkFile($filename)
+    {
+        // try to force symlinks
+        if (is_link($filename)) {
+            $sym = @readlink($filename);
+            if ($sym) {
+                return is_writable($filename) && @unlink($filename);
+            }
+        }
+
+        // try to use real path
+        if (realpath($filename) && realpath($filename) !== $filename) {
+            return is_writable($filename) && @unlink(realpath($filename));
+        }
+
+        // default unlink
+        return is_writable($filename) && @unlink($filename);
+    }
+
     public function editPemohon($id_pengumuman, PemohonRequest $request)
     {
         $this->validatePemohonRequest($request);

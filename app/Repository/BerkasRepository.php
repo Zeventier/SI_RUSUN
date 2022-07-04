@@ -25,7 +25,7 @@ class BerkasRepository {
 
     public function update(Berkas $berkas): Berkas
     {
-        $statement = $this->connection->prepare("UPDATE berkas SET ktp_pmhn = ?, ktp_psgn = ?, kartu_kk = ?, srt_kerja = ?, struk_gaji = ?, srt_nikah = ?) 
+        $statement = $this->connection->prepare("UPDATE berkas SET ktp_pmhn = ?, ktp_psgn = ?, kartu_kk = ?, srt_kerja = ?, struk_gaji = ?, srt_nikah = ?
         WHERE id_berkas = ?");
         $statement->execute([
             $berkas->ktp_pmhn, $berkas->ktp_psgn, $berkas->kartu_kk, $berkas->srt_kerja, $berkas->struk_gaji, $berkas->srt_nikah, $berkas->id_berkas 

@@ -131,6 +131,91 @@ class PortalAdminController
         ]);
     }
 
+    public function postBerkasPemohon()
+    {
+        $berkas = new Berkas();
+        $id_pengumuman = $_GET['id_pengumuman'];
+
+        $target_dir = 'assets/file/uploads/';
+
+        $target_file = $target_dir . rand() . $_GET['id_pengumuman'] . rand() . basename($_FILES["ktp_pmhn"]["name"]);
+        $tmpFile = $_FILES['ktp_pmhn']['tmp_name'];
+
+        $upload = move_uploaded_file($tmpFile, $target_file);
+
+        if ($upload) {
+            $berkas->ktp_pmhn = $target_file;
+        } else {
+            $berkas->ktp_pmhn = null;
+        }
+
+        $target_file = $target_dir . rand() . $_GET['id_pengumuman'] . rand() . basename($_FILES["ktp_psgn"]["name"]);
+        $tmpFile = $_FILES['ktp_psgn']['tmp_name'];
+
+        $upload = move_uploaded_file($tmpFile, $target_file);
+
+        if ($upload) {
+            $berkas->ktp_psgn = $target_file;
+        } else {
+            $berkas->ktp_psgn = null;
+        }
+
+        $target_file = $target_dir . rand() . $_GET['id_pengumuman'] . rand() . basename($_FILES["kartu_kk"]["name"]);
+        $tmpFile = $_FILES['kartu_kk']['tmp_name'];
+
+        $upload = move_uploaded_file($tmpFile, $target_file);
+
+        if ($upload) {
+            $berkas->kartu_kk = $target_file;
+        } else {
+            $berkas->kartu_kk = null;
+        }
+
+        $target_file = $target_dir . rand() . $_GET['id_pengumuman'] . rand() . basename($_FILES["srt_kerja"]["name"]);
+        $tmpFile = $_FILES['srt_kerja']['tmp_name'];
+
+        $upload = move_uploaded_file($tmpFile, $target_file);
+
+        if ($upload) {
+            $berkas->srt_kerja = $target_file;
+        } else {
+            $berkas->srt_kerja = null;
+        }
+
+        $target_file = $target_dir . rand() . $_GET['id_pengumuman'] . rand() . basename($_FILES["struk_gaji"]["name"]);
+        $tmpFile = $_FILES['struk_gaji']['tmp_name'];
+
+        $upload = move_uploaded_file($tmpFile, $target_file);
+
+        if ($upload) {
+            $berkas->struk_gaji = $target_file;
+        } else {
+            $berkas->struk_gaji = null;
+        }
+
+        $target_file = $target_dir . rand() . $_GET['id_pengumuman'] . rand() . basename($_FILES["srt_nikah"]["name"]);
+        $tmpFile = $_FILES['srt_nikah']['tmp_name'];
+
+        $upload = move_uploaded_file($tmpFile, $target_file);
+
+        if ($upload) {
+            $berkas->srt_nikah = $target_file;
+        } else {
+            $berkas->srt_nikah = null;
+        }
+
+        try {
+            $this->pemohonService->uploadBerkas($berkas, $id_pengumuman);
+
+            View::redirect('/portal/admin/berkas_pemohon?id_pengumuman=' . $id_pengumuman);
+        } catch (ValidationException $exception) {
+            View::render('Portal/Admin/pelayanan', [
+                "title" => "Portal Rusun Admin",
+                'error' => $exception->getMessage()
+            ]);
+        }
+    }
+
     public function postEditPemohon()
     {
         $id_pengumuman = $_GET['id_pengumuman'];
