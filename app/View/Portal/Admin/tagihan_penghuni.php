@@ -55,7 +55,8 @@
                             <td><?php echo $model['air'][0]['harga_akhir'] * $value['debit_air'] ?></td>
                             <td><?php echo $value['sewa_rusun'] ?></td>
                             <td><?php echo $model['air'][0]['harga_akhir'] * $value['debit_air'] + $value['sewa_rusun'] ?></td>
-                            <td class="unpaid"><?php echo $value['keterangan'] ?></td>
+                            <td <?php if($value['keterangan'] == "Lunas") { echo 'class="paid"'; } else {
+                                    echo 'class="unpaid"'; } ?> ><?php echo $value['keterangan'] ?></td>
                             <td id="not-print" class="table-btn">
                                 <div class="btn-center">
                                     <a href="/portal/admin/edit_tagihan?id_tagihan=<?php echo $value['id_sewa'] ?>" class="btn-warning">Edits</a>
