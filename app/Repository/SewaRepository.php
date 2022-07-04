@@ -37,7 +37,7 @@ class SewaRepository
 
     public function readAll()
     {
-        $statement = $this->connection->prepare("SELECT id_sewa, sewa_rusun, debit_air, keterangan, deadline, username FROM sewa");
+        $statement = $this->connection->prepare("SELECT id_sewa, sewa_rusun, debit_air, keterangan, deadline, username FROM sewaORDER BY keterangan ASC");
         $statement->execute();
 
         try {
@@ -55,7 +55,7 @@ class SewaRepository
 
     public function findByMY($year, $month)
     {
-        $statement = $this->connection->prepare("SELECT id_sewa, sewa_rusun, debit_air, keterangan, deadline, username FROM sewa WHERE YEAR(deadline) = ? AND MONTH(deadline) = ?");
+        $statement = $this->connection->prepare("SELECT id_sewa, sewa_rusun, debit_air, keterangan, deadline, username FROM sewa WHERE YEAR(deadline) = ? AND MONTH(deadline) = ? ORDER BY keterangan ASC");
         $statement->execute([$year, $month]);
 
         try {

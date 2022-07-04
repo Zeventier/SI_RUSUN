@@ -14,151 +14,93 @@
     </header>
 
     <section class="form-input">
-        <div>
-            <h1 class="heading"> Kelola Berkas Data Pemohon</h1>
-        </div>
-
-        <div class="rule">
-            <div class="list">
-                <div class="item single-input">
-                    <p>KTP Pemohon</p>
-                    <input type="text" value="<?php echo $model['data']->ktp_pmhn ?? ''; ?>" name="ktp_wakil" />
-                    <div class="container1">
-                        <a href="/<?php echo $model['data']->ktp_pmhn ?? ''; ?>">
-                            <button class="modal-display">Lihat</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="item single-input">
-                    <p>KTP Pasangan</p>
-                    <input type="text" value="<?php echo $model['data']->ktp_psgn ?? ''; ?>" name="name" />
-                    <div class="container2">
-                        <a href="/<?php echo $model['data']->ktp_psgn ?? ''; ?>">
-                            <button class="modal-display">Lihat</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="item single-input">
-                    <p>Kartu Keluarga</p>
-                    <input type="text" value="<?php echo $model['data']->kartu_kk ?? ''; ?>" name="name" />
-                    <div class="container3">
-                        <a href="/<?php echo $model['data']->kartu_kk ?? ''; ?>">
-                            <button class="modal-display">Lihat</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="item single-input">
-                    <p>Surat Keterangan Memiliki Pekerjaan Tetap</p>
-                    <input type="text" value="<?php echo $model['data']->srt_kerja ?? ''; ?>" name="name" />
-                    <div class="container4">
-                        <a href="/<?php echo $model['data']->srt_kerja ?? ''; ?>">
-                            <button class="modal-display">Lihat</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="item single-input">
-                    <p>Struk/Rincian Gaji</p>
-                    <input type="text" value="<?php echo $model['data']->struk_gaji ?? ''; ?>" name="name" />
-                    <div class="container5">
-                        <a href="/<?php echo $model['data']->struk_gaji ?? ''; ?>">
-                            <button class="modal-display">Lihat</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="item single-input">
-                    <p>Surat Nikah</p>
-                    <input type="text" value="<?php echo $model['data']->srt_nikah ?? ''; ?>" name="name" />
-                    <div class="container6">
-                        <a href="/<?php echo $model['data']->srt_nikah ?? ''; ?>">
-                            <button class="modal-display">Lihat</button>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="nav-rule">
-            <p></p>
+        <form method="post" action="/portal/admin/berkas_pemohon?id_pengumuman=<?php echo $_GET['id_pengumuman'] ?>" enctype="multipart/form-data">
             <div>
-                <a href="/portal/admin" class="btn-rule">Kembali</a>
+                <h1 class="heading"> Kelola Berkas Data Pemohon</h1>
             </div>
-        </div>
 
-        <!-- <div id="Modal1" class="modal">
-            <div class="modal-content">
-                <span class="close">×</span>
-                <a href="/<?php echo $model['data']->srt_nikah ?? ''; ?>" class="box">
-                    <div class="image">
-                        <img src="/<?php echo $model['data']->srt_nikah ?? ''; ?>" alt="">
+            <div class="rule">
+                <div class="list">
+                    <div class="item single-input">
+                        <p>KTP Pemohon</p>
+                        <input type="text" value="<?php echo $model['data']->ktp_pmhn ?? ''; ?>" disabled />
+                        <input type="file" accept="image/*" name="ktp_pmhn" />
+                        <div class="container1">
+                            <a href="/<?php echo $model['data']->ktp_pmhn ?? ''; ?>">
+                                <button class="modal-display">Lihat</button>
+                            </a>
+                        </div>
                     </div>
-                </a>
-            </div>
-        </div>
 
-        <div id="Modal2" class="modal">
-            <div class="modal-content">
-                <span class="close">×</span>
-                <a href="/<?php echo $model['data']->ktp_psgn ?? ''; ?>" class="box">
-                    <div class="image">
-                        <img src="/<?php echo $model['data']->ktp_psgn ?? ''; ?>" alt="">
+                    <div class="item single-input">
+                        <p>KTP Pasangan</p>
+                        <input type="text" value="<?php echo $model['data']->ktp_psgn ?? ''; ?>" disabled />
+                        <input type="file" accept="image/*" name="ktp_psgn" />
+                        <div class="container2">
+                            <a href="/<?php echo $model['data']->ktp_psgn ?? ''; ?>">
+                                <button class="modal-display">Lihat</button>
+                            </a>
+                        </div>
                     </div>
-                </a>
-            </div>
-        </div>
 
-        <div id="Modal3" class="modal">
-            <div class="modal-content">
-                <span class="close">×</span>
-                <a href="/<?php echo $model['data']->kartu_kk ?? ''; ?>" class="box">
-                    <div class="image">
-                        <img src="/<?php echo $model['data']->kartu_kk ?? ''; ?>" alt="">
+                    <div class="item single-input">
+                        <p>Kartu Keluarga</p>
+                        <input type="text" value="<?php echo $model['data']->kartu_kk ?? ''; ?>" disabled />
+                        <input type="file" accept="image/*" name="kartu_kk" />
+                        <div class="container3">
+                            <a href="/<?php echo $model['data']->kartu_kk ?? ''; ?>">
+                                <button class="modal-display">Lihat</button>
+                            </a>
+                        </div>
                     </div>
-                </a>
-            </div>
-        </div>
 
-        <div id="Modal4" class="modal">
-            <div class="modal-content">
-                <span class="close">×</span>
-                <a href="/<?php echo $model['data']->srt_kerja ?? ''; ?>" class="box">
-                    <div class="image">
-                        <img src="/<?php echo $model['data']->srt_kerja ?? ''; ?>" alt="">
+                    <div class="item single-input">
+                        <p>Surat Keterangan Memiliki Pekerjaan Tetap</p>
+                        <input type="text" value="<?php echo $model['data']->srt_kerja ?? ''; ?>" disabled />
+                        <input type="file" accept="image/*" name="srt_kerja" />
+                        <div class="container4">
+                            <a href="/<?php echo $model['data']->srt_kerja ?? ''; ?>">
+                                <button class="modal-display">Lihat</button>
+                            </a>
+                        </div>
                     </div>
-                </a>
-            </div>
-        </div>
 
-        <div id="Modal5" class="modal">
-            <div class="modal-content">
-                <span class="close">×</span>
-                <a href="/<?php echo $model['data']->struk_gaji ?? ''; ?>" class="box">
-                    <div class="image">
-                        <img src="/<?php echo $model['data']->struk_gaji ?? ''; ?>" alt="">
+                    <div class="item single-input">
+                        <p>Struk/Rincian Gaji</p>
+                        <input type="text" value="<?php echo $model['data']->struk_gaji ?? ''; ?>" disabled />
+                        <input type="file" accept="image/*" name="struk_gaji" />
+                        <div class="container5">
+                            <a href="/<?php echo $model['data']->struk_gaji ?? ''; ?>">
+                                <button class="modal-display">Lihat</button>
+                            </a>
+                        </div>
                     </div>
-                </a>
-            </div>
-        </div>
 
-        <div id="Modal6" class="modal">
-            <div class="modal-content">
-                <span class="close">×</span>
-                <a href="/<?php echo $model['data']->srt_nikah ?? ''; ?>" class="box">
-                    <div class="image">
-                        <img src="/<?php echo $model['data']->srt_nikah ?? ''; ?>" alt="">
+                    <div class="item single-input">
+                        <p>Surat Nikah</p>
+                        <input type="text" value="<?php echo $model['data']->srt_nikah ?? ''; ?>" disabled />
+                        <input type="file" accept="image/*" name="srt_nikah" />
+                        <div class="container6">
+                            <a href="/<?php echo $model['data']->srt_nikah ?? ''; ?>">
+                                <button class="modal-display">Lihat</button>
+                            </a>
+                        </div>
                     </div>
-                </a>
-            </div>
-        </div> -->
 
+                </div>
+            </div>
+
+            <div class="nav-rule">
+                <p></p>
+                <div>
+                    <button class="btn-success" type="submit">Upload</button>
+                    <a href="/portal/admin" class="btn-rule">Kembali</a>
+                </div>
+            </div>
+        </form>
     </section>
 
-    <script src="assets/js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
     <script>
         lightGallery(document.querySelector('.container1'));

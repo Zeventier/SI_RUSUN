@@ -3,6 +3,7 @@
 namespace Project\Service;
 
 use Project\Domain\Rusun;
+use Project\Domain\Berkas;
 use Project\Domain\Pemohon;
 use Project\Config\Database;
 use Project\Domain\Penghuni;
@@ -110,10 +111,18 @@ class PengumumanService {
 
             $pengumuman = new Pengumuman();
             $pemohon = new Pemohon();
+            $berkas = new Berkas();
 
             $pengumuman = $this->pengumumanRepository->findById($id_pengumuman);
             $pemohon = $this->pemohonRepository->findById($pengumuman->id_pemohon);
+            $berkas = $this->berkasRepository->findById($pengumuman->id_berkas);
 
+            PengumumanService::unlinkFile("/" + $berkas->ktp_pmhn);
+            PengumumanService::unlinkFile("/" + $berkas->ktp_psgn);
+            PengumumanService::unlinkFile("/" + $berkas->kartu_kk);
+            PengumumanService::unlinkFile("/" + $berkas->srt_kerja);
+            PengumumanService::unlinkFile("/" + $berkas->struk_gaji);
+            PengumumanService::unlinkFile("/" + $berkas->srt_nikah);
 
             $this->pengumumanRepository->delete($id_pengumuman);
             $this->pemohonRepository->delete($pengumuman->id_pemohon);
@@ -125,6 +134,25 @@ class PengumumanService {
             Database::rollbackTransaction();
             throw $exception;
         }
+    }
+
+    function unlinkFile($filename)
+    {
+        // try to force symlinks
+        if (is_link($filename)) {
+            $sym = @readlink($filename);
+            if ($sym) {
+                return is_writable($filename) && @unlink($filename);
+            }
+        }
+
+        // try to use real path
+        if (realpath($filename) && realpath($filename) !== $filename) {
+            return is_writable($filename) && @unlink(realpath($filename));
+        }
+
+        // default unlink
+        return is_writable($filename) && @unlink($filename);
     }
 
     public function aturJadwal($id_pengumuman, AturJadwalRequest $aturJadwalRequest): AturJadwalResponse
