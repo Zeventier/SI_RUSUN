@@ -136,3 +136,7 @@
     </section>
 
     <script src=" assets/js/script.js"></script>
+    <script>
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementsByName("tgl_huni")[0].setAttribute('min', today);
+    </script>
