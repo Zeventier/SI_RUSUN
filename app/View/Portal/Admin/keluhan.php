@@ -61,8 +61,8 @@
                                         <a href="/portal/admin/tanggapan?id_keluhan=<?php echo $value['id_keluhan'] ?>" class="btn-danger">Tanggapi</a>
                                     </div>
                                 <?php } else { ?>
-                                    <div class="btn-center">
-                                        <button class="btn-danger" disabled>Sudah ditanggapi</button>
+                                    <div class="cntr-done">
+                                        <button class="done" disabled>Sudah ditanggapi</button>
                                     </div>
                                 <?php } ?>
                             </td>

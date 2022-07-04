@@ -1399,6 +1399,17 @@ a {
   color: var(--btn-success-hov);
 }
 
+.table .cntr-done {
+  align-items: center;
+  text-align: center;
+}
+
+.table .done {
+  color: var(--btn-success-hov);
+  font-size: 2rem;
+  background-color: white;
+}
+
 .table .unpaid {
   color: var(--btn-primary-hov);
 }
