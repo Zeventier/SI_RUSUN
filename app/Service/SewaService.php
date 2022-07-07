@@ -5,6 +5,7 @@ namespace Project\Service;
 use Project\Domain\Sewa;
 use Project\Config\Database;
 use Project\Repository\SewaRepository;
+use Project\Exception\ValidationException;
 
 
 
@@ -72,6 +73,16 @@ class SewaService {
         try {
             Database::beginTransaction();
 
+            $checkTagihanUser = new Sewa();
+
+            $month = date('m', strtotime($sewa->deadline));
+
+            $checkTagihanUser = $this->sewaRepository->findByUserMonth($sewa->username, $month);
+
+            if ($checkTagihanUser != null) {
+                throw new ValidationException("Tagihan bulan yang dipilih untuk penghuni ini sudah ada!");
+            }
+
             do {
                 $id_sewa = rand();
                 $sewaCheck = $this->sewaRepository->findById($id_sewa);
@@ -102,7 +113,18 @@ class SewaService {
             Database::beginTransaction();
 
             $tagihan = new Sewa();
-            $tagihan = $this->sewaRepository->update($tagihan_request);
+            $tagihan->id_sewa = $tagihan_request->id_sewa;
+            $checkTagihanUser = new Sewa();
+
+            $month = date('m', strtotime($tagihan_request->deadline));
+
+            $checkTagihanUser = $this->sewaRepository->findByUserMonth($tagihan_request->username, $month);
+
+            if($checkTagihanUser != null && $checkTagihanUser[0]['id_sewa'] != $tagihan->id_sewa) {
+                throw new ValidationException("Tagihan bulan yang dipilih untuk penghuni ini sudah ada!");
+            } else {
+                $tagihan = $this->sewaRepository->update($tagihan_request);
+            }
 
             Database::commitTransaction();
 
