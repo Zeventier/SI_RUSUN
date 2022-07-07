@@ -115,14 +115,14 @@ class PengumumanService {
 
             $pengumuman = $this->pengumumanRepository->findById($id_pengumuman);
             $pemohon = $this->pemohonRepository->findById($pengumuman->id_pemohon);
-            $berkas = $this->berkasRepository->findById($pengumuman->id_berkas);
+            $berkas = $this->berkasRepository->findById($pemohon->id_berkas);
 
-            PengumumanService::unlinkFile("/" + $berkas->ktp_pmhn);
-            PengumumanService::unlinkFile("/" + $berkas->ktp_psgn);
-            PengumumanService::unlinkFile("/" + $berkas->kartu_kk);
-            PengumumanService::unlinkFile("/" + $berkas->srt_kerja);
-            PengumumanService::unlinkFile("/" + $berkas->struk_gaji);
-            PengumumanService::unlinkFile("/" + $berkas->srt_nikah);
+            PengumumanService::unlinkFile($berkas->ktp_pmhn);
+            PengumumanService::unlinkFile($berkas->ktp_psgn);
+            PengumumanService::unlinkFile($berkas->kartu_kk);
+            PengumumanService::unlinkFile($berkas->srt_kerja);
+            PengumumanService::unlinkFile($berkas->struk_gaji);
+            PengumumanService::unlinkFile($berkas->srt_nikah);
 
             $this->pengumumanRepository->delete($id_pengumuman);
             $this->pemohonRepository->delete($pengumuman->id_pemohon);
