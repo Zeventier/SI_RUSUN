@@ -472,7 +472,7 @@ class PortalAdminController
 
             View::redirect('/portal/admin/tagihan_penghuni?date=' . date('Y-m'));
         } catch (ValidationException $exception) {
-            View::render('Portal/Admin/edit_tagihan', [
+            View::render('Portal/Admin/tagihan_penghuni', [
                 "title" => "Portal Rusun Admin",
                 'error' => $exception->getMessage()
             ]);
@@ -509,7 +509,7 @@ class PortalAdminController
 
             View::redirect('/portal/admin/tagihan_penghuni?date=' . date('Y-m'));
         } catch (ValidationException $exception) {
-            View::render('Portal/Admin/edit_tagihan', [
+            View::render('Portal/Admin/tagihan_penghuni', [
                 "title" => "Portal Rusun Admin",
                 'error' => $exception->getMessage()
             ]);
